@@ -1,0 +1,531 @@
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+/*  <----------------------------------- SECTION FIXED BAR & FOOTER GENERAL -------------------------------> */
+
+.mainBar .list .navButton {
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.mainBar .list .navButton a{
+  color: inherit;
+}
+
+.mainBar nav .navButton:hover{
+  color: lightgrey;
+}
+
+.mainBar {
+  width: 100%;
+}
+
+.mainFooter {
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  background-color: #1F1F1F;
+  width: 100%;
+  color: white;
+  clear: both;
+}
+
+.mainFooter .mainFooterNav{
+}
+
+.mainFooter .mainFooterNav ul {
+  display: table;
+  margin: 0 auto;
+  clear: right;
+}
+
+.mainFooter .mainFooterNav ul a {
+  padding: 6px 10px 6px 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+}
+
+.mainFooter .mainFooterNav ul a:hover {
+  color: lightgrey;
+}
+
+.mainFooter .mainFooterNav ul li {
+  display: inline-block;
+
+  margin-top: 15px;
+}
+
+.mainFooter .mainFooterNav ul li {
+  border-right: 1px white solid;
+}
+
+.mainFooter .mainFooterNav ul li:last-child {
+  border:none;
+}
+
+.mainFooter .mainFooterNav p {
+  float: right;
+  padding-top: 20px;
+  padding-bottom: 2px;
+  font-size: 10px;
+}
+
+/*  <----------------------------------- SECTION FIXED BAR & FOOTER GENERAL -------------------------------> */
+
+/*  <----------------------------------- SECTION MAIN CONTAINER GENERAL -------------------------------> */
+.indexContainerMain {
+  color: #3f3f3f;
+}
+
+/*  <----------------------------------- SECTION MAIN CONTAINER GENERAL -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO GENERAL -------------------------------> */
+
+.indexContainerMain .sectionVideo h1{
+  font-weight: bold;
+  text-transform: uppercase;
+
+  text-shadow: 0px 1px 1px rgba(0,0,0, 0.5);
+}
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO GENERAL -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION PARALLAX GENERAL -------------------------------> */
+
+.indexContainerMain .sectionParallax {
+  background-image: url("../images/index_banner.png");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+}
+
+.indexContainerMain .sectionParallax .parallaxContain h2 {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  position: absolute;
+
+  text-shadow: 0px 1px 1px rgba(0,0,0, 0.5);
+
+  width: 100%;
+
+  top: 50%;
+  transform: translate(0px, -50%);
+}
+
+/*  <----------------------------------- (INDEX) SECTION PARALLAX GENERAL -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO GENERAL -------------------------------> */
+
+.indexContainerMain .sectionVideo h1{
+  text-align: center;
+}
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO GENERAL -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION INFO GENERAL -------------------------------> */
+
+.indexContainerMain .containerSectionInfo .sectionInfo{
+  padding: 20px;
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle {
+  overflow: hidden;
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleImg {
+  height: 100%;
+  width: 15%;
+  float: left;
+  display: inline-block;
+
+  position: relative;
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleImg img {
+  width: 100%;
+  position: absolute;
+
+  max-height: 80px;
+  max-width: 80px;
+
+  top: 50%;
+  right:0%;
+  transform: translate(0px, -50%);
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText {
+  height: 100%;
+  width: 85%;
+  display: inline-block;
+
+  position: relative;
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText .textContainer{
+  position: absolute;
+
+  top: 50%;
+  transform: translate(0px, -50%);
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText h3{
+  font-weight: bold;
+}
+
+/*  <----------------------------------- (INDEX) SECTION INFO GENERAL -------------------------------> */
+
+@media (max-width: 1280px){ /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+
+/*  <----------------------------------- SECTION FIXED BAR & FOOTER HASTA 1280 -------------------------------> */
+
+  .indexContainerMain .sectionMain {
+    display: none;
+  }
+
+  .mainBar {
+    margin-bottom: 30px;
+  }
+
+  .mainBar .logo {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .mainBar nav ul {
+    width: 100%;
+    background-color: #24ABA6;
+  }
+
+  .mainBar nav ul li {
+    text-align: center;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+  }
+
+  .mainBar .list .navButton,
+  .mainBar .list a{
+    color: white;
+  }
+
+  .mainFooter {
+    height: 80px;
+  }
+
+  .mainFooterNav {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+/*  <----------------------------------- SECTION FIXED BAR & FOOTER HASTA 1280 -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO HASTA 1280 -------------------------------> */
+
+  .indexContainerMain .sectionVideo .description {
+    width: 100%;
+  }
+
+  .indexContainerMain .sectionVideo .description {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .indexContainerMain .sectionVideo .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+  }
+
+  .indexContainerMain .sectionVideo .videoWrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO HASTA 1280 -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION INFO HASTA 1280 -------------------------------> */
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle {
+  height: 100px;
+  padding: 20px;
+  padding: 20px;
+}
+
+.indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText {
+  padding-left: 20px;
+}
+
+/*  <----------------------------------- (INDEX) SECTION INFO HASTA 1280 -------------------------------> */
+
+}
+
+@media (max-width: 550px) {
+
+  .indexContainerMain .sectionParallax .parallaxContain h2 {
+    font-size: 25px;
+
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .indexContainerMain .sectionVideo h1{
+    font-size: 25px;
+
+    padding-left: 3%;
+    padding-right: 4%;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText {
+    font-size: 15px;
+  }
+
+}
+
+@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+
+  .indexContainerMain .sectionParallax .parallaxContain h2 {
+    font-size: 40px;
+
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .indexContainerMain .sectionVideo h1{
+    font-size: 40px;
+
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+
+/*  <----------------------------------- SECTION FIXED BAR & FOOTER DESDE 1280 -------------------------------> */
+
+  .mainBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: solid 1px lightgrey;
+    box-shadow: 6px 0px 5px #888888;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .mainBar .mainBarNav{
+    height: 60px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mainBar .logo {
+    float: left;
+    height: 40px;
+    width: auto;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .mainBar nav ul {
+    height: 100%;
+    float: right;
+  }
+
+  .mainBar nav ul li {
+    padding-left: 10px;
+    padding-right:10px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 16px;
+    display: inline-block;
+
+  }
+
+  .mainBar .list .navButton {
+    color: #24ABA6;
+    cursor: pointer;
+    cursor: hand;
+  }
+
+  .mainFooter {
+    height: 80px;
+  }
+
+  .mainFooterNav {
+    width: 1200px;
+    margin: auto;
+  }
+
+/*  <----------------------------------- SECTION FIXED BAR & FOOTER DESDE 1280 -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO GRAAAAANDE DESDE 1280 -------------------------------> */
+
+.indexContainerMain .sectionMain .overVideo{
+  display: block;
+  /*height: 44.16vw;*/
+  height: 43.8vw;
+  width: 100vw;
+  background-image: url("../images/tiles/backgroundblack.png");/*  <-----------------------------------  -------------------------------> */
+  background-repeat: repeat;
+  filter: opacity(50%);
+  position: absolute;
+  z-index: 19;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+}
+
+.indexContainerMain .sectionMain video{
+  min-width: 100%;
+  min-height: 100%;
+  border-bottom: 1px solid darkgrey;
+  filter: blur(3px);
+
+}
+/*  <----------------------------------- (INDEX) SECTION VIDEO GRAAAAANDE DESDE 1280 -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO DESDE 1280 -------------------------------> */
+
+  .indexContainerMain .containerSectionVideo {
+    background-color: black;
+  }
+
+  .indexContainerMain .textOverVideo{
+    width: 1080px;
+    color: white;
+    position: absolute;
+    z-index: 20;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .indexContainerMain .textOverVideo h1{
+    font-size: 50px ;
+    font-weight: bold;
+  }
+
+  .indexContainerMain .textOverVideo h3{
+    padding-top: 30px;
+    font-size: 30px ;
+  }
+
+  .indexContainerMain .sectionVideo {
+    overflow: hidden;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .indexContainerMain .sectionVideo .videoWrapper {
+    width: 50%;
+    float: left;
+
+    display: inline-block;
+  }
+
+  .indexContainerMain .sectionVideo .videoWrapper iframe{
+    height: 250px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .indexContainerMain .sectionVideo .description {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 50%;
+    float: left;
+
+    display: inline-block;
+
+  }
+
+  .indexContainerMain .sectionVideo h1{
+    font-size: 40px;
+    text-align: center;
+  }
+
+/*  <----------------------------------- (INDEX) SECTION VIDEO DESDE 1280 -------------------------------> */
+
+/*  <----------------------------------- SECTION PARALLAX DESDE 1280 -------------------------------> */
+
+  .indexContainerMain .sectionParallax .parallaxContain h2 {
+    font-size: 30px;
+  }
+
+/*  <----------------------------------- SECTION PARALLAX DESDE 1280 -------------------------------> */
+
+/*  <----------------------------------- (INDEX) SECTION INFO DESDE 1280 -------------------------------> */
+
+  .indexContainerMain .containerSectionInfo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 100%;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo {
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo .infoArticle {
+    height: 120px;
+    width: 50%;
+    float: left;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText {
+    font-size: 15px;
+
+    padding-left: 20px;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText h3{
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+
+  .indexContainerMain .containerSectionInfo .sectionInfo .infoArticle .infoArticleText p{
+    font-size: 15px;
+    padding-right: 20px;   /* <--- ESTO ESTA MAL---> */
+  }
+
+  /*  <----------------------------------- (INDEX) SECTION INFO DESDE 1280 -------------------------------> */
+
+}

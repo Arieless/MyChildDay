@@ -1,0 +1,165 @@
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER GENERAL -------------------------------> */
+
+.FAQContainerMain {
+  color: #3f3f3f;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.FAQContainerMain .containerFAQ h1{
+  font-weight: bold;
+}
+
+.FAQContainerMain .containerFAQquestions{
+  list-style: none;
+}
+
+.FAQContainerMain .containerFAQquestions a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.FAQContainerMain .containerFAQquestions h2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.FAQContainerMain .containerFAQquestions a:hover{
+	color: #000000;
+}
+
+.FAQContainerMain .containerFAQanswers h3 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  font-weight: normal;
+}
+
+.FAQContainerMain .containerFAQanswers h2 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  font-style: italic;
+  font-weight: bold;
+}
+
+.FAQanswers {
+  cursor: pointer;
+}
+
+.FAQanswersText {
+  display: none;
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER GENERAL -------------------------------> */
+
+
+@media screen and (max-width: 300px) {
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER HASTA 300 -------------------------------> */
+
+  .FAQContainerMain {
+      font-size: 14px;
+      margin-bottom: 50px;
+  }
+
+  .FAQContainerMain .containerFAQanswers {
+    margin-top: 4%;
+  }
+
+  .FAQContainerMain h1{
+    font-size: 16px;
+  }
+
+  .FAQContainerMain h2,.FAQContainerMain h3{
+    font-size: 14px;
+  }
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER HASTA 300 -------------------------------> */
+
+}
+
+@media screen and (min-width: 300px) {
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 300 -------------------------------> */
+
+  .FAQContainerMain {
+      font-size: 13px;
+      margin-left: auto;
+      margin-right: auto;
+
+      margin-bottom: 30px;
+  }
+
+/*COMENTO ESTE MARGIN PARA QUE NO HAYA SEPARACION ENTRE EL TITULO Y LAS PREGUNTAS*/
+  /*.FAQContainerMain .containerFAQanswers {
+    margin-top: 8%;
+  }*/
+
+  .FAQContainerMain h1{
+    font-size: 18px;
+  }
+
+  .FAQContainerMain h2,.FAQContainerMain h3{
+    font-size: 16px;
+  }
+
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 300 -------------------------------> */
+@media (max-width: 1280px) {
+
+  .FAQContainerMain{
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .FAQContainerMain .containerImages{
+    display: none;
+  }
+
+  .FAQContainerMain .containerFAQ {
+    float: left;
+    padding-right: 5%;
+    width: 100%;
+  }
+
+}
+@media (min-width: 1280px) {
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 1280 -------------------------------> */
+
+  .FAQContainerMain {
+    margin-top: 120px;
+    max-width: 1080px;
+
+    margin-bottom: 60px;
+  }
+
+  .FAQContainerMain .containerImages{
+    float: left;
+    width: 35%;
+  }
+
+  .FAQContainerMain .containerImages img{
+    width: 100%;
+  }
+  .imgs {
+    display: none;
+  }
+
+  .FAQContainerMain .containerFAQ {
+    float: left;
+    padding-right: 5%;
+    width: 65%;
+  }
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 1280 -------------------------------> */
+
+}
