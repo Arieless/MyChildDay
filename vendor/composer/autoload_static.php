@@ -278,10 +278,19 @@ class ComposerStaticInitc39e87c4ba098e01dfd797c15aa8f0d5
     );
 
     public static $classMap = array (
-        'CreateKiidsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_054447_create_kiids_table.php',
+        'AddPostTypeIdColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_191724_add_post-type_id_column.php',
+        'AddSchoolIdColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_190041_add_school_id_column.php',
+        'CreateKidRoomTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192742_create_kid_room_table.php',
+        'CreateKidsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_054447_create_kids_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePostKidTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192553_create_post_kid_table.php',
+        'CreatePostTypesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_191606_create_post-types_table.php',
+        'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_190959_create_posts_table.php',
+        'CreateRoomSchoolTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192633_create_room_school_table.php',
         'CreateRoomsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_054319_create_rooms_table.php',
         'CreateSchoolTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_053217_create_school_table.php',
+        'CreateUserKidTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192817_create_user_kid_table.php',
+        'CreateUserRoomTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192916_create_user_room_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',

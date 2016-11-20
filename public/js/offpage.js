@@ -149,13 +149,13 @@ function loginValidation (evt){
 function formValidation (evt){
 
   // Validate register
-  var userName = new makeInputElement("nombre", document.getElementById("userName"), document.getElementById("userNameError"));
-  var userLastName = new makeInputElement("apellido", document.getElementById("userLastName"), document.getElementById("userLastNameError"));
+  var userName = new makeInputElement("nombre", document.getElementById("first-name"), document.getElementById("first-nameError"));
+  var userLastName = new makeInputElement("apellido", document.getElementById("first-name"), document.getElementById("last-nameError"));
   var email = new makeInputElement("email", document.getElementById("email"), document.getElementById("emailError"));
   var address = new makeInputElement("email", document.getElementById("address"), document.getElementById("addressError"));
   var phone = new makeInputElement ("phone", document.getElementById("phone"), document.getElementById("phoneError"));
   var password = new makeInputElement ("contraseña", document.getElementById("password"), document.getElementById("passwordError"));
-  var passwordConfirm = new makeInputElement ("contraseña", document.getElementById("passwordConfirm"), document.getElementById("passwordConfirmError"));
+  var passwordConfirm = new makeInputElement ("contraseña", document.getElementById("password-confirm"), document.getElementById("password-confirmError"));
 
 
   var flag;
@@ -215,40 +215,3 @@ function validatePasswordConfirm(password, password2) {
   markAsError(password2.errorElement, "La confirmacion de la contraseña debe ser igual a la contraseña.");
   return false;
 }
-
-
-/*
-function accordeon (ev){
-
-  ev.preventDefault();
-
-  if (this.nextElementSibling.style.display == "block") {
-      this.nextElementSibling.style.display = "none";
-  } else {
-      this.nextElementSibling.style.display = "block";
-  }
-
-  if (faqAnswers[0].style.display == "block" && faqAnswers[1].style.display == "block") {
-    faqImgs[0].style.display = "block";
-  } else {
-    faqImgs[0].style.display = "none";
-  }
-  if (faqAnswers[2].style.display == "block" && faqAnswers[1].style.display == "none" && faqAnswers[0].style.display == "block" || faqAnswers[1].style.display == "block" ) {
-    faqImgs[1].style.display = "block";
-  } else {
-    faqImgs[1].style.display = "none";
-}
-  if (faqAnswers[3].style.display == "block" && faqAnswers[4].style.display == "block") {
-    faqImgs[4].style.display = "block";
-  } else {
-    faqImgs[4].style.display = "none";
-  }
-  if (faqAnswers[2].style.display == "block" && faqAnswers[3].style.display == "block" || faqAnswers[4].style.display == "block") {
-    faqImgs[3].style.display = "block";
-    faqImgs[4].style.display = "block";
-  } else {
-    faqImgs[3].style.display = "none";
-    faqImgs[4].style.display = "none";
-  }
-}
-*/

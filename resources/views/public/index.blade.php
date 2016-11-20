@@ -1,6 +1,7 @@
 @extends('layouts.home')
 @section('title','MychildDay')
 @section('content')
+
     <div class ="indexContainerMain toHide"> <!-- This was added for easy background change -->
       <section class="sectionMain" >
         <div class="textOverVideo">

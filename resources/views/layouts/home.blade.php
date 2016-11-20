@@ -21,10 +21,13 @@
     <!-- HEADER -->
     @include('layouts.components.headerNoLog')
     <!-- REG/OLG -->
-    @include('layouts.components.registerLogin')
+
+    @include('layouts.components.register-login', ['displayLogin' => $displayLog, 'displayRegister' => $displayReg])
     <!-- CONTENT -->
     @yield('content')
     <!-- FOOTER -->
+
+
     @include('layouts.components.footer')
 
   </body>

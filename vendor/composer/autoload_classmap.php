@@ -6,10 +6,19 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateKiidsTable' => $baseDir . '/database/migrations/2016_11_19_054447_create_kiids_table.php',
+    'AddPostTypeIdColumn' => $baseDir . '/database/migrations/2016_11_20_191724_add_post-type_id_column.php',
+    'AddSchoolIdColumn' => $baseDir . '/database/migrations/2016_11_20_190041_add_school_id_column.php',
+    'CreateKidRoomTable' => $baseDir . '/database/migrations/2016_11_20_192742_create_kid_room_table.php',
+    'CreateKidsTable' => $baseDir . '/database/migrations/2016_11_19_054447_create_kids_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePostKidTable' => $baseDir . '/database/migrations/2016_11_20_192553_create_post_kid_table.php',
+    'CreatePostTypesTable' => $baseDir . '/database/migrations/2016_11_20_191606_create_post-types_table.php',
+    'CreatePostsTable' => $baseDir . '/database/migrations/2016_11_20_190959_create_posts_table.php',
+    'CreateRoomSchoolTable' => $baseDir . '/database/migrations/2016_11_20_192633_create_room_school_table.php',
     'CreateRoomsTable' => $baseDir . '/database/migrations/2016_11_19_054319_create_rooms_table.php',
     'CreateSchoolTable' => $baseDir . '/database/migrations/2016_11_19_053217_create_school_table.php',
+    'CreateUserKidTable' => $baseDir . '/database/migrations/2016_11_20_192817_create_user_kid_table.php',
+    'CreateUserRoomTable' => $baseDir . '/database/migrations/2016_11_20_192916_create_user_room_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
