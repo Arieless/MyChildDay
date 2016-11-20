@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title','MychildDay')
+@section('title','MyChildDay')
 @section('content')
 
     <div class ="indexContainerMain toHide"> <!-- This was added for easy background change -->
