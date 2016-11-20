@@ -17,7 +17,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('public.index' , ['displayReg' => "block", 'displayLog' => "none"]);
     }
 
     /**
