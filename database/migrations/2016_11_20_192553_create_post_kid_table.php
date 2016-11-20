@@ -14,10 +14,12 @@ class CreatePostKidTable extends Migration
     public function up()
     {
         Schema::create('post_kid', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('kid_id')->references('id')->on('kids');
-            $table->timestamps();
+          $table->increments('id');
+          $table->integer('post_id')->unsigned();
+          $table->foreign('post_id')->references('id')->on('posts');
+          $table->integer('kid_id')->unsigned();
+          $table->foreign('kid_id')->references('id')->on('kids');
+          $table->timestamps();
         });
     }
 
