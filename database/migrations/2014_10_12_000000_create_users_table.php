@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last-name');
             $table->string('email', 150)->unique();
             $table->string('address');
-            $table->required('phone', 50);
+            $table->string('phone', 50);
             $table->string('password', 250);
             $table->tinyInteger('parent-rol')->unsigned()->default('0');
             $table->tinyInteger('teacher-rol')->unsigned()->default('0');

@@ -13,9 +13,12 @@ class CreateRoomsTable extends Migration
      */
     public function up()
     {
+
+      Schema::enableForeignKeyConstraints();
       Schema::create('rooms', function(Blueprint $table) {
           $table->increments('id');
           $table->string('name');
+          $table->integer('school_id')->unsigned();
           $table->foreign('school_id')->references('id')->on('schools');
           $table->tinyInteger('deactivated')->unsigned()->default('0');
           $table->timestamps();

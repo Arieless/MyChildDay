@@ -15,7 +15,9 @@ class CreateKidRoomTable extends Migration
     {
         Schema::create('kid_room', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('kid_id')->unsigned();
             $table->foreign('kid_id')->references('id')->on('kids');
+            $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms');
             $table->timestamps();
         });

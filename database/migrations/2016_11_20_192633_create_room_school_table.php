@@ -15,7 +15,9 @@ class CreateRoomSchoolTable extends Migration
     {
         Schema::create('room_school', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms');
+            $table->integer('school_id')->unsigned();
             $table->foreign('school_id')->references('id')->on('schools');
             $table->timestamps();
         });

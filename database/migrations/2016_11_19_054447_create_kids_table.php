@@ -20,6 +20,7 @@ class CreateKidsTable extends Migration
           $table->string('birthdate');
           $table->string('description');
           $table->string('profile-picture');
+          $table->integer('school_id')->unsigned();
           $table->foreign('school_id')->references('id')->on('schools');
           $table->timestamps();
       });

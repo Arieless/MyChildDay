@@ -11,15 +11,21 @@ class CreateSchoolTable extends Migration
      *
      * @return void
      */
+
+
+
     public function up()
     {
+
+      Schema::enableForeignKeyConstraints();
       Schema::create('schools', function(Blueprint $table) {
           $table->increments('id');
           $table->string('name');
           $table->string('address');
-          $table->bigInteger('telephone');
+          $table->string('telephone');
           $table->string('email');
-          $table->foreign('administrator_id')->nullable()->references('id')->on('users');
+          $table->integer('user_id')->unsigned();
+          $table->foreign('user_id')->references('id')->on('users');
           $table->tinyInteger('deactivated')->unsigned()->default('0');
           $table->timestamps();
 
