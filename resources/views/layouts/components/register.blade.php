@@ -17,7 +17,7 @@
 
     </p>
     <label for="first-name">Nombres:</label>
-    <input id="first-name" type="text" placeholder="Ingrese su nombres" name="first-name"  required/>  <!-- value="{{ old('first-name') }}" -->
+    <input id="first-name" type="text" placeholder="Ingrese su nombres" name="first-name" value="{{ old('first-name') }}" required/>
     <p class="inputError" id="last-nameError">
 
     @if (isset($errors))
@@ -30,7 +30,7 @@
 
     </p>
     <label for="last-name">Apellido:</label>
-    <input id="last-name" type="text" placeholder="Ingrese su apellido" name="last-name"  required/ >  <!-- value="{{ old('last-name') }}" -->
+    <input id="last-name" type="text" placeholder="Ingrese su apellido" name="last-name" value="{{ old('last-name') }}" required/ >
     <p class="inputError" id="emailError">
 
     @if (isset($errors))
@@ -43,7 +43,7 @@
 
     </p>
     <label for="email">E-mail:</label>
-    <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" required/>  <!-- value="{{ old('email') }}"  -->
+    <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ old('email') }}" required/>
     <p class="inputError" id="addressError">
 
     @if (isset($errors))
@@ -56,7 +56,7 @@
 
     </p>
     <label for="address">Domicilio:</label>
-    <input id="address" type="text" placeholder="Ingrese domicilio" name="address" required/>  <!-- value="{{ old('address') }}"  -->
+    <input id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ old('address') }}" required/>
     <p class="inputError" id="phoneError">
 
     @if (isset($errors))
@@ -69,7 +69,7 @@
 
     </p>
     <label for="phone">Telefono de contacto:</label>
-    <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone"  required/> <!-- value="{{ old('phone') }}" -->
+    <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ old('phone') }}"  required/>
     <p class="inputError" id="passwordError">
 
     @if (isset($errors))
@@ -95,7 +95,7 @@
 
     </p>
     <label for="password-confirm">Verificacion de contraseña:</label>
-    <input type="password" id="password-confirm" placeholder="Ingrese su contraseña nuevamente" name="password-confirm" required>
+    <input type="password" id="password-confirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
     <div class="containerOptions">
       <p id="containerRegisterLoginText" class="containerOptionsText">Inicie sesion si ya se encuentra registrado</p>
     </div>
