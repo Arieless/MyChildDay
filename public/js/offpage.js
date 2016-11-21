@@ -57,17 +57,6 @@ window.onload = function () {
   // validate login form
   document.getElementById('loginForm').addEventListener('submit', loginValidation);
 
-  // Accordeon
-  /*
-  questions = document.getElementsByClassName("FAQanswers");
-  answers = document.getElementsByClassName("FAQanswersText");
-  imgs = document.getElementsByClassName("imgs");
-
-  for (var i = 0; i < questions.length; i++) {
-    questions[i].onclick = accordeon;
-  }
-  */
-
 };
 
 function popUpClose (){
@@ -121,8 +110,10 @@ function popUpEscapeClose (ev){
 }
 
 function hideTheRest (bool){
-  if (window.screen.availWidth < 1280){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
 
+  if (getWidth() < 1280){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
+
+    console.log (toHide);
     if (bool){
       for (var i=0; i < toHide.length; i++){
         toHide[i].style.display = "none";
@@ -133,6 +124,20 @@ function hideTheRest (bool){
         toHide[ii].style.display = "block";
       }
     }
+  }
+}
+
+function getWidth() {
+  if (self.innerWidth) {
+    return self.innerWidth;
+  }
+
+  if (document.documentElement && document.documentElement.clientWidth) {
+    return document.documentElement.clientWidth;
+  }
+
+  if (document.body) {
+    return document.body.clientWidth;
   }
 }
 
