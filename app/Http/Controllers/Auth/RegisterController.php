@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'address' => 'required|max:255',
             'phone' => 'required|max:255',
-            'password_verify' => '',
+            'password_verify' => 'required', // FALTA VALIDAR ESTO!
             'password' => 'required|min:6|confirmed',
 
         ]);
