@@ -2,6 +2,9 @@
   <img id="buttonCloseRegister" class="buttonClose" src="images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Ingrese sus datos para registrarse</h4>
   <form id="registerForm" role="form" method="POST" action="{{ url('/register') }}">
+
+    {{ csrf_field() }}
+
     <p class="inputError" id="first-nameError">
 
       @if (isset($errors))
