@@ -16,4 +16,6 @@ Route::get('/faq', 'PublicController@faq');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index'); // ->middleware('auth');
+Route::group(['middleware' => ['auth']], function(){ // auth pages goes here
+    Route::get('/home', 'HomeController@index');
+});

@@ -154,9 +154,9 @@ function loginValidation (evt){
 function formValidation (evt){
 
   // Validate register
-  var userName = new makeInputElement("nombre", document.getElementById("first-name"), document.getElementById("first-nameError"));
+  var userName = new makeInputElement("nombre", document.getElementById("firstName"), document.getElementById("firstNameError"));
   console.log (userName);
-  var userLastName = new makeInputElement("apellido", document.getElementById("last-name"), document.getElementById("last-nameError"));
+  var userLastName = new makeInputElement("apellido", document.getElementById("lastName"), document.getElementById("lastNameError"));
   console.log (userLastName);
   var email = new makeInputElement("email", document.getElementById("email"), document.getElementById("emailError"));
   console.log (email);
@@ -166,7 +166,7 @@ function formValidation (evt){
   console.log (phone);
   var password = new makeInputElement ("contraseña", document.getElementById("password"), document.getElementById("passwordError"));
   console.log (password);
-  var passwordConfirm = new makeInputElement ("verificacion de contraseña", document.getElementById("password-confirm"), document.getElementById("password-confirmError"));
+  var passwordConfirm = new makeInputElement ("verificacion de contraseña", document.getElementById("password_confirmation"), document.getElementById("password_confirmationError"));
   console.log (passwordConfirm);
 
 

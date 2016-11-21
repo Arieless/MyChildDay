@@ -8,22 +8,27 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_index.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_faq.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
+
+      <script src="/js/offpage.js" charset="utf-8"></script>
 
       <title>@yield('title')</title>
   </head>
   <body>
 
     <!-- HEADER -->
-    @include('layouts.components.header.logged')
+    @include('layouts.components.header.notLogged')
     <!-- REG/OLG -->
 
-
+    @include('layouts.components.popUps.all', ['displayLogin' => $displayLog, 'displayRegister' => $displayReg])
     <!-- CONTENT -->
     @yield('content')
     <!-- FOOTER -->
 
 
-    @include('layouts.components.footer.logged')
+    @include('layouts.components.footer.notLogged')
 
   </body>
   </html>
