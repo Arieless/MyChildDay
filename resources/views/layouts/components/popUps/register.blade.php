@@ -5,32 +5,32 @@
 
     {{ csrf_field() }}
 
-    <p class="inputError" id="first-nameError">
+    <p class="inputError" id="firstNameError">
 
       @if (isset($errors))
-        @if ($errors->has('first-name'))
-          @foreach ($errors->get('first-name') as $message)
+        @if ($errors->has('firstName'))
+          @foreach ($errors->get('firstName') as $message)
               {{ $message }} <br/>
           @endforeach
         @endif
       @endif
 
     </p>
-    <label for="first-name">Nombres:</label>
-    <input id="first-name" type="text" placeholder="Ingrese su nombres" name="first-name" value="{{ old('first-name') }}" required/>
-    <p class="inputError" id="last-nameError">
+    <label for="firstName">Nombres:</label>
+    <input id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ old('firstName') }}" required/>
+    <p class="inputError" id="lastNameError">
 
     @if (isset($errors))
-      @if ($errors->has('last-name'))
-        @foreach ($errors->get('last-name') as $message)
+      @if ($errors->has('lastName'))
+        @foreach ($errors->get('lastName') as $message)
             {{ $message }} <br/>
         @endforeach
       @endif
     @endif
 
     </p>
-    <label for="last-name">Apellido:</label>
-    <input id="last-name" type="text" placeholder="Ingrese su apellido" name="last-name" value="{{ old('last-name') }}" required/ >
+    <label for="lastName">Apellido:</label>
+    <input id="lastName" type="text" placeholder="Ingrese su apellido" name="lastName" value="{{ old('lastName') }}" required/ >
     <p class="inputError" id="emailError">
 
     @if (isset($errors))
