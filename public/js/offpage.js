@@ -57,17 +57,6 @@ window.onload = function () {
   // validate login form
   document.getElementById('loginForm').addEventListener('submit', loginValidation);
 
-  // Accordeon
-  /*
-  questions = document.getElementsByClassName("FAQanswers");
-  answers = document.getElementsByClassName("FAQanswersText");
-  imgs = document.getElementsByClassName("imgs");
-
-  for (var i = 0; i < questions.length; i++) {
-    questions[i].onclick = accordeon;
-  }
-  */
-
 };
 
 function popUpClose (){
@@ -121,8 +110,10 @@ function popUpEscapeClose (ev){
 }
 
 function hideTheRest (bool){
-  if (window.screen.availWidth < 1280){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
 
+  if (getWidth() < 1280){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
+
+    console.log (toHide);
     if (bool){
       for (var i=0; i < toHide.length; i++){
         toHide[i].style.display = "none";
@@ -133,6 +124,20 @@ function hideTheRest (bool){
         toHide[ii].style.display = "block";
       }
     }
+  }
+}
+
+function getWidth() {
+  if (self.innerWidth) {
+    return self.innerWidth;
+  }
+
+  if (document.documentElement && document.documentElement.clientWidth) {
+    return document.documentElement.clientWidth;
+  }
+
+  if (document.body) {
+    return document.body.clientWidth;
   }
 }
 
@@ -150,12 +155,19 @@ function formValidation (evt){
 
   // Validate register
   var userName = new makeInputElement("nombre", document.getElementById("first-name"), document.getElementById("first-nameError"));
-  var userLastName = new makeInputElement("apellido", document.getElementById("first-name"), document.getElementById("last-nameError"));
+  console.log (userName);
+  var userLastName = new makeInputElement("apellido", document.getElementById("last-name"), document.getElementById("last-nameError"));
+  console.log (userLastName);
   var email = new makeInputElement("email", document.getElementById("email"), document.getElementById("emailError"));
-  var address = new makeInputElement("email", document.getElementById("address"), document.getElementById("addressError"));
+  console.log (email);
+  var address = new makeInputElement("address", document.getElementById("address"), document.getElementById("addressError"));
+  console.log (address);
   var phone = new makeInputElement ("phone", document.getElementById("phone"), document.getElementById("phoneError"));
+  console.log (phone);
   var password = new makeInputElement ("contraseña", document.getElementById("password"), document.getElementById("passwordError"));
-  var passwordConfirm = new makeInputElement ("contraseña", document.getElementById("password-confirm"), document.getElementById("password-confirmError"));
+  console.log (password);
+  var passwordConfirm = new makeInputElement ("verificacion de contraseña", document.getElementById("password-confirm"), document.getElementById("password-confirmError"));
+  console.log (passwordConfirm);
 
 
   var flag;

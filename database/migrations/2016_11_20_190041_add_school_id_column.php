@@ -14,7 +14,7 @@ class AddSchoolIdColumn extends Migration
     public function up()
     {
       Schema::table('users', function(Blueprint $table) {
-        $table->integer('school_id')->unsigned();
+        $table->integer('school_id')->unsigned()->nullable();
         $table->foreign('school_id')->nullable()->references('id')->on('schools');
      });
     }
