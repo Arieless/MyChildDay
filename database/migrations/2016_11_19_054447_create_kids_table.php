@@ -15,11 +15,11 @@ class CreateKidsTable extends Migration
     {
       Schema::create('kids', function(Blueprint $table) {
           $table->increments('id');
-          $table->string('first-name');
-          $table->string('last-name');
+          $table->string('firstName');
+          $table->string('lastName');
           $table->string('birthdate');
           $table->string('description');
-          $table->string('profile-picture');
+          $table->string('profilePicture');
           $table->integer('school_id')->unsigned();
           $table->foreign('school_id')->references('id')->on('schools');
           $table->timestamps();

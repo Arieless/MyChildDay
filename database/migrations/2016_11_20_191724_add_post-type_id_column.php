@@ -14,8 +14,8 @@ class AddPostTypeIdColumn extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-          $table->integer('post-type_id')->unsigned();
-          $table->foreign('post-type_id')->references('id')->on('post-types');
+          $table->integer('postType_id')->unsigned();
+          $table->foreign('postType_id')->references('id')->on('postTypes');
         });
     }
 
@@ -27,7 +27,7 @@ class AddPostTypeIdColumn extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('post-type_id');
+            $table->dropColumn('postType_id');
         });
     }
 }
