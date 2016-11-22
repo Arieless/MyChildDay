@@ -3,7 +3,11 @@ html {
 
 }
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER GENERAL -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER GENERAL -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 
 .termsContainerMain {
   color: #3f3f3f;
@@ -41,12 +45,20 @@ html {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER GENERAL -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER GENERAL -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 
 
 @media screen and (max-width: 300px) {
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER HASTA 300 -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER HASTA 300 -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 
   .termsContainerMain {
     margin-left: 20px;
@@ -57,17 +69,35 @@ html {
   }
 
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER HASTA 300 -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER HASTA 300 -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 
 }
 
 @media screen and (min-width: 300px) {
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 300 -------------------------------> */
 
 }
 
 /*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 300 -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 300 -------------------------------> */
+
+/*COMENTO ESTE MARGIN PARA QUE NO HAYA SEPARACION ENTRE EL TITULO Y LAS PREGUNTAS*/
+  /*.FAQContainerMain .containerFAQanswers {
+    margin-top: 8%;
+  }*/
+
+
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 300 -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 @media (max-width: 1280px) {
 
   .termsContainerMain{
@@ -77,7 +107,11 @@ html {
 }
 @media (min-width: 1280px) {
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 1280 -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 1280 -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 
   .termsContainerMain {
     padding-top: 7%;
@@ -85,6 +119,10 @@ html {
     margin-bottom: 60px;
   }
 
+<<<<<<< HEAD
 /*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 1280 -------------------------------> */
+=======
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 1280 -------------------------------> */
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 
 }
