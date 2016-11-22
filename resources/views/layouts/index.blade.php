@@ -20,16 +20,15 @@
   <body>
 
     <!-- HEADER -->
-    @include('layouts.components.header.notLogged')
+    @include('layouts.components.headers.notLogged')
     <!-- REG/OLG -->
-
-    @include('layouts.components.popUps.all', ['displayLogin' => $displayLog, 'displayRegister' => $displayReg])
+    @include ('layouts.components.popUps.bg', ['display' => $displayReg])
+    @include ('layouts.components.popUps.register', ['display' => $displayReg])
+    @include ('layouts.components.popUps.login', ['display' => $displayLog,])
     <!-- CONTENT -->
     @yield('content')
     <!-- FOOTER -->
-
-
-    @include('layouts.components.footer.notLogged')
+    @include('layouts.components.footers.notLogged')
 
   </body>
   </html>
