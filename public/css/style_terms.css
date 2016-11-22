@@ -1,0 +1,96 @@
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER GENERAL -------------------------------> */
+
+.termsContainerMain {
+  color: #3f3f3f;
+  overflow: hidden;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+.termsContainerMain h2{
+  text-align: center;
+  font-weight: bold;
+}
+
+.termsContainerMain .containerTerms{
+  padding-top: 5%;
+}
+
+.termsContainerMain .containerTerms h3 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.termsContainerMain .containerTerms ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  counter-reset: item;
+}
+.termsContainerMain .containerTerms .termsTextContainer li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+}
+
+.termsContainerMain .containerTerms .termsTextContainer {
+  margin-bottom: 20px;
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER GENERAL -------------------------------> */
+
+
+@media screen and (max-width: 300px) {
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER HASTA 300 -------------------------------> */
+
+  .termsContainerMain {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  .termsContainerMain .containerMain {
+    padding-top: 2%;
+  }
+
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER HASTA 300 -------------------------------> */
+
+}
+
+@media screen and (min-width: 300px) {
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 300 -------------------------------> */
+
+/*COMENTO ESTE MARGIN PARA QUE NO HAYA SEPARACION ENTRE EL TITULO Y LAS PREGUNTAS*/
+  /*.FAQContainerMain .containerFAQanswers {
+    margin-top: 8%;
+  }*/
+
+
+}
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 300 -------------------------------> */
+@media (max-width: 1280px) {
+
+  .termsContainerMain{
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+}
+@media (min-width: 1280px) {
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 1280 -------------------------------> */
+
+  .termsContainerMain {
+    padding-top: 7%;
+    max-width: 1080px;
+    margin-bottom: 60px;
+  }
+
+/*  <----------------------------------- (FAQ) MAIN CONTAINER DESDE 1280 -------------------------------> */
+
+}

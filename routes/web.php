@@ -13,6 +13,7 @@
 
 Route::get('/', 'PublicController@index');
 Route::get('/faq', 'PublicController@faq');
+Route::get('/terminos', 'PublicController@terms');
 
 Auth::routes();
 

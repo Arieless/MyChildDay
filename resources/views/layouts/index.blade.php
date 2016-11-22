@@ -10,6 +10,7 @@
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
       <link rel="stylesheet" type="text/css" href="/css/style_index.css">
       <link rel="stylesheet" type="text/css" href="/css/style_faq.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
       <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
 
       <script src="/js/offpage.js" charset="utf-8"></script>
