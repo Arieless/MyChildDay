@@ -14,7 +14,7 @@
   <body>
 
     <!-- HEADER -->
-    @include('layouts.components.header.logged')
+    @include('layouts.components.headers.loggedParent')
     <!-- REG/OLG -->
 
 
@@ -23,7 +23,7 @@
     <!-- FOOTER -->
 
 
-    @include('layouts.components.footer.logged')
+    @include('layouts.components.footers.loggedParent')
 
   </body>
   </html>
