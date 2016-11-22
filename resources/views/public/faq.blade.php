@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.index')
 @section('title','MychildDay - Preguntas Frecuentes')
 @section('content')
 
