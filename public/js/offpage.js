@@ -20,6 +20,8 @@ window.onload = function () {
   popUpContainerBackground = document.getElementById('popUpContainerBackground');
   popUpContainerLogin = document.getElementById('popUpContainerLogin');
   popUpContainerRegister = document.getElementById('popUpContainerRegister');
+  popUpContainerEmailReset = document.getElementById('popUpContainerEmailReset');
+  popUpContainerPassReset = document.getElementById('popUpContainerPassReset');
 
   // elements to hide in resolutions less than 1280 so it looks like a new page
   toHide = document.getElementsByClassName('toHide');
@@ -28,17 +30,27 @@ window.onload = function () {
   document.getElementById('buttonCloseLogin').onclick = popUpClose;
   // close on register buttonClose click
   document.getElementById('buttonCloseRegister').onclick = popUpClose;
+  // close on emailReset buttonClose click
+  document.getElementById('buttonCloseEmailReset').onclick = popUpClose;
+  // close on passReset buttonClose click
+  document.getElementById('buttonClosePassReset').onclick = popUpClose;
 
   // pop up on button register click
   document.getElementById('containerLoginRegisterText').onclick = popUpRegister;
   // pop up on button login click
   document.getElementById('containerRegisterLoginText').onclick = popUpLogin;
+  // pop up on button passReset click
+  document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
 
   popUpContainerLogin.onclick = function () {
     canClose = false;
   };
 
   popUpContainerRegister.onclick = function (){
+    canClose = false;
+  };
+
+  popUpContainerPassReset.onclick = function (){
     canClose = false;
   };
 
@@ -50,12 +62,18 @@ window.onload = function () {
   document.getElementById('popUpButtonRegister').onclick = popUpRegister;
   // pops login form
   document.getElementById('popUpButtonLogIn').onclick = popUpLogin;
+  // pops passReset form
+  document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
 
 
   // validate register form
   document.getElementById('registerForm').addEventListener('submit', formValidation);
   // validate login form
   document.getElementById('loginForm').addEventListener('submit', loginValidation);
+  // validate emailReset form
+  document.getElementById('emailResetForm').addEventListener('submit', formValidation);
+  // validate passReset form
+  document.getElementById('passResetForm').addEventListener('submit', formValidation);
 
 };
 
@@ -64,6 +82,8 @@ function popUpClose (){
   popUpContainerLogin.style.display = "none";
   popUpContainerBackground.style.display = "none";
   popUpContainerRegister.style.display = "none";
+  popUpContainerEmailReset.style.display = "none";
+  popUpContainerPassReset.style.display = "none";
 
   hideTheRest(false); //este es otro super hackcode
 }
@@ -73,6 +93,8 @@ function popUpLogin(){
   popUpContainerLogin.style.display = "block";
   popUpContainerBackground.style.display = "block";
   popUpContainerRegister.style.display = "none";
+  popUpContainerEmailReset.style.display = "none";
+  popUpContainerPassReset.style.display = "none";
 
   hideTheRest(true);
 
@@ -83,6 +105,31 @@ function popUpRegister () {
   popUpContainerRegister.style.display = "block";
   popUpContainerBackground.style.display = "block";
   popUpContainerLogin.style.display = "none";
+  popUpContainerEmailReset.style.display = "none";
+  popUpContainerPassReset.style.display = "none";
+
+  hideTheRest(true);
+
+}
+
+function popUpEmailReset () {
+
+  popUpContainerEmailReset.style.display = "block";
+  popUpContainerBackground.style.display = "block";
+  popUpContainerLogin.style.display = "none";
+  popUpContainerPassReset.style.display = "none";
+
+  hideTheRest(true);
+
+}
+
+function popUpPassReset () {
+
+  popUpContainerPassReset.style.display = "block";
+  popUpContainerBackground.style.display = "block";
+  popUpContainerLogin.style.display = "none";
+  popUpContainerEmailReset.style.display = "none";
+
 
   hideTheRest(true);
 
@@ -94,6 +141,8 @@ function popUpClickClose () {
       popUpContainerBackground.style.display = "none";
       popUpContainerLogin.style.display = "none";
       popUpContainerRegister.style.display = "none";
+      popUpContainerEmailReset.style.display = "none";
+      popUpContainerPassReset.style.display = "none";
     }
 
     canClose = true;
@@ -105,6 +154,8 @@ function popUpEscapeClose (ev){
       popUpContainerBackground.style.display = "none";
       popUpContainerLogin.style.display = "none";
       popUpContainerRegister.style.display = "none";
+      popUpContainerEmailReset.style.display = "none";
+      popUpContainerPassReset.style.display = "none";
 
       hideTheRest(false);
     }
@@ -114,7 +165,6 @@ function hideTheRest (bool){
 
   if (getWidth() < 1280){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
 
-    console.log (toHide);
     if (bool){
       for (var i=0; i < toHide.length; i++){
         toHide[i].style.display = "none";
