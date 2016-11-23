@@ -22,7 +22,7 @@
     <!-- HEADER -->
     @include('layouts.components.headers.notLogged')
     <!-- REG/OLG -->
-    @include ('layouts.components.popUps.bg', ['display' => $displayReg])
+    @include ('layouts.components.popUps.bg', ['displayRegister' => $displayReg, 'displayLogin' => $displayLog])
     @include ('layouts.components.popUps.register', ['display' => $displayReg])
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
     <!-- CONTENT -->
