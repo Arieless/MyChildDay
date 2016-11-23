@@ -130,7 +130,7 @@ trait ResetsPasswords
     {
         return redirect()->back()
                     ->withInput($request->only('email'))
-                    ->withErrors(['email' => trans($response)]);
+                    ->withErrors(['email' => trans($response)."AAAAAAAAAA"]);
     }
 
     /**
