@@ -1,7 +1,7 @@
 <header class="mainBar">
   <nav class="mainBarNav">
     <a href="index.php">
-      <img class="logo" src="images/logo.svg" alt="logotype" />
+      <img class="logo" src="/images/logo.svg" alt="logotype" />
     </a>
     <ul class="list">
       <li class="navButton"><a href="/faq"><h3>F.A.Q</h3></a></li>
