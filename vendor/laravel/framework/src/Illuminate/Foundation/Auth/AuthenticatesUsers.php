@@ -124,11 +124,21 @@ trait AuthenticatesUsers
      */
     protected function sendFailedLoginResponse(Request $request)
     {
+
+      return redirect(url('/login'))
+          ->withInput($request->only($this->username(), 'remember'))
+          ->withErrors([
+              $this->usernameInput() => Lang::get('auth.failed'), // FIX THIS!!!!!!!!!!
+          ]);
+
+
+/*
         return redirect()->back()
             ->withInput($request->only($this->username(), 'remember'))
             ->withErrors([
                 $this->username() => Lang::get('auth.failed'),
             ]);
+*/
     }
 
     /**
@@ -139,6 +149,11 @@ trait AuthenticatesUsers
     public function username()
     {
         return 'email';
+    }
+
+    public function usernameInput()
+    {
+        return 'emailLogin';
     }
 
     /**

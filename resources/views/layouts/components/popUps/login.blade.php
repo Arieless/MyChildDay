@@ -7,9 +7,17 @@
 
     <p class="inputError" id="loginEmailError">
 
+      @if (isset($errors))
+        @if ($errors->has('emailLogin'))
+          @foreach ($errors->get('emailLogin') as $message)
+              {{ $message }} <br/>
+          @endforeach
+        @endif
+      @endif
+
     </p>
     <label for="loginEmail">Email:</label>
-    <input id="loginEmail" type="email" placeholder="Ingrese su email" name="email" required>
+    <input id="loginEmail" type="email" placeholder="Ingrese su email" name="email" value="{{ (isset($errors) && $errors->get('emailLogin')) { old('email')} }}" required>
     <label for="loginPassword">Contraseña:</label>
     <input id="loginPassword" type="password" placeholder="Ingrese su clave" name="password" required>
     <div class="rememberCheckbox" name="rememberMe">

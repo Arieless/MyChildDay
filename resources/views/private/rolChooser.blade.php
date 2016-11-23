@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+@extends('layouts.home')
+@section('title','MyChildDay')
+@section('content')
+
 
     <h3>ROL CHOOSER</h3>
 
@@ -16,3 +13,5 @@
 
   </body>
 </html>
+
+@endsection
