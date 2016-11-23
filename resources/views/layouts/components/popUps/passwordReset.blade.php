@@ -7,11 +7,46 @@
 
     <p class="inputError" id="loginEmailError">
 
+      @if (isset($errors))
+        @if ($errors->has('email'))
+          @foreach ($errors->get('email') as $message)
+              {{ $message }} <br/>
+          @endforeach
+        @endif
+      @endif
+
     </p>
+
     <label for="resetPass">Email:</label>
     <input id="resetPassEmail" type="email" placeholder="Ingrese su email" name="email" required>
+
+  <p class="inputError" id="loginEmailError">
+
+    @if (isset($errors))
+      @if ($errors->has('password'))
+        @foreach ($errors->get('password') as $message)
+            {{ $message }} <br/>
+        @endforeach
+      @endif
+    @endif
+
+    </p>
+
     <label for="resetPassword">Contraseña:</label>
     <input id="resetPassword" type="password" placeholder="Ingrese su clave" name="password" required>
+
+    <p class="inputError" id="loginEmailError">
+
+    @if (isset($errors))
+      @if ($errors->has('password_confirmation'))
+        @foreach ($errors->get('password_confirmation') as $message)
+            {{ $message }} <br/>
+        @endforeach
+      @endif
+    @endif
+
+    </p>
+
     <label for="resetPasswordConfirm">Verificación de contraseña:</label>
     <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
     <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="

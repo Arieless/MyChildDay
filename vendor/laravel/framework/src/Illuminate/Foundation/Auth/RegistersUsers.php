@@ -17,7 +17,12 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('public.index' , ['displayReg' => "block", 'displayLog' => "none"]);
+        return view('public.index' ,  [
+                                        'displayReg' => "block",
+                                        'displayLog' => "none",
+                                        'displayPassReset' => "none",
+                                        'displayEmailReset' => "none",
+                                      ]);
     }
 
     /**

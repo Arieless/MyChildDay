@@ -5,12 +5,29 @@
 
     {{ csrf_field() }}
 
+
+
     <p class="inputError" id="loginEmailError">
 
+      @if (isset($errors))
+        @if ($errors->has('email'))
+          @foreach ($errors->get('email') as $message)
+              {{ $message }} <br/>
+          @endforeach
+        @endif
+      @endif
     </p>
+
+    <p class="inputSucces">
+      @if (session('status'))
+              {{ session('status') }}
+      @endif
+    </p>
+
+
     <label for="resetEmail">Email:</label>
     <input id="resetEmail" type="email" placeholder="Ingrese su email" name="email" required>
     <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="
-    float: right;"><strong>Enviar link para recuperar contraseña</strong></button>
+    float: right;"><strong>Recuperar contraseña</strong></button>
   </form>
 </div>
