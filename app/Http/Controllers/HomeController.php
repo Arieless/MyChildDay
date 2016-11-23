@@ -22,17 +22,17 @@ class HomeController extends Controller
 
         }else if ($numberOfRols > 1){
           return view('private.rolLogin', [
-                                      'parentRol' => Auth::user()->parentRol,
-                                      'schoolRol' => Auth::user()->schoolRol,
-                                      'teacherRol' => Auth::user()->teacherRol,
-                                    ]);
+                                            'parentRol' => Auth::user()->parentRol,
+                                            'schoolRol' => Auth::user()->schoolRol,
+                                            'teacherRol' => Auth::user()->teacherRol,
+                                          ]);
         }
 
         return view('private.rolChooser', [
-                                    'parentRol' => Auth::user()->parentRol,
-                                    'schoolRol' => Auth::user()->schoolRol,
-                                    'teacherRol' => Auth::user()->teacherRol,
-                                  ]);
+                                            'parentRol' => Auth::user()->parentRol,
+                                            'schoolRol' => Auth::user()->schoolRol,
+                                            'teacherRol' => Auth::user()->teacherRol,
+                                          ]);
 
 
         return view('private.home');

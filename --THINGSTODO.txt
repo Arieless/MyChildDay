@@ -1,0 +1,6 @@
+* fix big video poster to match aspect ratio of video mychilddaywide.mp4.
+* fix regex so js and laravel validate the same.
+* fix login * ver por que tarda en cargarse la funcionalidad de los botones
+* fix errors in login with media querys and js
+* fix register not poping up after error
+* fix problem with names so errors appears in different forms.
