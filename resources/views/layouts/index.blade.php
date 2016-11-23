@@ -15,16 +15,17 @@
 
       <script src="/js/offpage.js" charset="utf-8"></script>
 
-      <title>@yield('title')</title>
-  </head>
-  <body>
+      <title>@yield('title')Pass</title>
+  </heaEmail<body>
 
-    <!-- HEADER -->
+    <!-- HEAEmailDER -->
     @include('layouts.components.headers.notLogged')
     <!-- REG/OLG -->
-    @include ('layouts.components.popUps.bg', ['display' => $displayReg])
-    @include ('layouts.components.popUps.register', ['display' => $displayReg])
+    @include ('layouts.components.popUps.bg', ['displayRegister' => $displayReg, 'displayLogin' => $displayLog, 'displayPassReset' => $displayPassReset, 'displayEmailReset' => $displayEmailReset])
+    @include ('layouts.components.popUps.register', ['display' => $displayReg,])
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
+    @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
+    @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
     <!-- CONTENT -->
     @yield('content')
     <!-- FOOTER -->
