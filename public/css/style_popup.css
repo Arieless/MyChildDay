@@ -31,22 +31,16 @@
   text-align: left;
   vertical-align: middle;
 
-  display: inline-block;
   box-sizing: border-box;
   font-size: 16px;
-  width: 20%;
-  padding-left: 30px;
-  padding-right: 15px;
+
 }
 
 /* Inputs width */
 .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
 .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email] {
   box-sizing: border-box;
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px;
-  display: inline-block;
+
   border: 1px solid #E8E8E8;
   border-radius: 3px;
   background-color: #f2f2f2;
@@ -177,6 +171,27 @@
   .popUpContainer{
     min-height: 600px;
   }
+
+  .popUpContainer label {
+    display: block;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
+  .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email]{
+    display: block;
+    width: 96%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
 }
 
 /*  <----------------------------------- (LOG IN) MAIN CONTAINER HASTA 1280 -------------------------------> */
@@ -218,6 +233,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
 */
+  }
+
+  .popUpContainer label {
+    display: inline-block;
+    width: 20%;
+    padding-left: 30px;
+    padding-right: 15px;
+  }
+
+  .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
+  .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email] {
+    display: inline-block;
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px;
   }
 
   .buttonClose{

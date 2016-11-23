@@ -18,7 +18,7 @@
     </div>
     <div class="containerOptions">
       <p class="containerOptionsText">
-        <span>¿Olvidaste tu contraseña?</span>
+        <span id="containerEmailResetText">¿Olvidaste tu contraseña?</span>
       </p>
       <p id="containerLoginRegisterText" class="containerOptionsText">
         <span>¿Aun no tienes cuenta? Regístrate</span>

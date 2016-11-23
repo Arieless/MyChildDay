@@ -101,4 +101,6 @@
     </div>
     <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>REGISTRARME</strong></button>
   </form>
+  <hr/>
+  <p class="termsAndConditions">Al completar este formulario usted acepta los <a href="/terminos">Terminos y condiciones</a>.</p>
 </div>
