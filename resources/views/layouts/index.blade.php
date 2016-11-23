@@ -22,7 +22,7 @@
     @include('layouts.components.headers.notLogged')
     <!-- REG/OLG -->
 
-    @if ($displayReg || $displayLog || $displayEmailReset || $displayPassReset)
+    @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block')
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> </div>
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none"> </div>
