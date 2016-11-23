@@ -14,13 +14,7 @@ trait SendsPasswordResetEmails
      */
     public function showLinkRequestForm()
     {
-      
-      return view('public.index',   [
-                                      'displayReg' => "none",
-                                      'displayLog' => "none",
-                                      'displayPassReset' => "none",
-                                      'displayEmailReset' => "block",
-                                    ]);
+          return view('public.index' , ['displayLog' => "none", 'displayReg' => "none", 'displayEmailReset' => "block", 'displayPassReset' => "none", ]);
     }
 
     /**

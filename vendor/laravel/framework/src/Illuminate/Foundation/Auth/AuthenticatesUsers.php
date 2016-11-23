@@ -17,12 +17,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('public.index',   [
-                                        'displayReg' => "none",
-                                        'displayLog' => "block",
-                                        'displayPassReset' => "none",
-                                        'displayEmailReset' => "none",
-                                      ]);
+        return view('public.index',  ['displayReg' => "none", 'displayLog' => "block", 'displayPassReset' => "none", 'displayEmailReset' => "none"]);
     }
 
     /**
