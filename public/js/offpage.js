@@ -65,7 +65,6 @@ function popUpClose (){
   popUpContainerBackground.style.display = "none";
   popUpContainerRegister.style.display = "none";
 
-  hideTheRest(false); //este es otro super hackcode
 }
 
 function popUpLogin(){
@@ -124,12 +123,6 @@ function hideTheRest (bool){
       for (var ii=0; ii < toHide.length; ii++){
         toHide[ii].style.display = "block";
       }
-    }
-  }
-
-  else if (getWidth() >= 1280 && !bool){ //esto es un super hackcode
-    for (var ii=0; ii < toHide.length; ii++){
-      toHide[ii].style.display = "block";
     }
   }
 }

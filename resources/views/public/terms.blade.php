@@ -1,7 +1,10 @@
-@extends('layouts.index')
+<<<<<<< HEAD
+@extends('layouts.index') 
 @section('title','MychildDay - Terminos y Condiciones')
 @section('content')
-
+=======
+@extends('layouts.home') @section('title','MychildDay - Terminos y Condiciones') @section('content')
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 <div class="termsContainerMain toHide">
 	<h2>Terminos y Condiciones</h2>
 	<div class="containerTerms">
@@ -15,7 +18,11 @@
 				</div>
 			</li>
 			<li>
+<<<<<<< HEAD
+				2<h3>Tesssssssrm2</h3>
+=======
 				2<h3>Term2</h3>
+>>>>>>> a8092b1fb0d450a1521d1aab088cb94c12123d8f
 				<div class="termsTextContainer">
 					2.1<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
 						dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

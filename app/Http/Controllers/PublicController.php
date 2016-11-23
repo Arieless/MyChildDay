@@ -28,8 +28,13 @@ class PublicController extends Controller
     public function faq() {
 
       return view('public.faq',  ['displayReg' => "none", 'displayLog' => "none"]); //
-    }
+    }    
     public function terms() {
+      return view('public.terms',  ['displayReg' => "none", 'displayLog' => "none"]); //
+    }
+
+    public function terms() {
+
       return view('public.terms',  ['displayReg' => "none", 'displayLog' => "none"]); //
     }
 }
