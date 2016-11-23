@@ -1,5 +1,5 @@
 <div id="popUpContainerRegister" class="popUpContainer" style="display: {{ isset($display)? $display : 'none' }}" >
-  <img id="buttonCloseRegister" class="buttonClose" src="images/icons/close.png" alt="cerrar" />
+  <img id="buttonCloseRegister" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Ingrese sus datos para registrarse</h4>
   <form id="registerForm" role="form" method="POST" action="{{ url('/register') }}">
 
@@ -98,9 +98,9 @@
     <input type="password" id="password-confirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
     <div class="containerOptions">
       <p id="containerRegisterLoginText" class="containerOptionsText">Inicie sesion si ya se encuentra registrado</p>
-      <hr/>
-      <p class="termsAndConditions">Al completar este formulario usted acepta los <a href="/terminos">Terminos y condiciones</a>.</p>
     </div>
     <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>REGISTRARME</strong></button>
   </form>
+  <hr/>
+  <p class="termsAndConditions">Al completar este formulario usted acepta los <a href="/terminos">Terminos y condiciones</a>.</p>
 </div>

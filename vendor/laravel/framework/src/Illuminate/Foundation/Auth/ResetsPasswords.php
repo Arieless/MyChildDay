@@ -22,7 +22,7 @@ trait ResetsPasswords
      */
     public function showResetForm(Request $request, $token = null)
     {
-        return view('auth.passwords.reset')->with(
+        return view('public.index' , ['displayPassReset' => "block", 'displayLog' => "none", 'displayReg' => "none", 'displayEmailReset' => "none"])->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

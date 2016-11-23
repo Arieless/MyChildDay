@@ -20,21 +20,31 @@ class PublicController extends Controller
 
         // The user is not logged in...
 
-        return view('public.index' , ['displayReg' => "none", 'displayLog' => "none"]); //
+        return view('public.index' , [
+                                        'displayReg' => "none",
+                                        'displayLog' => "none",
+                                        'displayPassReset' => "none",
+                                        'displayEmailReset' => "none",
+                                      ]);
       }
-
     }
 
     public function faq() {
 
-      return view('public.faq',  ['displayReg' => "none", 'displayLog' => "none"]); //
-    }    
-    public function terms() {
-      return view('public.terms',  ['displayReg' => "none", 'displayLog' => "none"]); //
+      return view('public.faq',  [
+                                    'displayReg' => "none",
+                                    'displayLog' => "none",
+                                    'displayPassReset' => "none",
+                                    'displayEmailReset' => "none"
+                                  ]);
     }
 
     public function terms() {
-
-      return view('public.terms',  ['displayReg' => "none", 'displayLog' => "none"]); //
+      return view('public.terms', [
+                                    'displayReg' => "none",
+                                    'displayLog' => "none",
+                                    'displayPassReset' => "none",
+                                    'displayEmailReset' => "none"
+                                  ]);
     }
 }
