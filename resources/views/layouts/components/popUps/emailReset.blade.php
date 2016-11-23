@@ -16,7 +16,6 @@
           @endforeach
         @endif
       @endif
-
     </p>
 
     <p class="inputSucces">
@@ -28,7 +27,11 @@
 
     <label for="resetEmail">Email:</label>
     <input id="resetEmail" type="email" placeholder="Ingrese su email" name="email" required>
-    <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="
-    float: right;"><strong>Recuperar contraseña</strong></button>
+    <div class="containerOptions">
+      <p id="containerEmailResetText" class="containerOptionsInfo">
+        <span>Te enviaremos un mail con un link para recuperar tu contraseña</span>
+      </p>
+    </div>
+    <button id="resetFormSubmit" type="submit" name="resetFormSubmit"><strong>Recuperar contraseña</strong></button>
   </form>
 </div>
