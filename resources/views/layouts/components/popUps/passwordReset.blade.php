@@ -47,9 +47,9 @@
 
       </p>
 
-      <label for="resetPasswordConfirm">Verificación de contraseña:</label>
-      <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
-      <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="
-      float: right;"><strong>Cambiar contraseña</strong></button>
-    </form>
-  </div>
+    <label for="resetPasswordConfirm">Verificación de contraseña:</label>
+    <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
+    <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="
+    float: right;"><strong>Cambiar contraseña</strong></button>
+  </form>
+</div>

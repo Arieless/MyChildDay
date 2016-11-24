@@ -8,38 +8,25 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_navBar.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_footer.css">
 
-      <link rel="stylesheet" type="text/css" href="/css/style_index.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_faq.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
-
-      <script src="/js/offpage.js" charset="utf-8"></script>
-
+      <link rel="stylesheet" type="text/css" href="/css/style_rols.css">
 
       <title>@yield('title')</title>
   </head>
   <body>
-
-    <a href="{{ url('/logout') }}"
-                                                onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                                Logout
-                                            </a>
-
-                                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
     <!-- HEADER -->
-    @include('layouts.components.headers.loggedParent')
-    <!-- REG/OLG -->
+    @include('layouts.components.headers.home')
+
+    <!-- POPUPS -->
 
     <!-- CONTENT -->
     @yield('content')
+
     <!-- FOOTER -->
 
-
-    @include('layouts.components.footers.loggedParent')
+    @include('layouts.components.footers.home')
 
   </body>
   </html>

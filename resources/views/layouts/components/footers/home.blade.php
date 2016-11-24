@@ -6,4 +6,5 @@
       <li><a href="/">Contacto</a></li>
     </ul>
     <p>© Untitled. All rights reserved.</p>
+  </nav>
 </footer>

@@ -56,7 +56,6 @@ class RegisterController extends Controller
             'phone' => 'required|max:255',
             'password_confirmation' => 'required',
             'password' => 'required|min:6|confirmed',
-
         ]);
     }
 

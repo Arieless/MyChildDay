@@ -18,21 +18,13 @@ class HomeController extends Controller
 
         if ($numberOfRols == 1){
 
-          sendToRol();
+          $this->sendToAccurateRol();
 
         }else if ($numberOfRols > 1){
-          return view('private.rolLogin', [
-                                            'parentRol' => Auth::user()->parentRol,
-                                            'schoolRol' => Auth::user()->schoolRol,
-                                            'teacherRol' => Auth::user()->teacherRol,
-                                          ]);
+          return view('private.rol.login');
         }
 
-        return view('private.rolChooser', [
-                                            'parentRol' => Auth::user()->parentRol,
-                                            'schoolRol' => Auth::user()->schoolRol,
-                                            'teacherRol' => Auth::user()->teacherRol,
-                                          ]);
+        return view('private.rol.chooser');
 
 
         return view('private.home');
@@ -57,15 +49,15 @@ class HomeController extends Controller
     private function sendToAccurateRol(){
 
       if (Auth::user()->parentRol){
-        return view('private.homeParent');
+        return view('private.parent');
       }
 
       if (Auth::user()->schoolRol){
-        return view('private.homeSchool');
+        return view('private.school');
       }
 
       if (Auth::user()->teacherRol){
-        return view ('private.homeTeacher');
+        return view ('private.teacher');
       }
     }
 }

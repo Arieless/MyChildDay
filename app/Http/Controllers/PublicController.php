@@ -10,23 +10,17 @@ class PublicController extends Controller
     public function index() {
 
       if (Auth::check()) {
-
         // The user is logged in...
         // Redirects to home
-
         return redirect()->intended('home');
-
-      }else{
-
-        // The user is not logged in...
-
-        return view('public.index' , [
-                                        'displayReg' => "none",
-                                        'displayLog' => "none",
-                                        'displayPassReset' => "none",
-                                        'displayEmailReset' => "none",
-                                      ]);
       }
+
+      return view('public.index' , [
+                                      'displayReg' => "none",
+                                      'displayLog' => "none",
+                                      'displayPassReset' => "none",
+                                      'displayEmailReset' => "none",
+                                    ]);
     }
 
     public function faq() {
