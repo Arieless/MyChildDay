@@ -23,7 +23,7 @@
     @include('layouts.components.headers.notLogged')
     <!-- REG/OLG -->
 
-    @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block')
+    @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block' || $displayContact == 'block')
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> </div>
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none"> </div>
@@ -33,6 +33,7 @@
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
     @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
     @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
+    <!-- @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
     <!-- CONTENT -->
     @yield('content')
     <!-- FOOTER -->

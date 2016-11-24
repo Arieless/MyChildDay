@@ -25,6 +25,7 @@ class PublicController extends Controller
                                         'displayLog' => "none",
                                         'displayPassReset' => "none",
                                         'displayEmailReset' => "none",
+                                        'displayContact' => "none"
                                       ]);
       }
     }
@@ -35,7 +36,8 @@ class PublicController extends Controller
                                     'displayReg' => "none",
                                     'displayLog' => "none",
                                     'displayPassReset' => "none",
-                                    'displayEmailReset' => "none"
+                                    'displayEmailReset' => "none",
+                                    'displayContact' => "none"
                                   ]);
     }
 
@@ -44,7 +46,17 @@ class PublicController extends Controller
                                     'displayReg' => "none",
                                     'displayLog' => "none",
                                     'displayPassReset' => "none",
-                                    'displayEmailReset' => "none"
+                                    'displayEmailReset' => "none",
+                                    'displayContact' => "none"
+                                  ]);
+    }
+    public function contact() {
+      return view('layouts.components.popUps.contact', [
+                                    'displayReg' => "none",
+                                    'displayLog' => "none",
+                                    'displayPassReset' => "none",
+                                    'displayEmailReset' => "none",
+                                    'displayContact' => "block"
                                   ]);
     }
 }
