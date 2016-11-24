@@ -5,42 +5,23 @@ html {
 
 /*  <----------------------------------- (TERMS) MAIN CONTAINER GENERAL -------------------------------> */
 
-
 .termsContainerMain {
   color: #3f3f3f;
-  overflow: hidden;
-  padding-top: 0px;
-  padding-bottom: 30px;
-  margin-left: 20px;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.termsContainerMain h2{
-  text-align: center;
+.termsContainerMain h2 {
   font-weight: bold;
-}
-
-.termsContainerMain .containerTerms{
-  padding-top: 5%;
+  text-align: center;
+  margin-bottom: 2%;
 }
 
 .termsContainerMain .containerTerms h3 {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-style: italic;
   font-weight: bold;
-}
-.termsContainerMain .containerTerms ol {
-  list-style-type: decimal;
-  list-style-position: inside;
-  counter-reset: item;
-}
-.termsContainerMain .containerTerms .termsTextContainer li:before {
-  content: counters(item, ".") " ";
-  counter-increment: item;
-}
-
-.termsContainerMain .containerTerms .termsTextContainer {
-  margin-bottom: 20px;
 }
 
 /*  <----------------------------------- (TERMS) MAIN CONTAINER GENERAL -------------------------------> */
@@ -51,33 +32,58 @@ html {
 /*  <----------------------------------- (TERMS) MAIN CONTAINER HASTA 300 -------------------------------> */
 
   .termsContainerMain {
-    margin-left: 20px;
-    margin-right: 10px;
-  }
-  .termsContainerMain .containerMain {
-    padding-top: 2%;
+    font-size: 14px;
+    margin-bottom: 50px;
   }
 
+  .termsContainerMain .containerTerms {
+    margin-top: 4%;
+  }
+
+  .termsContainerMain h2 {
+    font-size: 16px;
+    }
+
+  .termsContainerMain h3{
+    font-size: 14px;
+  }
 
 /*  <----------------------------------- (TERMS) MAIN CONTAINER HASTA 300 -------------------------------> */
+
+}
 
 @media screen and (min-width: 300px) {
 
 /*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 300 -------------------------------> */
 
+  .termsContainerMain {
+      font-size: 18px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+  }
+
+  .termsContainerMain h2,.termsContainerMain h3{
+    font-size: 16px;
+  }
+
 }
+
+/*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 300 -------------------------------> */
 @media (max-width: 1280px) {
 
   .termsContainerMain{
     margin-left: 20px;
     margin-right: 10px;
   }
+
 }
 @media (min-width: 1280px) {
 
 /*  <----------------------------------- (TERMS) MAIN CONTAINER DESDE 1280 -------------------------------> */
+
   .termsContainerMain {
-    padding-top: 7%;
+    margin-top: 120px;
     max-width: 1080px;
     margin-bottom: 60px;
   }

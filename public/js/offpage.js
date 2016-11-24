@@ -22,6 +22,7 @@ window.onload = function () {
   popUpContainerRegister = document.getElementById('popUpContainerRegister');
   popUpContainerEmailReset = document.getElementById('popUpContainerEmailReset');
   popUpContainerPassReset = document.getElementById('popUpContainerPassReset');
+  popUpContainerContact = document.getElementById('popUpContainerContact');
 
   // elements to hide in resolutions less than 1280 so it looks like a new page
   toHide = document.getElementsByClassName('toHide');
@@ -34,6 +35,8 @@ window.onload = function () {
   document.getElementById('buttonCloseEmailReset').onclick = popUpClose;
   // close on passReset buttonClose click
   document.getElementById('buttonClosePassReset').onclick = popUpClose;
+  // close on contact buttonClose click
+  document.getElementById('buttonCloseContact').onclick = popUpClose;
 
   // pop up on button register click
   document.getElementById('containerLoginRegisterText').onclick = popUpRegister;
@@ -41,6 +44,8 @@ window.onload = function () {
   document.getElementById('containerRegisterLoginText').onclick = popUpLogin;
   // pop up on button passReset click
   document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
+  // pop up on button contact click
+  document.getElementById('containerContactText').onclick = popUpContact;
 
   popUpContainerLogin.onclick = function () {
     canClose = false;
@@ -51,6 +56,9 @@ window.onload = function () {
   };
 
   popUpContainerPassReset.onclick = function (){
+    canClose = false;
+  };
+  popUpContainerContact.onclick = function (){
     canClose = false;
   };
 
@@ -64,6 +72,8 @@ window.onload = function () {
   document.getElementById('popUpButtonLogIn').onclick = popUpLogin;
   // pops passReset form
   document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
+  // pops contact form
+  document.getElementById('containerContactText').onclick = popUpContact;
 
 
   // validate register form
@@ -74,6 +84,8 @@ window.onload = function () {
   document.getElementById('emailResetForm').addEventListener('submit', formValidation);
   // validate passReset form
   document.getElementById('passResetForm').addEventListener('submit', formValidation);
+  // validate contact form
+  document.getElementById('contactForm').addEventListener('submit', formValidation);
 
 };
 
@@ -84,6 +96,7 @@ function popUpClose (){
   popUpContainerRegister.style.display = "none";
   popUpContainerEmailReset.style.display = "none";
   popUpContainerPassReset.style.display = "none";
+  popUpContainerContact.style.display = "none";
 
   hideTheRest(false); //este es otro super hackcode
 }
@@ -95,6 +108,7 @@ function popUpLogin(){
   popUpContainerRegister.style.display = "none";
   popUpContainerEmailReset.style.display = "none";
   popUpContainerPassReset.style.display = "none";
+  popUpContainerContact.style.display = "none";
 
   hideTheRest(true);
 
@@ -107,6 +121,7 @@ function popUpRegister () {
   popUpContainerLogin.style.display = "none";
   popUpContainerEmailReset.style.display = "none";
   popUpContainerPassReset.style.display = "none";
+  popUpContainerContact.style.display = "none";
 
   hideTheRest(true);
 
@@ -118,6 +133,7 @@ function popUpEmailReset () {
   popUpContainerBackground.style.display = "block";
   popUpContainerLogin.style.display = "none";
   popUpContainerPassReset.style.display = "none";
+  popUpContainerContact.style.display = "none";
 
   hideTheRest(true);
 
@@ -127,6 +143,20 @@ function popUpPassReset () {
 
   popUpContainerPassReset.style.display = "block";
   popUpContainerBackground.style.display = "block";
+  popUpContainerLogin.style.display = "none";
+  popUpContainerEmailReset.style.display = "none";
+  popUpContainerContact.style.display = "none";
+
+
+  hideTheRest(true);
+
+}
+
+function popUpContact () {
+
+  popUpContainerContact.style.display = "block";
+  popUpContainerBackground.style.display = "block";
+  popUpContainerPassReset.style.display = "none";
   popUpContainerLogin.style.display = "none";
   popUpContainerEmailReset.style.display = "none";
 
@@ -143,6 +173,7 @@ function popUpClickClose () {
       popUpContainerRegister.style.display = "none";
       popUpContainerEmailReset.style.display = "none";
       popUpContainerPassReset.style.display = "none";
+      popUpContainerContact.style.display = "none";
     }
 
     canClose = true;
@@ -156,6 +187,7 @@ function popUpEscapeClose (ev){
       popUpContainerRegister.style.display = "none";
       popUpContainerEmailReset.style.display = "none";
       popUpContainerPassReset.style.display = "none";
+      popUpContainerContact.style.display = "none";
 
       hideTheRest(false);
     }
