@@ -13,8 +13,6 @@ var ruleText = new makeRule (/^[a-zA-Z\s]{2,}$/, "Solo puede contener letras");
 var ruleAddress = new makeRule(/^\s*\S+(?:\s+\S+)/, "Ingrese un nombre de calle y su altura.");
 var ruleNumber = new  makeRule(/^\d{1,45}$/, "Solo puede contener numeros");
 
-var canClose = true; // This is an ultra super hack, i didnt have enough time to make it right...
-
 window.onload = function () {
   // pop ups
   popUpContainerBackground = document.getElementById('popUpContainerBackground');
@@ -41,18 +39,6 @@ window.onload = function () {
   document.getElementById('containerRegisterLoginText').onclick = popUpLogin;
   // pop up on button passReset click
   document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
-
-  popUpContainerLogin.onclick = function () {
-    canClose = false;
-  };
-
-  popUpContainerRegister.onclick = function (){
-    canClose = false;
-  };
-
-  popUpContainerPassReset.onclick = function (){
-    canClose = false;
-  };
 
   // close popups on key escape down
   window.onkeydown = popUpEscapeClose;
@@ -135,17 +121,15 @@ function popUpPassReset () {
 
 }
 
-function popUpClickClose () {
+function popUpClickClose (ev) {
 
-    if (canClose){
+    if (ev.target == popUpContainerBackground){
       popUpContainerBackground.style.display = "none";
       popUpContainerLogin.style.display = "none";
       popUpContainerRegister.style.display = "none";
       popUpContainerEmailReset.style.display = "none";
       popUpContainerPassReset.style.display = "none";
     }
-
-    canClose = true;
 }
 
 function popUpEscapeClose (ev){
@@ -178,8 +162,8 @@ function hideTheRest (bool){
   }
 
   else if (getWidth() >= 1280 && !bool){ //esto es un super hackcode
-    for (var ii=0; ii < toHide.length; ii++){
-      toHide[ii].style.display = "block";
+    for (iii=0; iii < toHide.length; iii++){
+      toHide[iii].style.display = "block";
     }
   }
 }

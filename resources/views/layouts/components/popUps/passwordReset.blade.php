@@ -5,11 +5,13 @@
 
     {{ csrf_field() }}
 
+    <input type="hidden" name="token" value="{{ isset($token)? $token: '' }}">
+
     <p class="inputError" id="loginEmailError">
 
       @if (isset($errors))
-        @if ($errors->has('email'))
-          @foreach ($errors->get('email') as $message)
+        @if ($errors->has('emailReset'))
+          @foreach ($errors->get('emailReset') as $message)
               {{ $message }} <br/>
           @endforeach
         @endif
@@ -49,7 +51,8 @@
 
     <label for="resetPasswordConfirm">Verificación de contraseña:</label>
     <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
-    <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="
-    float: right;"><strong>Cambiar contraseña</strong></button>
+    <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="margin-left: 370px;">
+      <strong>Cambiar contraseña</strong>
+    </button>
   </form>
 </div>
