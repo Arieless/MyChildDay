@@ -51,7 +51,7 @@ class PublicController extends Controller
                                   ]);
     }
     public function contact() {
-      return view('layouts.components.popUps.contact', [
+      return view('public.index', [
                                     'displayReg' => "none",
                                     'displayLog' => "none",
                                     'displayPassReset' => "none",

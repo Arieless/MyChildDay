@@ -21,19 +21,23 @@
 
     <!-- HEADER -->
     @include('layouts.components.headers.notLogged')
-    <!-- REG/OLG -->
+    <!-- REG/LOG -->
 
     @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block' || $displayContact == 'block')
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> </div>
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none"> </div>
     @endif
-
+    <!-- REG -->
     @include ('layouts.components.popUps.register', ['display' => $displayReg])
+    <!-- LOG -->
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
+    <!-- EMAILR -->
     @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
+    <!-- PASSR -->
     @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
-    <!-- @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
+    <!-- CONTACT -->
+    @include ('layouts.components.popUps.contact', ['display' => $displayContact,])
     <!-- CONTENT -->
     @yield('content')
     <!-- FOOTER -->
