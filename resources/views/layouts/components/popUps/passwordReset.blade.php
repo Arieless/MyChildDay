@@ -5,7 +5,7 @@
 
     {{ csrf_field() }}
 
-    <input type="hidden" name="token" value="{{ isset($token)? $token: '' }}">
+    <input type="hidden" name="token" value="{{ isset($token)? $token: '' }}" />
 
     <p class="inputError" id="loginEmailError">
 
@@ -20,7 +20,7 @@
     </p>
 
     <label for="resetPass">Email:</label>
-    <input id="resetPassEmail" type="email" placeholder="Ingrese su email" name="email" value="{{ $email or old('email') }}" required autofocus>
+    <input id="resetPassEmail" type="email" placeholder="Ingrese su email" name="email" value="{{ $email or old('email') }}" required autofocus />
 
     <p class="inputError" id="loginEmailError">
 
@@ -35,7 +35,7 @@
       </p>
 
       <label for="resetPassword">Contraseña:</label>
-      <input id="resetPassword" type="password" placeholder="Ingrese su clave" name="password" required>
+      <input id="resetPassword" type="password" placeholder="Ingrese su clave" name="password" required />
 
       <p class="inputError" id="loginEmailError">
 
@@ -50,7 +50,7 @@
       </p>
 
     <label for="resetPasswordConfirm">Verificación de contraseña:</label>
-    <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required>
+    <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su contraseña nuevamente" name="password_confirmation" required />
     <button id="resetFormSubmit" type="submit" name="resetFormSubmit" style="margin-left: 370px;">
       <strong>Cambiar contraseña</strong>
     </button>

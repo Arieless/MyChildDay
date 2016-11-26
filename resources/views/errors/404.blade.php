@@ -8,7 +8,7 @@
   <img class="errorsImgLogo" src="/images/logo.svg" alt="">
   <h1 class="errorsTitle errorsText">UUPS! </h1>
   <br/>
-  <h4 class="errorsMessage errorsText">Estamos en mantenimiento, volvemos en seguida!</h4>
+  <h4 class="errorsMessage errorsText">Parece que algo funciono mal, lo sentimos!</h4>
 </div>
 
 @endsection

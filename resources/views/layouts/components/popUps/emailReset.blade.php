@@ -26,7 +26,7 @@
 
     <label for="emailReset">Email:</label>
 
-    <input id="emailReset" type="email" placeholder="Ingrese su email"  name="email" value="{{ old('email') }}" required>
+    <input id="emailReset" type="email" placeholder="Ingrese su email"  name="email" value="{{ old('email') }}" required />
 
     <button id="resetFormSubmit" type="submit" style="margin-left: 370px;">
       <strong>Recuperar contraseña</strong>
