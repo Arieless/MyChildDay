@@ -14,6 +14,7 @@
 Route::get('/', 'PublicController@index');
 Route::get('/faq', 'PublicController@faq');
 Route::get('/terminos', 'PublicController@terms');
+Route::get('/contacto', 'PublicController@contact');
 
 Auth::routes();
 

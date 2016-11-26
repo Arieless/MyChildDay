@@ -12,6 +12,7 @@
       <link rel="stylesheet" type="text/css" href="/css/style_footer.css">
       <link rel="stylesheet" type="text/css" href="/css/style_index.css">
       <link rel="stylesheet" type="text/css" href="/css/style_faq.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
       <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
       <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
 
@@ -25,9 +26,8 @@
     @include('layouts.components.headers.index')
 
 
-    <!-- POPUPS -->
-    @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block')
-      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
+    @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block' || $displayContact == 'block')
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> </div>
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
     @endif
@@ -36,8 +36,11 @@
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
     @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
     @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
-
     </div>
+
+    {{--
+    @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
+    --}}
     <!-- CONTENT -->
     @yield('content')
 
