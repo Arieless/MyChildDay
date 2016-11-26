@@ -52,6 +52,10 @@
 
 }
 
+.popUpContainer input[type=text]{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .popUpContainer ::-webkit-input-placeholder,/* Chrome/Opera/Safari */
 .popUpContainer ::-moz-placeholder, /* IE 10+ */
 .popUpContainer :-ms-input-placeholder, /* Firefox 18- */
@@ -177,10 +181,6 @@
 
 @media (max-width: 1280px){
 
-  .popUpContainerBackground {
-    padding: 100px;
-  }
-
   .popUpContainer .buttonClose{
     display: none;
   }
@@ -195,8 +195,6 @@
     padding-left: 15px;
     padding-right: 15px;
   }
-
-
 
   .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
   .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email], .popUpContainer textarea{

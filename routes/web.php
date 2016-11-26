@@ -16,17 +16,21 @@
 Route::get('/', 'PublicController@index');
 Route::get('/faq', 'PublicController@faq');
 Route::get('/terms', 'PublicController@terms');
-Route::get('/contact', 'PublicController@contact');
+
 
 // MAIL routes
+Route::get('/contact', 'PublicController@contact');
+Route::post('/contact/send', 'MailController@postContact');
 
-Route::post('contact', 'MailController@postContact');
+
+
 
 //AUTH routes
 
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function(){ // auth pages goes here
+
     Route::get('/home', 'HomeController@index');
 
     Route::get('/home/profile/edit/user', 'ProfileController@editUser');
