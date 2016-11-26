@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 150)->unique();
             $table->string('address');
             $table->string('phone', 50);
-            $table->string('picture', 100);
+            $table->string('profilePicture', 100);
             $table->string('password', 250);
             $table->tinyInteger('parentRol')->unsigned()->default('0');
             $table->tinyInteger('teacherRol')->unsigned()->default('0');
