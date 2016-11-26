@@ -1,6 +1,6 @@
 <header class="mainBar">
   <nav class="mainBarNav">
-    <a href="index.php">
+    <a href="/">
       <img class="logo" src="/images/logo.svg" alt="logotype" />
     </a>
     <ul class="list">
