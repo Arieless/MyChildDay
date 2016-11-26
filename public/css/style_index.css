@@ -66,6 +66,7 @@ html {
 
 .mainFooter .mainFooterNav ul li:last-child {
   border:none;
+  cursor: pointer;
 }
 
 .mainFooter .mainFooterNav p {

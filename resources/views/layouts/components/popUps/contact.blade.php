@@ -1,7 +1,7 @@
 <div id="popUpContainerContact" class="popUpContainer" style="display: {{ isset($display)? $display : 'none' }}">
   <img id="buttonCloseContact" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Contacto</h4>
-  <form id="contactForm" role="form" method="POST" action="/">
+  <form id="contactForm" role="form" method="POST" action="{{ url ('/contact') }}">
 
     {{ csrf_field() }}
 

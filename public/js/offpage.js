@@ -45,7 +45,7 @@ window.onload = function () {
   // pop up on button passReset click
   document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
   // pop up on button contact click
-  document.getElementById('containerContactText').onclick = popUpContact;
+  document.getElementById('popUpContactButton').onclick = popUpContact;
 
   popUpContainerLogin.onclick = function () {
     canClose = false;
@@ -73,7 +73,7 @@ window.onload = function () {
   // pops passReset form
   document.getElementById('containerEmailResetText').onclick = popUpEmailReset;
   // pops contact form
-  document.getElementById('containerContactText').onclick = popUpContact;
+  document.getElementById('popUpContactButton').onclick = popUpContact;
 
 
   // validate register form
@@ -132,6 +132,7 @@ function popUpEmailReset () {
   popUpContainerEmailReset.style.display = "block";
   popUpContainerBackground.style.display = "block";
   popUpContainerLogin.style.display = "none";
+  popUpContainerRegister.style.display = "none";
   popUpContainerPassReset.style.display = "none";
   popUpContainerContact.style.display = "none";
 
@@ -144,6 +145,7 @@ function popUpPassReset () {
   popUpContainerPassReset.style.display = "block";
   popUpContainerBackground.style.display = "block";
   popUpContainerLogin.style.display = "none";
+  popUpContainerRegister.style.display = "none";
   popUpContainerEmailReset.style.display = "none";
   popUpContainerContact.style.display = "none";
 
@@ -158,6 +160,7 @@ function popUpContact () {
   popUpContainerBackground.style.display = "block";
   popUpContainerPassReset.style.display = "none";
   popUpContainerLogin.style.display = "none";
+  popUpContainerRegister.style.display = "none";
   popUpContainerEmailReset.style.display = "none";
 
 

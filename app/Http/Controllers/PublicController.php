@@ -50,6 +50,7 @@ class PublicController extends Controller
                                     'displayContact' => "none"
                                   ]);
     }
+
     public function contact() {
       return view('public.index', [
                                     'displayReg' => "none",
@@ -59,4 +60,5 @@ class PublicController extends Controller
                                     'displayContact' => "block"
                                   ]);
     }
+
 }

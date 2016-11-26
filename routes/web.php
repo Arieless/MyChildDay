@@ -11,10 +11,18 @@
 |
 */
 
+// PUBLIC routes
+
 Route::get('/', 'PublicController@index');
 Route::get('/faq', 'PublicController@faq');
-Route::get('/terminos', 'PublicController@terms');
-Route::get('/contacto', 'PublicController@contact');
+Route::get('/terms', 'PublicController@terms');
+Route::get('/contact', 'PublicController@contact');
+
+// MAIL routes
+
+Route::post('contact', 'MailController@postContact');
+
+//AUTH routes
 
 Auth::routes();
 
