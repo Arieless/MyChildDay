@@ -102,6 +102,16 @@
 
       </article>
     </section>
+
+    <section class="profileSection">
+      <header class="profileTitles">
+        <h3 class="secondary">FOTO</h3>
+      </header>
+      <article class="profileInputs">
+        <h1>ACAAAAAAAAAAAAAAAAAAAAAAA</h1>
+      </article>
+    </section>
+
     <section class="profileSection">
       <header class="profileTitles">
         <h3 class="secondary">PASSWORD</h3>
