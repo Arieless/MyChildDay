@@ -5,3 +5,17 @@
 * fix register not poping up after error
 * fix problem with names so errors appears in different forms.
 * no se muestran los errores en el login.tienen los mismos nombres register y login, register funciona ok.no funcionan los 2 al mismo tiempo
+
+
+* Graficos
+
+* Escuela
+* Profesor
+* Padre
+* Cerrar sesion
+* Editar Perfil
+
+
+* Funciones
+
+user->hasChildren () >> bool

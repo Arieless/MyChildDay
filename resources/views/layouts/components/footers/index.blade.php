@@ -6,4 +6,5 @@
       <li id="popUpContactButton" class="popUpContactButton"><a>Contacto</a></li>
     </ul>
     <p>© Untitled. All rights reserved.</p>
+  </nav>
 </footer>

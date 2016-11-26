@@ -17,12 +17,12 @@
 
     </p>
     <label for="loginEmail">Email:</label>
-    <input id="loginEmail" type="email" placeholder="Ingrese su email" name="email" value="{{ (isset($errors) && $errors->get('emailLogin')) { old('email')} }}" required>
+    <input id="loginEmail" type="email" placeholder="Ingrese su email" name="email" value="{{ (isset($errors) && $errors->get('emailLogin')) { old('email')} }}" required />
     <label for="loginPassword">Contraseña:</label>
-    <input id="loginPassword" type="password" placeholder="Ingrese su clave" name="password" required>
+    <input id="loginPassword" type="password" placeholder="Ingrese su clave" name="password" required />
     <div class="rememberCheckbox" name="rememberMe">
-      <input id="loginRememberMe" type="checkbox" checked="checked">
-      <label for="loginRememberMe">Quiero que me recuerden mi contraseña.</label>
+      <input id="loginRememberMe" type="checkbox" checked="checked" />
+      <label for="loginRememberMe">Quiero que recuerden mi contraseña.</label>
     </div>
     <div class="containerOptions">
       <p class="containerOptionsText">
