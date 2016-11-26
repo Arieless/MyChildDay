@@ -27,7 +27,7 @@
     --}}
 
       <li class="dropdown">
-        <img class="dropImg" src=" {{ url('users/avatars/') }}" alt=""> {{-- Auth::user()->picture --}}
+        <span class="userName">{{ strtolower(Auth::user()->firstName) }}</span> <img class="dropImg" src=" {{ url('users/avatars/') }}" alt=""> {{-- Auth::user()->picture --}}
         <ul class="dropdown-content">
           <li id='logoutButton' class="navButton dropdownLink">
             <a class="navButton" href=#>

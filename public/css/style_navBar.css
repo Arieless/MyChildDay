@@ -17,6 +17,13 @@
   width: 100%;
 }
 
+.mainBar .dropdown span.userName {
+  text-transform: capitalize;
+  color: #24ABA6;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
 @media (max-width: 1280px){
 
   .mainBar {
