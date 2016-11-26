@@ -26,7 +26,7 @@
     @include('layouts.components.headers.index')
 
     @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block' || $displayContact == 'block')
-      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> 
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
     @endif
@@ -46,7 +46,6 @@
 
     <!-- FOOTER -->
 
-    if
     @include('layouts.components.footers.home')
 
   </body>
