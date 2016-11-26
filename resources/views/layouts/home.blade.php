@@ -14,6 +14,8 @@
       <link rel="stylesheet" type="text/css" href="/css/style_rols.css">
       <link rel="stylesheet" type="text/css" href="/css/style_profile.css">
 
+      <script src="/js/offpage.js" charset="utf-8"></script>
+
       <title>@yield('title')</title>
   </head>
   <body>
@@ -21,6 +23,11 @@
     @include('layouts.components.headers.home')
 
     <!-- POPUPS -->
+    @if (isset($displayContact) && $displayContact == 'block')
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
+        @include ('layouts.components.popUps.contact', ['display' => $displayContact,])
+      </div>
+    @endif
 
     <!-- CONTENT -->
     @yield('content')
