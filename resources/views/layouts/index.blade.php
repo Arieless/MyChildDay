@@ -29,17 +29,19 @@
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
-    @endif
+        @endif
+        <!-- REG -->
+        @include ('layouts.components.popUps.register', ['display' => $displayReg])
+        <!-- LOG -->
+        @include ('layouts.components.popUps.login', ['display' => $displayLog,])
+        <!-- EMAILR -->
+        @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
+        <!-- PASSR -->
+        @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
+        <!-- CONTACT -->
+        @include ('layouts.components.popUps.contact', ['display' => $displayContact,])
 
-    @include ('layouts.components.popUps.register', ['display' => $displayReg])
-    @include ('layouts.components.popUps.login', ['display' => $displayLog,])
-    @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
-
-    </div>
-
-    {{--
-    @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
-    --}}
+      </div>
 
     <!-- CONTENT -->
     @yield('content')

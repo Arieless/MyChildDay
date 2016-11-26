@@ -10,7 +10,7 @@ class PublicController extends Controller
     public function index() {
 
       if (Auth::check()) {
-        
+
         // The user is logged in...
         // Redirects to home
         return redirect()->intended('home');
@@ -33,4 +33,5 @@ class PublicController extends Controller
     public function contact() {
       return view('layouts.components.popUps.contact', ['displayContact' => "block", 'displayReg' => "none",'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "block", ]);
     }
+
 }
