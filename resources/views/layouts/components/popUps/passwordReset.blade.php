@@ -5,11 +5,13 @@
 
     {{ csrf_field() }}
 
+    <input type="hidden" name="token" value="{{ isset($token)? $token: '' }}" />
+
     <p class="inputError" id="loginEmailError">
 
       @if (isset($errors))
-        @if ($errors->has('email'))
-          @foreach ($errors->get('email') as $message)
+        @if ($errors->has('emailReset'))
+          @foreach ($errors->get('emailReset') as $message)
               {{ $message }} <br/>
           @endforeach
         @endif
@@ -18,7 +20,7 @@
     </p>
 
     <label for="resetPass">Email:</label>
-    <input id="resetPassEmail" type="email" placeholder="Ingrese su email" name="email" required>
+    <input id="resetPassEmail" type="email" placeholder="Ingrese su email" name="email" value="{{ $email or old('email') }}" required autofocus />
 
   <p class="inputError" id="loginEmailError">
 
@@ -32,8 +34,8 @@
 
     </p>
 
-    <label for="resetPassword">Contraseña:</label>
-    <input id="resetPassword" type="password" placeholder="Ingrese su nueva clave" name="password" required>
+      <label for="resetPassword">Contraseña:</label>
+      <input id="resetPassword" type="password" placeholder="Ingrese su clave" name="password" required />
 
     <p class="inputError" id="loginEmailError">
 
@@ -48,7 +50,8 @@
     </p>
 
     <label for="resetPasswordConfirm">Verificación de contraseña:</label>
-    <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su nueva contraseña nuevamente" name="password_confirmation" required>
+    <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su nueva contraseña nuevamente" name="password_confirmation" required />
+
     <div class="containerOptions">
       <p id="containerEmailResetText" class="containerOptionsInfo">
         <span>Ingrese su nueva contraseña</span>

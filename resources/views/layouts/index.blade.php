@@ -8,10 +8,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_navBar.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_footer.css">
       <link rel="stylesheet" type="text/css" href="/css/style_index.css">
       <link rel="stylesheet" type="text/css" href="/css/style_faq.css">
       <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
       <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
 
       <script src="/js/offpage.js" charset="utf-8"></script>
 
@@ -20,24 +23,31 @@
   <body>
 
     <!-- HEADER -->
-    @include('layouts.components.headers.notLogged')
-    <!-- REG/OLG -->
+    @include('layouts.components.headers.index')
 
     @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block' || $displayContact == 'block')
-      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> </div>
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> 
     @else
-      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none"> </div>
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
     @endif
 
     @include ('layouts.components.popUps.register', ['display' => $displayReg])
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
     @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
-    @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
-    <!-- @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
+
+    </div>
+
+    {{--
+    @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
+    --}}
+
     <!-- CONTENT -->
     @yield('content')
+
     <!-- FOOTER -->
-    @include('layouts.components.footers.notLogged')
+
+    if
+    @include('layouts.components.footers.home')
 
   </body>
   </html>
