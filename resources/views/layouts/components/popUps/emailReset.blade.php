@@ -25,7 +25,6 @@
     <label for="emailReset">Email:</label>
 
     <input id="emailReset" type="email" placeholder="Ingrese su email"  name="email" value="{{ old('email') }}" required />
-
     <div class="containerOptions">
       <p id="containerEmailResetText" class="containerOptionsInfo">
         <span>Te enviaremos un mail con un link para recuperar tu contraseña</span>

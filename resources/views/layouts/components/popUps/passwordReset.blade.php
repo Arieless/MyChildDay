@@ -51,6 +51,7 @@
 
     <label for="resetPasswordConfirm">Verificación de contraseña:</label>
     <input type="password" id="resetPasswordConfirm" placeholder="Ingrese su nueva contraseña nuevamente" name="password_confirmation" required />
+
     <div class="containerOptions">
       <p id="containerEmailResetText" class="containerOptionsInfo">
         <span>Ingrese su nueva contraseña</span>

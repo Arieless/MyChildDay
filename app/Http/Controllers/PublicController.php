@@ -10,26 +10,27 @@ class PublicController extends Controller
     public function index() {
 
       if (Auth::check()) {
+        
         // The user is logged in...
         // Redirects to home
         return redirect()->intended('home');
 
       }else{
 
-        return view('public.index' , ['displayReg' => "none", 'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none",]);
+        // The user is not logged in...
+        return view('public.index' , ['displayReg' => "none", 'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "none", 'displayContact' => "none"]);
       }
     }
 
     public function faq() {
-
-      return view('public.faq',  ['displayReg' => "none", 'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "none" ]);
+      return view('public.faq',  ['displayReg' => "none", 'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "none", 'displayContact' => "none"]);
     }
 
     public function terms() {
-      return view('public.terms', ['displayReg' => "none", 'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "none" ]);
+      return view('public.terms', ['displayReg' => "none", 'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "none", 'displayContact' => "none"]);
     }
 
     public function contact() {
-      return view('layouts.components.popUps.contact', ['displayContact' => "block", 'displayReg' => "none",'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", ]);
+      return view('layouts.components.popUps.contact', ['displayContact' => "block", 'displayReg' => "none",'displayLog' => "none", 'displayPassReset' => "none", 'displayEmailReset' => "none", 'displayContact' => "block", ]);
     }
 }

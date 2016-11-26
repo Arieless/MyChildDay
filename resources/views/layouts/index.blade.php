@@ -25,9 +25,8 @@
     <!-- HEADER -->
     @include('layouts.components.headers.index')
 
-
     @if ($displayReg == 'block'|| $displayLog == 'block' || $displayEmailReset == 'block' || $displayPassReset == 'block' || $displayContact == 'block')
-      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> </div>
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block"> 
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
     @endif
@@ -35,12 +34,13 @@
     @include ('layouts.components.popUps.register', ['display' => $displayReg])
     @include ('layouts.components.popUps.login', ['display' => $displayLog,])
     @include ('layouts.components.popUps.emailReset', ['display' => $displayEmailReset,])
-    @include ('layouts.components.popUps.passwordReset', ['display' => $displayPassReset,])
+
     </div>
 
     {{--
     @include ('layouts.components.popUps.contact', ['display' => $displayContact,]) -->
     --}}
+
     <!-- CONTENT -->
     @yield('content')
 
