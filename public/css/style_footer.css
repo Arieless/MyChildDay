@@ -40,6 +40,7 @@
 
 .mainFooter .mainFooterNav ul li:last-child {
   border:none;
+  cursor: pointer;
 }
 
 .mainFooter .mainFooterNav p {
@@ -68,7 +69,7 @@
 
 
 @media (min-width: 1280px) {
-  
+
   .mainFooter {
     height: 80px;
   }
