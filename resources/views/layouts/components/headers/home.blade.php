@@ -7,7 +7,7 @@
       <ul class="flexList spaceAround">
         <li class="dropdown">
           <a class="flexIconLink neutralColor">
-            <img class="userPicture roundPicture" src="{{ url('/images/users/avatars/default_avatar_'.rand(1,2)).'.svg' }}" alt="Ver lista de mensajes">
+            <img class="userPicture roundPicture" src="{{ Auth::user()->profilePicture }}" alt="Ver lista de mensajes">
             <br/>{{ strtolower(Auth::user()->firstName) }}
           </a>
           @include ('layouts.components.headers.components.profileDropdown', ['color' => 'neutralColor'])
