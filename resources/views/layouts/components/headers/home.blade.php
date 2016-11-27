@@ -37,6 +37,7 @@
           </li>
           <li class="navButton dropdownLink">
             <a class="navButton" href="{{ url('/home/profile/edit/user') }}">
+            <!-- <a class="navButton" href="{{ url('/home/profile/edit/school') }}"> -->
               <img src="/images/icons/profile.svg" alt="">
               <h5>Perfil Personal</h5>
             </a>

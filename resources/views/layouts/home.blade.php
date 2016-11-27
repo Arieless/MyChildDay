@@ -14,6 +14,7 @@
       <link rel="stylesheet" type="text/css" href="/css/style_rols.css">
       <link rel="stylesheet" type="text/css" href="/css/style_profile.css">
 
+      <script src="/js/jquery-3.1.1.js" charset="utf-8"></script>
       <script src="/js/offpage.js" charset="utf-8"></script>
 
       <title>@yield('title')</title>

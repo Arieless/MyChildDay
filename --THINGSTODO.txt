@@ -19,3 +19,9 @@
 * Funciones
 
 user->hasChildren () >> bool
+
+* http://stackoverflow.com/questions/39327954/laravel-5-3-redefine-reset-email-blade-template
+* http://www.dropzonejs.com/
+
+
+*Cuando el usuario se resgistra y la app lo auto loguea, no le crea remember_token

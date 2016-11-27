@@ -279,6 +279,7 @@ class ComposerStaticInitc39e87c4ba098e01dfd797c15aa8f0d5
 
     public static $classMap = array (
         'AddPostTypeIdColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_191724_add_post-type_id_column.php',
+        'AddProfilePicColumnToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_26_212455_AddProfilePicColumnToUsersTable.php',
         'AddSchoolIdColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_190041_add_school_id_column.php',
         'CreateKidRoomTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192742_create_kid_room_table.php',
         'CreateKidsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_054447_create_kids_table.php',
