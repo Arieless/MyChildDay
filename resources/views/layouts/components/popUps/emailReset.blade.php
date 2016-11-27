@@ -5,13 +5,11 @@
 
     {{ csrf_field() }}
 
-
-
     <p class="inputError" id="loginEmailError">
 
       @if (isset($errors))
-        @if ($errors->has('email'))
-          @foreach ($errors->get('email') as $message)
+        @if ($errors->has('emailReset'))
+          @foreach ($errors->get('emailReset') as $message)
               {{ $message }} <br/>
           @endforeach
         @endif
@@ -24,9 +22,9 @@
       @endif
     </p>
 
+    <label for="emailReset">Email:</label>
 
-    <label for="resetEmail">Email:</label>
-    <input id="resetEmail" type="email" placeholder="Ingrese su email" name="email" required>
+    <input id="emailReset" type="email" placeholder="Ingrese su email"  name="email" value="{{ old('email') }}" required />
     <div class="containerOptions">
       <p id="containerEmailResetText" class="containerOptionsInfo">
         <span>Te enviaremos un mail con un link para recuperar tu contraseña</span>

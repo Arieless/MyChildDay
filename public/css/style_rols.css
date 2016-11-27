@@ -1,0 +1,134 @@
+.containerRols {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.containerRols .title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #1F1F1F;
+
+  padding-bottom: 60px;
+}
+
+.flexContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerRols .flexContainer h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+
+  color: darkgrey;
+}
+
+.containerRols img {
+  filter: brightness(500%);
+}
+
+.containerRols .flexContainer .rol{
+  cursor: pointer;
+  cursor: hand;
+}
+
+.containerRols .flexContainer .rol:hover h1 {
+  color: black;
+}
+
+.containerRols .flexContainer .rol:hover img {
+  filter: brightness(100%);
+}
+
+@media (max-width: 550px){
+
+  .containerRols {
+    padding-top: 80px;
+    width: 100vw;
+  }
+
+  .containerRols img {
+    width: 100%;
+  }
+
+  .containerRols .title {
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 550px) and (max-width: 960px) {   /*  <----------ENTRE 550 Y 960 -------------------------------> */
+
+  .containerRols {
+    padding-top: 80px;
+    width: 100vw;
+    min-height: 650px;
+  }
+
+  .containerRols img {
+    width: 120px;
+  }
+
+  .containerRols .title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1280px){ /*  <----------------------------------- ENTRE 960 Y 1280 -------------------------------> */
+
+  .containerRols {
+    padding-top: 80px;
+    width: 960px;
+  }
+
+  .containerRols img {
+    width: 150px;
+  }
+
+  .containerRols .title {
+    font-size: 28px;
+  }
+
+}
+
+@media (max-width: 1280px) { /*  <----------------------------------- MENOS DE 1280 -------------------------------> */
+
+  .containerRols {
+    height: calc(100vh - 180px);
+    min-height: calc(550px - 180px)
+  }
+
+}
+
+@media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+
+  .containerRols {
+    padding-top: 80px;
+    width: 1024px;
+    height: calc(100vh - 80px);
+    min-height: calc(660px - 80px);
+  }
+
+  .containerRols .rol {
+    display: inline-block;
+  }
+
+  .containerRols img {
+    width: 200px;
+  }
+
+  .containerRols .title {
+    padding-top: 12vh;
+    font-size: 32px;
+  }
+}

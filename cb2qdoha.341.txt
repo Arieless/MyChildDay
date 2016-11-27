@@ -1,0 +1,43 @@
+﻿Merge remote-tracking branch 'refs/remotes/origin/master' into br
+
+# Conflicts:
+#	app/Http/Controllers/PublicController.php
+#	public/js/offpage.js
+#	resources/views/layouts/components/popUps/emailReset.blade.php
+#	resources/views/layouts/components/popUps/passwordReset.blade.php
+#	resources/views/layouts/index.blade.php
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch br
+# Your branch is up-to-date with 'origin/br'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   --THINGSTODO.txt
+#	modified:   app/Http/Controllers/PublicController.php
+#	modified:   public/css/style_terms.css
+#	modified:   public/js/offpage.js
+#	modified:   resources/views/layouts/components/footers/index.blade.php
+#	new file:   resources/views/layouts/components/popUps/contact.blade.php
+#	modified:   resources/views/layouts/components/popUps/emailReset.blade.php
+#	modified:   resources/views/layouts/components/popUps/passwordReset.blade.php
+#	modified:   resources/views/layouts/index.blade.php
+#	modified:   resources/views/public/terms.blade.php
+#	modified:   routes/web.php
+#	modified:   vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php
+#	modified:   vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php
+#	modified:   vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php
+#	modified:   vendor/laravel/framework/src/Illuminate/Foundation/Auth/SendsPasswordResetEmails.php
+#
+# Changes not staged for commit:
+#	modified:   --THINGSTODO.txt
+#
+

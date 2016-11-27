@@ -9,37 +9,36 @@
 
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
 
-      <link rel="stylesheet" type="text/css" href="/css/style_index.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_faq.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_terms.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_loggedBar.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_loggedBar_dropdown.css">
 
+      <link rel="stylesheet" type="text/css" href="/css/style_footer.css">
+
+      <link rel="stylesheet" type="text/css" href="/css/style_rols.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_profile.css">
+
+      <script src="/js/jquery-3.1.1.js" charset="utf-8"></script>
       <script src="/js/offpage.js" charset="utf-8"></script>
-
 
       <title>@yield('title')</title>
   </head>
   <body>
-
-    <a href="{{ url('/logout') }}"
-                                                onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                                Logout
-                                            </a>
-
-                                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
     <!-- HEADER -->
-    @include('layouts.components.headers.loggedParent')
-    <!-- REG/OLG -->
+    @include('layouts.components.headers.home')
+
+    <!-- POPUPS -->
+    @if (isset($displayContact) && $displayContact == 'block')
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
+        @include ('layouts.components.popUps.contact', ['display' => $displayContact,])
+      </div>
+    @endif
 
     <!-- CONTENT -->
     @yield('content')
+
     <!-- FOOTER -->
 
-
-    @include('layouts.components.footers.loggedParent')
+    @include('layouts.components.footers.home')
 
   </body>
   </html>

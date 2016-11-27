@@ -404,7 +404,7 @@ html {
   min-width: 100%;
   min-height: 100%;
   border-bottom: 1px solid darkgrey;
-  --filter: blur(3px);
+  filter: blur(3px);
 
 }
 /*  <----------------------------------- (INDEX) SECTION VIDEO GRAAAAANDE DESDE 1280 -------------------------------> */

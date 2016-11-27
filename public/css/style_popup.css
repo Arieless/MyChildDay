@@ -2,6 +2,7 @@
 .popUpContainerBackground {
   display: none;
 }
+
 .popUpContainer{
   display: none;
 
@@ -23,7 +24,7 @@
 
 .popUpContainer .popUpTitles {
     color: rgb(50, 50, 50);
-    padding: 20px 20px 40px 40px;
+    padding: 30px 20px 40px 40px;
     font-weight: bold;
 }
 
@@ -36,15 +37,23 @@
 
 }
 
+.popUpContainer textarea {
+  height: 125px;
+}
+
 /* Inputs width */
 .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
-.popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email] {
+.popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email], .popUpContainer textarea {
   box-sizing: border-box;
 
   border: 1px solid #E8E8E8;
   border-radius: 3px;
   background-color: #f2f2f2;
 
+}
+
+.popUpContainer input[type=text]{
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .popUpContainer ::-webkit-input-placeholder,/* Chrome/Opera/Safari */
@@ -188,7 +197,7 @@
   }
 
   .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
-  .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email]{
+  .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email], .popUpContainer textarea{
     display: block;
     width: 96%;
     padding-top: 12px;
@@ -209,32 +218,42 @@
 
 /*  <----------------------------------- POPUP CONTAINER DESDE 1280 -------------------------------> */
 
-
   .popUpContainerBackground {
     color: #3f3f3f;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    position: fixed;
-    bottom: 0px;
+    z-index:100;
+    display:none;
+
+    padding-top:80px;
+    padding-bottom: 20px;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:auto;
+
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.9)
   }
 
   .popUpContainer{
-    box-sizing: border-box;
+
+    margin:auto;
+    position:relative;
+    padding:0;
+    outline:0;
 
     background-color: white;
     border-radius: 2px;
-
-    position: absolute;
     width: 720px;
-    height: auto;
+
     z-index: 1001;
     display: none;
-    top: 0px;
-    margin-top: 70px;
-    right: 50%;
-    transform: translateX(50%);
+
 /*
     position: fixed;
     top: 50%;
@@ -251,24 +270,30 @@
   }
 
   .popUpContainer input[type=text], .popUpContainer input[type=password], .popUpContainer input[type=date],
-  .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email] {
+  .popUpContainer input[type=tel], .popUpContainer input[type=number], .popUpContainer input[type=email], .popUpContainer textarea {
     display: inline-block;
     width: 70%;
     padding: 12px 20px;
     margin: 8px;
   }
 
+  .popUpContainer textarea {
+    margin-left: 155px;
+  }
+
   .buttonClose{
     display: block;
     background-color: white;
-    position: relative;
+    position: absolute;
 
     width: 25px;
     height: 25px;
-    left: 100%;
-    top: 0%;
+    right: 0px;
+    top: 0px;
     z-index: 1002;
-    transform: translate(0%, -100%);
+    padding: 2px 2px 2px 2px;
+
+    transform: translate(100%, -100%);
 
     padding: 3px 3px 3px 3px;
     border-radius: 50%;

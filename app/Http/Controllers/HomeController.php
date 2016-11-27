@@ -18,24 +18,41 @@ class HomeController extends Controller
 
         if ($numberOfRols == 1){
 
-          sendToRol();
+          if (Auth::user()->parentRol) return view('private.feed.parent');
+          if (Auth::user()->schoolRol) return view('private.feed.school');
+          if (Auth::user()->teacherRol) return view ('private.feed.teacher');
 
         }else if ($numberOfRols > 1){
-          return view('private.rolLogin', [
-                                            'parentRol' => Auth::user()->parentRol,
-                                            'schoolRol' => Auth::user()->schoolRol,
-                                            'teacherRol' => Auth::user()->teacherRol,
-                                          ]);
+
+          return view('private.rol.login');
         }
 
-        return view('private.rolChooser', [
-                                            'parentRol' => Auth::user()->parentRol,
-                                            'schoolRol' => Auth::user()->schoolRol,
-                                            'teacherRol' => Auth::user()->teacherRol,
-                                          ]);
+        return view('private.rol.chooser');
 
+    }
 
-        return view('private.home');
+    public function chooseRol (Request $request) {
+
+      $result = $request->input('choose-input');
+
+      if ($result == 'teacher'){
+        Auth::user()->teacherRol = 1;
+        Auth::user()->save();
+
+      }else if ($result == 'school'){
+        Auth::user()->schoolRol = 1;
+        Auth::user()->save();
+
+      }else if ($result == 'parent'){
+        Auth::user()->parentRol = 1;
+        Auth::user()->save();
+
+      }else{
+        return view ('errors.403');
+      }
+
+      return redirect('/home');
+
     }
 
     private function numberOfRols (){
@@ -54,18 +71,4 @@ class HomeController extends Controller
       return $count;
     }
 
-    private function sendToAccurateRol(){
-
-      if (Auth::user()->parentRol){
-        return view('private.homeParent');
-      }
-
-      if (Auth::user()->schoolRol){
-        return view('private.homeSchool');
-      }
-
-      if (Auth::user()->teacherRol){
-        return view ('private.homeTeacher');
-      }
-    }
 }

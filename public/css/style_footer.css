@@ -1,0 +1,81 @@
+
+.mainFooter {
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  background-color: #1F1F1F;
+  width: 100%;
+  color: white;
+  clear: both;
+}
+
+.mainFooter .mainFooterNav{
+}
+
+.mainFooter .mainFooterNav ul {
+  display: table;
+  margin: 0 auto;
+  clear: right;
+}
+
+.mainFooter .mainFooterNav ul a {
+  padding: 6px 10px 6px 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+}
+
+.mainFooter .mainFooterNav ul a:hover {
+  color: lightgrey;
+}
+
+.mainFooter .mainFooterNav ul li {
+  display: inline-block;
+
+  margin-top: 15px;
+}
+
+.mainFooter .mainFooterNav ul li {
+  border-right: 1px white solid;
+}
+
+.mainFooter .mainFooterNav ul li:last-child {
+  border:none;
+  cursor: pointer;
+}
+
+.mainFooter .mainFooterNav p {
+  float: right;
+  padding-top: 20px;
+  padding-bottom: 2px;
+  font-size: 10px;
+}
+
+@media (max-width: 1280px){
+
+  .mainFooter {
+    height: 80px;
+  }
+
+  .mainFooterNav {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+}
+
+@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+
+}
+
+
+@media (min-width: 1280px) {
+
+  .mainFooter {
+    height: 80px;
+  }
+
+  .mainFooterNav {
+    width: 1200px;
+    margin: auto;
+  }
+}

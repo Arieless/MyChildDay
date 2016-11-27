@@ -28,7 +28,6 @@ class CreateSchoolTable extends Migration
           $table->foreign('user_id')->references('id')->on('users');
           $table->tinyInteger('deactivated')->unsigned()->default('0');
           $table->timestamps();
-
       });
     }
 

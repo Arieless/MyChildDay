@@ -1,0 +1,107 @@
+.mainBar .list .navButton {
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.mainBar .list .navButton a{
+  color: inherit;
+}
+
+.mainBar nav .navButton:hover{
+  color: lightgrey;
+}
+
+.mainBar {
+  width: 100%;
+}
+
+}
+
+@media (max-width: 1280px){
+
+  .mainBar {
+    margin-bottom: 30px;
+  }
+
+  .mainBar .logo {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .mainBar nav ul {
+    width: 100%;
+    background-color: #24ABA6;
+  }
+
+  .mainBar nav ul li {
+    text-align: center;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+  }
+
+  .mainBar .list .navButton,
+  .mainBar .list a{
+    color: white;
+  }
+
+}
+
+
+@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+
+}
+
+@media (min-width: 1280px) {
+
+  .mainBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    clear: both;
+    border-bottom: solid 1px lightgrey;
+    box-shadow: 6px 0px 5px #888888;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .mainBar nav{
+    height: 60px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mainBar .logo {
+    float: left;
+    height: 40px;
+    width: auto;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .mainBar nav ul:not(.dropdown-content) {
+    height: 100%;
+    float: right;
+  }
+
+  .mainBar nav ul li {
+    padding-left: 10px;
+    padding-right:10px;
+    line-height: 60px;
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 16px;
+  }
+
+  .mainBar nav ul li:not(.dropdownLink) {
+    display: inline-block;
+  }
+
+  .mainBar .list .navButton {
+    color: #24ABA6;
+  }
+}
