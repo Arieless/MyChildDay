@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function(){ // auth pages goes here
 
     Route::get('/home/profile/edit/user', 'ProfileController@editUser');
 
+    Route::get('/home/profile/edit/school', 'ProfileController@editSchoolTemp');
+
     // Route::group(['middleware' => ['auth', 'authSchool']], function(){}
 
     // Route::group(['middleware' => ['auth', 'authParent']], function(){}
