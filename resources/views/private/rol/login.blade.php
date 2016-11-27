@@ -1,31 +1,44 @@
 @extends('layouts.home')
 @section('title','MyChildDay')
+
+
 @section('content')
+<div class="containerRols">
 
-<div class="containerRols flexContainer">
+      <h1 class="title">Elige con que rol quieres ingresar</h1>
 
-<h1>LOG IN AS!</h1>
+<div class="flexContainer">
 
+  @if (Auth::user()->teacherRol)
   <div class="rol">
-    <a href="{{ url ('/teacher/registeras') }}">
-      <img src="{{url ('images/icons/teacher.png')}}" alt="">
+    <a href="{{ url ('/home/teacher/feed') }}">
+      <img src="{{url ('images/icons/big/teacher.svg')}}" alt="">
       <h1>Docente</h1>
     </a>
   </div>
+  @endif
 
+  @if (Auth::user()->schoolRol)
   <div class="rol">
-    <a href="{{ url ('/school/registeras') }}">
-      <img src="{{url ('images/icons/school.png')}}" alt="">
+    <a href="{{ url ('/home/school/feed') }}">
+      <img src="{{url ('images/icons/big/school.svg')}}" alt="">
       <h1>Escuela</h1>
     </a>
   </div>
+  @endif
 
-  <a href="{{ url ('/parent/registeras') }}">
+
+  @if (Auth::user()->parentRol)
+  <a href="{{ url ('/home/parent/feed') }}">
     <div class="rol">
-      <img src="{{url ('images/icons/parent.png')}}" alt="">
+      <img src="{{url ('images/icons/big/parent.svg')}}" alt="">
       <h1>Padre</h1>
     </div>
   </a>
+  @endif
+
+</div>
+
 
   <script type="text/javascript">
 

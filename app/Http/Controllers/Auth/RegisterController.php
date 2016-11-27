@@ -56,7 +56,6 @@ class RegisterController extends Controller
             'phone' => 'required|max:255',
             'password_confirmation' => 'required',
             'password' => 'required|min:6|confirmed',
-
         ]);
     }
 
@@ -76,6 +75,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
+            // 'profilePicture' => '/images/users/avatars/default_avatar_'.rand(0,20)).'.svg';
         ]);
     }
 }
