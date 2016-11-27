@@ -209,6 +209,7 @@ window.addEventListener('load', function (evt) {
 
   var imageLoader = document.getElementById('profilePicInput');
       imageLoader.addEventListener('change', handleImage, false);
+      // imageLoader.addEventListener('change', defaultImage, false);
 
   function handleImage(e) {
       var reader = new FileReader();
@@ -216,13 +217,20 @@ window.addEventListener('load', function (evt) {
           $('#profilePicImgContainer img').attr('src',event.target.result);
       }
       reader.readAsDataURL(e.target.files[0]);
-
   }
 
-  var dropbox = document.getElementById("profilePicImg");
-  dropbox.addEventListener("dragenter", dragenter, false);
-  dropbox.addEventListener("dragover", dragover, false);
-  dropbox.addEventListener("drop", drop, false);
+  // function defaultImage(e) {
+  //   if (imageLoader === "") {
+  //     reader.onload = function (event) {
+  //         $('#profilePicImgContainer img').attr('src', event.target."/images/icons/profile_default.png");
+  //     }
+  //   }
+  // }
+
+  var dropImg = document.getElementById("profilePicImg");
+  dropImg.addEventListener("dragenter", dragenter, false);
+  dropImg.addEventListener("dragover", dragover, false);
+  dropImg.addEventListener("drop", drop, false);
 
   function dragenter(e) {
     e.stopPropagation();
