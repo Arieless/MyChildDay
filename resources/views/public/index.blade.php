@@ -36,7 +36,7 @@
         <section class="sectionInfo">
                 <article class="infoArticle">
                   <div class="infoArticleImg">
-                    <img src="/images/icons/website-lock.svg" class="icons">
+                    <img src="/images/icons/index/website-lock.svg" class="icons">
                   </div>
                     <div class="infoArticleText">
                       <div class="textContainer">
@@ -47,7 +47,7 @@
                 </article>
                 <article class="infoArticle">
                   <div class="infoArticleImg">
-                    <img src="/images/icons/wallet.svg" class="icons">
+                    <img src="/images/icons/index/wallet.svg" class="icons">
                   </div>
                     <div class="infoArticleText">
                       <div class="textContainer">
@@ -58,7 +58,7 @@
                 </article>
                 <article class="infoArticle">
                   <div class="infoArticleImg">
-                    <img src="/images/icons/speech-bubble.svg" class="icons">
+                    <img src="/images/icons/index/speech-bubble.svg" class="icons">
                   </div>
                   <div class="infoArticleText">
                     <div class="textContainer">
@@ -69,7 +69,7 @@
                 </article>
                 <article class="infoArticle">
                   <div class="infoArticleImg">
-                    <img src="/images/icons/calculator.svg" class="icons">
+                    <img src="/images/icons/index/calculator.svg" class="icons">
                   </div>
                   <div class="infoArticleText">
                     <div class="textContainer">
@@ -80,7 +80,7 @@
                 </article>
                 <article class="infoArticle">
                     <div class="infoArticleImg">
-                      <img src="/images/icons/hand-shopping-bag.svg" class="icons">
+                      <img src="/images/icons/index/hand-shopping-bag.svg" class="icons">
                     </div>
                     <div class="infoArticleText">
                       <div class="textContainer">
@@ -91,7 +91,7 @@
                 </article>
                 <article class="infoArticle">
                     <div class="infoArticleImg">
-                    <img src="/images/icons/seo-tag.svg" class="icons">
+                    <img src="/images/icons/index/seo-tag.svg" class="icons">
                     </div>
                     <div class="infoArticleText">
                       <div class="textContainer">
