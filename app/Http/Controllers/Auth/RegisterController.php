@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
-            // 'profilePicture' => '/images/users/avatars/default_avatar_'.rand(0,20)).'.svg';
+            'profilePicture' => url('/images/users/avatars/default_avatar_'.rand(0,20).'.svg'),
         ]);
     }
 }

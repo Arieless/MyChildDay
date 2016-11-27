@@ -55,7 +55,7 @@
         </li>
         <li class="dropdown">
           <a class="flexIconLink teacherColor">
-            <img class="userPicture roundPicture" src="{{ url('/images/users/avatars/default_avatar_'.rand(0,20)).'.svg' }}" alt="Ver perfil">
+            <img class="userPicture roundPicture" src="{{ Auth::user()->profilePicture }}" alt="Ver perfil">
             <br/>{{ strtolower(Auth::user()->firstName) }}
           </a>
           @include ('layouts.components.headers.components.profileDropdown', ['color' => 'teacherColor'])

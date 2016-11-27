@@ -28,13 +28,14 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function(){ // auth pages goes here
 
     Route::get('/home', 'HomeController@index');
-    Route::post('/home/chooseRol', 'HomeController@chooseRol');
-    Route::get('/home/profile/edit/user', 'ProfileController@editUser');
 
-    Route::get('/home/profile/edit/school', 'ProfileController@editSchoolTemp');
+    Route::post('/home/chooseRol', 'HomeController@chooseRol');
+
+    Route::get('/home/profile/edit/user', 'ProfileController@editUser');
 
     // Route::group(['middleware' => ['auth', 'authSchool']], function(){}
     Route::get('/home/school/feed', 'SchoolController@feed');
+    Route::get('/home/profile/edit/school', 'ProfileController@editSchoolTemp');
     // Route::group(['middleware' => ['auth', 'authParent']], function(){}
     Route::get('/home/parent/feed', 'ParentController@feed');
     // Route::group(['middleware' => ['auth', 'authTeacher']], function(){}
