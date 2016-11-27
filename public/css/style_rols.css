@@ -1,6 +1,4 @@
 .containerRols {
-  width: 1024px;
-  height: 80vh;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -12,18 +10,14 @@
   font-weight: bold;
   color: #1F1F1F;
 
-  font-size: 32px;
-
-  padding-top: 12vh;
   padding-bottom: 60px;
-
 }
 
 .flexContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -39,26 +33,90 @@
   color: darkgrey;
 }
 
+.containerRols img {
+  filter: brightness(500%);
+}
+
+.containerRols .flexContainer .rol{
+  cursor: pointer;
+  cursor: hand;
+}
 
 .containerRols .flexContainer .rol:hover h1 {
   color: black;
 }
 
+.containerRols .flexContainer .rol:hover img {
+  filter: brightness(100%);
+}
 
-@media (max-width: 1280px){ /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+@media (max-width: 550px){
 
+  .containerRols {
+    padding-top: 80px;
+    width: 100vw;
+  }
+
+  .containerRols img {
+    width: 100%;
+  }
+
+  .containerRols .title {
+    font-size: 18px;
+  }
 
 }
 
-@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+@media (min-width: 550px) and (max-width: 960px) {   /*  <----------ENTRE 550 Y 960 -------------------------------> */
+
+  .containerRols {
+    padding-top: 80px;
+    width: 100vw;
+    min-height: 650px;
+  }
+
+  .containerRols img {
+    width: 120px;
+  }
+
+  .containerRols .title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1280px){ /*  <----------------------------------- ENTRE 960 Y 1280 -------------------------------> */
+
+  .containerRols {
+    padding-top: 80px;
+    width: 960px;
+  }
+
+  .containerRols img {
+    width: 150px;
+  }
+
+  .containerRols .title {
+    font-size: 28px;
+  }
+
+}
+
+@media (max-width: 1280px) { /*  <----------------------------------- MENOS DE 1280 -------------------------------> */
+
+  .containerRols {
+    height: calc(100vh - 180px);
+    min-height: calc(550px - 180px)
+  }
 
 }
 
 @media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
 
   .containerRols {
-    margin-top: 80px;
-
+    padding-top: 80px;
+    width: 1024px;
+    height: calc(100vh - 80px);
+    min-height: calc(660px - 80px);
   }
 
   .containerRols .rol {
@@ -69,4 +127,8 @@
     width: 200px;
   }
 
+  .containerRols .title {
+    padding-top: 12vh;
+    font-size: 32px;
+  }
 }
