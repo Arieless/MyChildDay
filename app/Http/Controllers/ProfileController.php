@@ -11,12 +11,16 @@ class ProfileController extends Controller
       return view('private.profile.edit.user');
     }
 
+    function editSchoolTemp () {
+      return view('private.profile.edit.school');
+    }
+
     function editSchool () {
       if (Auth::user()->schoolRol){
         return view ('private.profile.edit.school');
+      } else {
+        return view('errors/403'); // forbidden
       }
-
-      return view('errors/403'); // forbidden
     }
 
     function editChildren () {

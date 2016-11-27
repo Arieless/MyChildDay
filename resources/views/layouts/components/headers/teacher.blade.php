@@ -9,6 +9,7 @@
       <li><img class="childrenPicture roundPicture" src="{{ children->picture }}" alt=""></li>
       @endforeach
     </ul>
+
     --}}
 
     <div class="navFlexContainer">

@@ -10,7 +10,7 @@
 
     <section class="profileSection">
       <header class="profileTitles">
-        <h3 class="main">Datos Personales</h3>
+        <h3 class="main">Datos de la Institucion</h3>
       </header>
       <article class="profileInputs">
 
@@ -31,22 +31,6 @@
           </p>
           <label for="firstName">Nombre</label>
           <input id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
-        </div>
-
-        <div class="inputContainer">
-        <p class="inputError" id="lastNameError">
-
-          @if (isset($errors))
-            @if ($errors->has('lastName'))
-              @foreach ($errors->get('lastName') as $message)
-                  {{ $message }} <br/>
-              @endforeach
-            @endif
-          @endif
-
-        </p>
-        <label for="lastName">Apellido</label>
-        <input id="lastName" type="text" placeholder="Ingrese su apellido" name="lastName" value="{{ Auth::user()->lastName }}" readonly/ >
         </div>
 
         <div class="inputContainer">
@@ -79,7 +63,7 @@
 
 
 
-          <label for="address">Domicilio</label>
+          <label for="address">Dirección</label>
           <input id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ Auth::user()->address }}" readonly />
         </div>
         <div class="inputContainer">
@@ -94,7 +78,7 @@
             @endif
 
           </p>
-          <label for="phone">Telefono de contacto</label>
+          <label for="phone">Telefono</label>
           <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
         </div>
 
@@ -107,8 +91,8 @@
         <h3 class="secondary">FOTO</h3>
       </header>
       <article class="profileInputs">
-          <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
-            <img id="profilePicImg" src="/images/icons/profile_default.png" alt="profilePic" >
+          <div class="profilePicImgContainer" id="profilePicImgContainer">
+            <img id="profilePicImg" src="/images/icons/profile_default.png" alt="profilePic">
           </div>
           <label for="profilePic">Foto de Perfil</label>
           <input id="profilePicInput" type="file" class="profilePicInput">
@@ -246,4 +230,4 @@ window.addEventListener('load', function (evt) {
 });
 
 
-</script>
+  </script>
