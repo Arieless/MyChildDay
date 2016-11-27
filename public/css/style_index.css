@@ -1,88 +1,6 @@
-html {
-    font-family: 'Source Sans Pro', sans-serif;
-
-}
-
-
-/*  <----------------------------------- SECTION FIXED BAR & FOOTER GENERAL -------------------------------> */
-
-.mainBar .list .navButton {
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  cursor: hand;
-}
-
-.mainBar .list .navButton a{
-  color: inherit;
-}
-
-.mainBar nav .navButton:hover{
-  color: lightgrey;
-}
-
-.mainBar {
-  width: 100%;
-}
-
-.mainFooter {
-  border-top: 2px solid lightgrey;
-  border-bottom: 2px solid lightgrey;
-  background-color: #1F1F1F;
-  width: 100%;
-  color: white;
-  clear: both;
-}
-
-.mainFooter .mainFooterNav{
-}
-
-.mainFooter .mainFooterNav ul {
-  display: table;
-  margin: 0 auto;
-  clear: right;
-}
-
-.mainFooter .mainFooterNav ul a {
-  padding: 6px 10px 6px 10px;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: white;
-}
-
-.mainFooter .mainFooterNav ul a:hover {
-  color: lightgrey;
-}
-
-.mainFooter .mainFooterNav ul li {
-  display: inline-block;
-
-  margin-top: 15px;
-}
-
-.mainFooter .mainFooterNav ul li {
-  border-right: 1px white solid;
-}
-
-.mainFooter .mainFooterNav ul li:last-child {
-  border:none;
-}
-
-.mainFooter .mainFooterNav p {
-  float: right;
-  padding-top: 20px;
-  padding-bottom: 2px;
-  font-size: 10px;
-}
-
-/*  <----------------------------------- SECTION FIXED BAR & FOOTER GENERAL -------------------------------> */
-
-/*  <----------------------------------- SECTION MAIN CONTAINER GENERAL -------------------------------> */
 .indexContainerMain {
   color: #3f3f3f;
 }
-
-/*  <----------------------------------- SECTION MAIN CONTAINER GENERAL -------------------------------> */
 
 /*  <----------------------------------- (INDEX) SECTION VIDEO GENERAL -------------------------------> */
 
@@ -188,51 +106,11 @@ html {
 
 @media (max-width: 1280px){ /*  <----------------------------------- MAS DE 1280 -------------------------------> */
 
-/*  <----------------------------------- SECTION FIXED BAR & FOOTER HASTA 1280 -------------------------------> */
+/*  <----------------------------------- (INDEX) SECTION VIDEO HASTA 1280 -------------------------------> */
 
   .indexContainerMain .sectionMain {
     display: none;
   }
-
-  .mainBar {
-    margin-bottom: 30px;
-  }
-
-  .mainBar .logo {
-    width: 100%;
-    height: 40px;
-    margin: 10px 0px 10px 0px;
-  }
-
-  .mainBar nav ul {
-    width: 100%;
-    background-color: #24ABA6;
-  }
-
-  .mainBar nav ul li {
-    text-align: center;
-    padding: 10px 0px;
-    text-transform: uppercase;
-    border-bottom: 1px solid white;
-  }
-
-  .mainBar .list .navButton,
-  .mainBar .list a{
-    color: white;
-  }
-
-  .mainFooter {
-    height: 80px;
-  }
-
-  .mainFooterNav {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-/*  <----------------------------------- SECTION FIXED BAR & FOOTER HASTA 1280 -------------------------------> */
-
-/*  <----------------------------------- (INDEX) SECTION VIDEO HASTA 1280 -------------------------------> */
 
   .indexContainerMain .sectionVideo .description {
     width: 100%;
@@ -321,67 +199,6 @@ html {
 
 @media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
 
-/*  <----------------------------------- SECTION FIXED BAR & FOOTER DESDE 1280 -------------------------------> */
-
-  .mainBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    overflow: hidden;
-    border-bottom: solid 1px lightgrey;
-    box-shadow: 6px 0px 5px #888888;
-    background-color: rgba(255, 255, 255, 0.95);
-  }
-
-  .mainBar .mainBarNav{
-    height: 60px;
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .mainBar .logo {
-    float: left;
-    height: 40px;
-    width: auto;
-    margin: 10px 0px 10px 0px;
-  }
-
-  .mainBar nav ul {
-    height: 100%;
-    float: right;
-  }
-
-  .mainBar nav ul li {
-    padding-left: 10px;
-    padding-right:10px;
-    padding-top: 20px;
-    box-sizing: border-box;
-    height: 100%;
-    font-size: 16px;
-    display: inline-block;
-
-  }
-
-  .mainBar .list .navButton {
-    color: #24ABA6;
-    cursor: pointer;
-    cursor: hand;
-  }
-
-  .mainFooter {
-    height: 80px;
-  }
-
-  .mainFooterNav {
-    width: 1200px;
-    margin: auto;
-  }
-
-/*  <----------------------------------- SECTION FIXED BAR & FOOTER DESDE 1280 -------------------------------> */
-
 /*  <----------------------------------- (INDEX) SECTION VIDEO GRAAAAANDE DESDE 1280 -------------------------------> */
 
 .indexContainerMain .sectionMain .overVideo{
@@ -404,7 +221,7 @@ html {
   min-width: 100%;
   min-height: 100%;
   border-bottom: 1px solid darkgrey;
-  filter: blur(3px);
+  --filter: blur(3px);
 
 }
 /*  <----------------------------------- (INDEX) SECTION VIDEO GRAAAAANDE DESDE 1280 -------------------------------> */
