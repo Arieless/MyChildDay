@@ -108,9 +108,8 @@
       </header>
       <article class="profileInputs">
           <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
-            <img id="profilePicImg" src="/images/icons/profile_default.png" alt="profilePic" >
+            <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
           </div>
-          <label for="profilePic">Foto de Perfil</label>
           <input id="profilePicInput" type="file" class="profilePicInput">
       </article>
     </section>
