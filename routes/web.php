@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth']], function(){ // auth pages goes here
     Route::post('/home/chooseRol', 'HomeController@chooseRol');
 
     Route::get('/home/profile/edit/user', 'ProfileController@editUser');
+    Route::post('/home/profile/edit/user', 'ProfileController@updateUser');
 
 
     // Route::group(['middleware' => ['auth', 'authParent']], function(){}
