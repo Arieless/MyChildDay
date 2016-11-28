@@ -9,58 +9,65 @@
       <li><img class="childrenPicture roundPicture" src="{{ children->picture }}" alt=""></li>
       @endforeach
     </ul>
+
     --}}
 
     <div class="navFlexContainer">
       <ul class="flexList spaceAround">
         <li class="logoItem">
-            <a class="flexIconLink schoolColor" href=" {{ url('/home') }}">
+            <a class="flexIconLink schoolColor" href="{{ url('/home') }}">
               <img class="logo" src="/images/logoWhite.svg" alt="logotype" />
             </a>
         </li>
         <li>
           <ul class="flexList center">
-            <li>
+            <li class="optionIcon">
               <a class="flexIconLink schoolColor" href="{{ url('home/school/feed') }}">
                 <img src="/images/icons/app/feed.svg" alt="Ver noticias">
                 <br/>Novedades
               </a>
             </li>
-            <li>
+            <li class="optionIcon">
               <a class="flexIconLink schoolColor" href="{{ url('home/school/rooms') }}">
                 <img src="/images/icons/app/classroom.svg" alt="Ver aulas">
                 <br/>Aulas
               </a>
             </li>
-            <li>
+            <li class="optionIcon">
               <a class="flexIconLink schoolColor" href="{{ url('home/school/students') }}">
-                <img src="/images/icons/app/close.svg" alt="Ver estudiantes">
+                <img src="/images/icons/app/students.svg" alt="Ver estudiantes">
                 <br/>Estudiantes
               </a>
             </li>
-            <li>
-              <a class="flexIconLink schoolColor" href="{{ url('home/school/students') }}">
-                <img src="/images/icons/app/close.svg" alt="Ver profesores">
+            <li class="optionIcon">
+              <a class="flexIconLink schoolColor" href="{{ url('home/school/teachers') }}">
+                <img src="/images/icons/app/teachers.svg" alt="Ver profesores">
                 <br/>Profesores
               </a>
             </li>
-            <li>
+            <li class="optionIcon">
+              <a class="flexIconLink schoolColor" href="{{ url('home/school/post') }}">
+                <img src="/images/icons/app/post.svg" alt="Ver profesores">
+                <br/>Posts
+              </a>
+            </li>
+            <li class="optionIcon">
               <a class="flexIconLink schoolColor" href="{{ url('home/school/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
                 <br/>Eventos
               </a>
             </li>
-            <li>
+            <li class="optionIcon">
               <a class="flexIconLink schoolColor" href="{{ url('home/user/messages') }}">
                 <img src="/images/icons/app/messages.svg" alt="Ver lista de mensajes">
                 <br/>Mensajes
               </a>
-              </li>
+            </li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown userPicture">
           <a class="flexIconLink schoolColor">
-            <img class="userPicture roundPicture" src="{{ Auth::user()->profilePicture  }}" alt="Ver perfil">
+            <img class="roundPicture userPicture" src="{{ Auth::user()->profilePicture  }}" alt="Ver perfil">
             <br/>{{ strtolower(Auth::user()->firstName) }}
           </a>
           @include ('layouts.components.headers.components.profileDropdown', ['color' => 'schoolColor'])
