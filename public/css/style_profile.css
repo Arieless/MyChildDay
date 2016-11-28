@@ -1,7 +1,7 @@
-
-
 .profileContainerMain {
-  color: #3f3f3f;
+  width: 100%;
+  color: white;
+  margin-top: 120px;
 }
 
 .profileTitles h3 {
@@ -11,172 +11,186 @@
 }
 
 .profileTitles h3.main {
-  background-color: red;
+  background-color: rgb(130, 130, 130);
 }
 
 .profileTitles h3.secondary {
   background-color: darkgrey;
 }
 
-/*  <----------------------------------- (INDEX) SECTION INFO GENERAL -------------------------------> */
-
-@media (max-width: 1280px){ /*  <----------------------------------- MAS DE 1280 -------------------------------> */
-
+.profileContainerMain .profileSection {
+  overflow: hidden;
 }
 
-@media (max-width: 550px) {
+.profileContainerMain .profileTitles,
+.profileContainerMain .profileInputs {
+  display: block;
+  float: left;
+}
 
+.profileContainerMain .profileTitles{
+  width: 30%;
+  margin: auto;
+}
+
+.profileContainerMain .profileTitles h3 {
+  padding: 3px 8px 3px 3px;
+}
+
+.profileContainerMain .profileInputs {
+  color: #3f3f3f;
+  width: 70%;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.profileContainerMain .profileInputs .profilePicImgContainer{
+  width: 100px;
+}
+
+.profileContainerMain .profileInputs .profilePicImgContainer img {
+  border-radius: 100%;
+  background: ghostwhite;
+  width: 100px;
+  height: 100px;
+}
+
+.profileContainerMain .profileInputs .profilePicImgContainer img:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}
+
+.profileContainerMain .profileInputs .inputContainer {
+  overflow: hidden;
+}
+
+.profileContainerMain .profileInputs .inputContainer.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.profileContainerMain .profileInputs input.checkbox{
+  margin-top: 13px;
+}
+
+.profileContainerMain .profileInputs .inputContainer.newPassword  {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profileContainerMain .profileInputs label,
+.profileContainerMain .profileInputs input {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.profileContainerMain .profileInputs label{
+  font-weight: bold;
+  float: left;
+  display: block;
+  width: 160px;
+  text-align: left;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.profileContainerMain .profileInputs label.checkbox{
+  margin-left: 10px;
+}
+
+.profileContainerMain .profileInputs input {
+  padding-left: 10px;
+  float: left;
+  color: inherit;
+  border: none;
+}
+
+.profileContainerMain .profileInputs button{
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  min-width: 10%;
+  max-width: 120px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  letter-spacing: 0.5px;
+
+  color: #4CAF50;
+  background-color: transparent;
+  text-transform: uppercase;
+
+  border: none;
+  outline:none;
+  cursor: pointer;
+}
+
+.profileContainerMain .profileInputs button:hover {
+  font-weight: bolder;
+  font-size: 14.2px;
+  color: #3F9643;
+}
+
+.profileContainerMain .profileInputs input:hover {
+  color: black
+}
+
+.profileContainerMain .profileInputs input:active {
+  background-color: lightgrey;
+}
+
+.profileContainerMain .inputError {
+}
+
+
+
+@media (max-width: 1280px){ /*  <----------------------------------- HASTA DE 1280 -------------------------------> */
+  .profileContainerMain {
+
+  }
+
+  .profileContainerMain .profileInputs label{
+    width: 130px;
+    padding-right: 30px;
+}
+
+@media (max-width: 550px) {  /*  <----------HASTA 550  -------------------------------> */
+  .profileContainerMain .profileTitles {
+    width: 100%;
+  }
+  .profileContainerMain .profileInputs {
+    width: 100%;
+  }
+  .profileContainerMain .profileTitles h3 {
+    text-align: center;
+  }
+  .profileContainerMain .profileInputs .profilePicImgContainer  {
+    margin: auto;
+  }
 
 }
 
 @media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+  .profileContainerMain {
 
+  }
 
 }
 
 @media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
-
-
-  .profileContainerMain{
+  .profileContainerMain {
     color: white;
-    width: 100%;
-    height: 100%;
     width: 720px;
-
-    margin-top: 120px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 25%;
+    padding-right: 25%;
   }
 
-  .profileContainerMain .profileSection {
-    overflow: hidden;
-  }
-
-  .profileContainerMain .profileTitles,
-  .profileContainerMain .profileInputs {
-    display: block;
-    float: left;
-  }
-
-  .profileContainerMain .profileTitles{
-    width: 30%;
-    margin: auto;
-  }
-
-  .profileContainerMain .profileTitles h3 {
-    padding: 3px 8px 3px 3px;
-  }
-
-  .profileContainerMain .profileInputs {
-    color: #3f3f3f;
-    width: 70%;
-    margin: auto;
-    padding-top: 40px;
-    padding-bottom: 20px;
-  }
-
-.profileContainerMain .profileInputs .profilePicImgContainer{
-  width: 250px;
-}
-
-  .profileContainerMain .profileInputs .profilePicImgContainer img {
-    border-radius: 100%;
-    background: ghostwhite;
-    width: 250px;
-    height: 250px;
-  }
-
-  .profileContainerMain .profileInputs .profilePicImgContainer img:hover {
-    cursor: pointer;
-    background-color: gainsboro;
-  }
-
-  .profileContainerMain .profileInputs .inputContainer {
-    overflow: hidden;
-  }
-
-  .profileContainerMain .profileInputs .inputContainer.checkbox {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-
-  .profileContainerMain .profileInputs input.checkbox{
-    margin-top: 13px;
-  }
-
-  .profileContainerMain .profileInputs .inputContainer.newPassword  {
-    display: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .profileContainerMain .profileInputs label,
-  .profileContainerMain .profileInputs input {
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-
-  .profileContainerMain .profileInputs label{
-    font-weight: bold;
-    float: left;
-    display: block;
-    width: 160px;
-    text-align: left;
-    white-space: nowrap;
-    padding-right: 10px;
-  }
-
-  .profileContainerMain .profileInputs label.checkbox{
-    padding-left: 10px;
-  }
-
-  .profileContainerMain .profileInputs input {
-    padding-left: 10px;
-    float: left;
-    color: inherit;
-    border: none;
-  }
-
-  .profileContainerMain .profileInputs button{
-    display: block;
-    margin: auto;
-    padding: 10px 20px;
-    min-width: 10%;
-    max-width: 120px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-
-    text-align: center;
-
-    font-weight: bold;
-
-    letter-spacing: 0.5px;
-
-    color: #4CAF50;
-    background-color: transparent;
-    text-transform: uppercase;
-
-    border: none;
-    outline:none;
-    cursor: pointer;
-  }
-
-  .profileContainerMain .profileInputs button:hover {
-    font-weight: bolder;
-    font-size: 14.2px;
-    color: #3F9643;
-  }
-
-  .profileContainerMain .profileInputs input:hover {
-    color: black
-  }
-
-  .profileContainerMain .profileInputs input:active {
-    background-color: lightgrey;
-  }
-
-  .profileContainerMain .inputError {
-  }
 
 }
