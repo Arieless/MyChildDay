@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddPostTypeIdColumn' => $baseDir . '/database/migrations/2016_11_20_191724_add_post-type_id_column.php',
-    'AddProfilePicColumnToUsersTable' => $baseDir . '/database/migrations/2016_11_26_212455_AddProfilePicColumnToUsersTable.php',
     'AddSchoolIdColumn' => $baseDir . '/database/migrations/2016_11_20_190041_add_school_id_column.php',
     'CreateKidRoomTable' => $baseDir . '/database/migrations/2016_11_20_192742_create_kid_room_table.php',
     'CreateKidsTable' => $baseDir . '/database/migrations/2016_11_19_054447_create_kids_table.php',
@@ -93,6 +92,8 @@ return array(
     'Hamcrest\\Type\\IsString' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+    'Kid_RoomTableSeeder' => $baseDir . '/database/seeds/Kid_RoomTableSeeder.php',
+    'KidsTableSeeder' => $baseDir . '/database/seeds/KidsTableSeeder.php',
     'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
@@ -468,6 +469,11 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'Post_KidTableSeeder' => $baseDir . '/database/seeds/Post_KidTableSeeder.php',
+    'PostsTableSeeder' => $baseDir . '/database/seeds/PostsTableSeeder.php',
+    'PosttypesTableSeeder' => $baseDir . '/database/seeds/PosttypesTableSeeder.php',
+    'Room_SchoolTableSeeder' => $baseDir . '/database/seeds/Room_SchoolTableSeeder.php',
+    'RoomsTableSeeder' => $baseDir . '/database/seeds/RoomsTableSeeder.php',
     'SchoolsTableSeeder' => $baseDir . '/database/seeds/SchoolsTableSeeder.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
@@ -550,5 +556,7 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'User_KidTableSeeder' => $baseDir . '/database/seeds/User_KidTableSeeder.php',
+    'User_RoomTableSeeder' => $baseDir . '/database/seeds/User_RoomTableSeeder.php',
     'UsersTableSeeder' => $baseDir . '/database/seeds/UsersTableSeeder.php',
 );

@@ -33,7 +33,7 @@ class Kid extends Model
   }
 
   public function taggedIn() {
-    return $this->belongsToMany(Post::class, 'post_kid', 'kid_id', 'post_id')
+    return $this->belongsToMany(Post::class, 'post_kid', 'kid_id', 'post_id');
   }
 
 }

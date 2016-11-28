@@ -11,51 +11,57 @@
 |
 */
 
-$factory->define('App\User', function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'first-name' => $faker->firstName,
-        'last-name' => $faker->lastName,
+        'firstName' => $faker->firstName,
+        'lastName' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         'address' => $faker->secondaryAddress,
         'phone' => '1165578099',
+        'profilePicture' => url('/images/users/avatars/default_avatar_'.rand(0,20).'.svg'),
         'password' => '123456789a',
-        'profilePicture' => url('/images/users/avatars/default_avatar_'.rand(0,20).'.svg');
         'remember_token' => str_random(10),
     ];
 });
+$factory->define(App\School::class, function (Faker\Generator $faker) {
+  return [
+    'name' => $faker->country,
+    'address' => $faker->secondaryAddress,
+    'telephone' => '1165578099',
+    'email' => $faker->email,
+    'user_id' => App\User::all()->random()->id,
+  ];
+});
 $factory->define(App\Kid::class, function (Faker\Generator $faker) {
     return [
-        'first-name' => $faker->firstName,
-        'last-name' => $faker->lastName,
+        'firstName' => $faker->firstName,
+        'lastName' => $faker->lastName,
         'birthdate' => $faker->date($format = 'd-m-Y', $max = 'now'),
-        'description' =>$faker->text,
-        'profile-picture' =>$faker->imageUrl($width = 640, $height = 480),
-    ];
-});
-$factory->define('App\School', function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->country,
-        'address' => $faker->secondaryAddress,
-        'telephone' => '1165578099',
-        'email' => $faker->email,
-        'user_id' => $
+        'description' => $faker->text,
+        'profilePicture' => $faker->imageUrl($width = 640, $height = 480),
+        'school_id' => App\School::all()->random()->id,
     ];
 });
 $factory->define(App\Room::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->city,
+        'school_id' => App\School::all()->random()->id,
     ];
+});
+$factory->define(App\Posttype::class, function (Faker\Generator $faker) {
+  return [
+    'type' => $faker->word,
+  ];
 });
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
-        'content' => $faker->text,
-        'postType_id' => 1;
-    ];
-});
-$factory->define(App\PostType::class, function (Faker\Generator $faker) {
-    return [
-        'content' => $faker->text,
+        'contentText' => $faker->text,
+        'postType_id' => 1,
+        'user_id' => App\User::all()->random()->id,
+        'school_id' => App\School::all()->random()->id,
+        'room_id' => App\Room::all()->random()->id,
+        'postType_id' => App\Posttype::all()->random()->id,
     ];
 });
