@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName', 'lastName', 'email', 'address', 'phone', 'password', 'profilePicture'
+        'firstName', 'lastName', 'email', 'address', 'phone', 'profilePicture', 'password'
     ];
 
     /**
@@ -27,7 +27,22 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function kids() {
-        return $this->hasMany('App\Kids');
+    public function hasKids(){
+      return $this->kids()->count() > 0? true : false;
     }
+
+    public function kids() {
+        return $this->belongsToMany(Class::Kid, 'user_kid', 'user_id', 'kid_id');
+    }
+
+    public function isTeacher () {
+      return ($this->teacherRol > 0 && $this->teacherInRooms().count() > 0) true : false;
+    }
+
+    public function teacherInRooms () {
+
+        return $this->belongsToMany(Class::Room; 'user_room', 'user_id', 'room_id');
+    }
+
+
 }

@@ -1,10 +1,16 @@
 
+body {
+    background-color: #4140a0;
+}
+
 .profileContainerMain {
   color: white;
   margin: auto;
 
   padding-top: 20px;
   margin-top: 70px;
+
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .profileTitles h3 {
@@ -14,11 +20,11 @@
 }
 
 .profileTitles h3.main {
-  background-color: rgba(55, 55, 55, 0.5);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .profileTitles h3.secondary {
-  background-color: rgba(55, 55, 55, 0.2);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .profileContainerMain .profileSection {
@@ -41,7 +47,7 @@
 }
 
 .profileContainerMain .profileInputs {
-  color: #3f3f3f;
+  color: white;
   width: 70%;
   margin: auto;
   padding-top: 40px;
@@ -50,19 +56,38 @@
 
 .profileContainerMain .profileInputs .profilePicImgContainer{
   width: 100px;
+  height: 100px;
+  margin: auto;
+  background-color: ghostwhite;
+  border-radius: 50%;
+}
+.profileContainerMain .profileInputs .fakeSelectFile{
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: inline-text;
+  margin-top: 10px;
+  cursor: pointer;
+  cursor: hand;
 }
 
 .profileContainerMain .profileInputs .profilePicImgContainer img {
   border-radius: 100%;
-  background: ghostwhite;
   width: 100px;
   height: 100px;
+
+}
+
+.profileContainerMain .profileInputs .profilePicInput{
+  display: none;
 }
 
 .profileContainerMain .profileInputs .profilePicImgContainer img:hover {
   cursor: pointer;
+  cursor: hand;
   filter: brightness(90%);
 }
+
 
 .profileContainerMain .profileInputs .inputContainer {
   overflow: hidden;
@@ -76,6 +101,7 @@
 
 .profileContainerMain .profileInputs input.checkbox{
   margin-top: 13px;
+  width: 10%;
 }
 
 .profileContainerMain .profileInputs .inputContainer.newPassword  {
@@ -91,13 +117,14 @@
 }
 
 .profileContainerMain .profileInputs label{
-  font-weight: bold;
   float: left;
   display: block;
   width: 160px;
   text-align: left;
   white-space: nowrap;
   margin-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .profileContainerMain .profileInputs label.checkbox{
@@ -105,10 +132,34 @@
 }
 
 .profileContainerMain .profileInputs input {
-  padding-left: 10px;
+  width: calc(100% - 180px);
   float: left;
-  color: inherit;
-  border: none;
+  color: #dddddd;
+  box-sizing: border-box;
+  border: 1px solid  rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.05);
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 20px;
+  padding-left: 10px;
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.profileContainerMain .profileInputs input:hover {
+  color: black
+}
+
+.profileContainerMain .profileInputs input:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profileContainerMain .profileInputs input:focus{
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
 .profileContainerMain .update {
@@ -130,11 +181,16 @@
 
   letter-spacing: 0.5px;
 
-  color: #4CAF50;
-  background-color: transparent;
+  color: white;
+  background-color: #4CAF50;
   text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 
   border: none;
+  border-radius: 3px;
+  box-shadow: 0px 2px #3F9643;
   outline:none;
   cursor: pointer;
 
@@ -144,19 +200,16 @@
 .profileContainerMain .update button:hover {
   font-weight: bolder;
   font-size: 14.2px;
-  color: #3F9643;
-}
-
-.profileContainerMain .profileInputs input:hover {
-  color: black
-}
-
-.profileContainerMain .profileInputs input:active {
-  background-color: lightgrey;
+  background-color: #3F9643;
+  box-shadow: none;
 }
 
 .profileContainerMain .inputError {
-
+  color: #bb6767;
+  font-size: 14px;
+  text-align: right;
+  font-weight: 400;
+  margin-right: 10%;
 }
 
 
@@ -185,6 +238,10 @@
   .profileContainerMain .profileInputs .profilePicImgContainer  {
     margin: auto;
   }
+  .profileContainerMain .profileSection .profileInputs .profilePicInput {
+    width: 155px;
+    margin-left: 35%;
+  }
 
 }
 
@@ -192,6 +249,9 @@
 
   .profileContainerMain .profileInputs input {
     width: 100%;
+  }
+  .profileContainerMain .profileSection .profileInputs .profilePicInput {
+    margin-left: 25%;
   }
 
 }
