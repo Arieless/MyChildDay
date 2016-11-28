@@ -6,7 +6,7 @@
 
 
 <div class="profileContainerMain">
-    <form class="userUpdateInfoForm" id="userUpdateInfoForm" role="form" method="POST" enctype="multipart/form-data" action="{{ url('/home/profile/edit/update') }}">
+    <form class="userUpdateInfoForm" id="userUpdateInfoForm" role="form" method="POST" enctype="multipart/form-data" action="{{ url('home/profile/edit/user') }}">
 
     <section class="profileSection">
       <header class="profileTitles">
@@ -107,9 +107,12 @@
         <h3 class="secondary">FOTO</h3>
       </header>
       <article class="profileInputs">
+
+        
           <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
             <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
           </div>
+          <div id="fakeSelectFile" class="fakeSelectFile">Select a file</div>
           <input id="profilePicInput" type="file" class="profilePicInput">
       </article>
     </section>
@@ -174,7 +177,7 @@
         </div>
       </article>
     </section>
-    
+
     <div class="update">
         <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>ACTUALIZAR</strong></button>
     </div>
@@ -184,6 +187,12 @@
 </div>
 
 <script>
+
+window.addEventListener('load', function (evt){
+  document.getElementById('fakeSelectFile').addEventListener('click', function (evt){
+    document.getElementById('profilePicInput').click();
+  });
+});
 
 window.addEventListener('load', function (evt) {
   var updateInfoInputs = document.querySelectorAll('form.userUpdateInfoForm input');

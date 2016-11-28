@@ -21,6 +21,7 @@ $factory->define('App\User', function (Faker\Generator $faker) {
         'address' => $faker->secondaryAddress,
         'phone' => '1165578099',
         'password' => '123456789a',
+        'profilePicture' => url('/images/users/avatars/default_avatar_'.rand(0,20).'.svg');
         'remember_token' => str_random(10),
     ];
 });
@@ -39,6 +40,7 @@ $factory->define('App\School', function (Faker\Generator $faker) {
         'address' => $faker->secondaryAddress,
         'telephone' => '1165578099',
         'email' => $faker->email,
+        'user_id' => $
     ];
 });
 $factory->define(App\Room::class, function (Faker\Generator $faker) {
@@ -49,6 +51,7 @@ $factory->define(App\Room::class, function (Faker\Generator $faker) {
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
         'content' => $faker->text,
+        'postType_id' => 1;
     ];
 });
 $factory->define(App\PostType::class, function (Faker\Generator $faker) {
