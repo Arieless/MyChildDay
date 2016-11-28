@@ -28,7 +28,7 @@
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink parentColor" href="{{ url('home/school/calendar') }}">
+              <a class="flexIconLink parentColor" href="{{ url('home/parent/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
                 <br/>Eventos
               </a>

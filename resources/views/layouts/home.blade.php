@@ -12,7 +12,7 @@
       <link rel="stylesheet" type="text/css" href="/css/style_loggedBar.css">
       <link rel="stylesheet" type="text/css" href="/css/style_loggedBar_dropdown.css">
 
-      <link rel="stylesheet" type="text/css" href="/css/style_footer.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_footerLogged.css">
 
       <link rel="stylesheet" type="text/css" href="/css/style_rols.css">
       <link rel="stylesheet" type="text/css" href="/css/style_profile.css">

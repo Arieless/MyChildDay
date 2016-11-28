@@ -22,25 +22,25 @@
         <li>
           <ul class="flexList center">
             <li class="optionIcon">
-              <a class="flexIconLink teacherColor" href="{{ url('home/parent/feed') }}">
+              <a class="flexIconLink teacherColor" href="{{ url('home/teacher/feed') }}">
                 <img src="/images/icons/app/feed.svg" alt="Ver noticias">
                 <br/>Novedades
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink teacherColor" href="{{ url('home/school/students') }}">
+              <a class="flexIconLink teacherColor" href="{{ url('home/teacher/students') }}">
                 <img src="/images/icons/app/students.svg" alt="Ver estudiantes">
                 <br/>Estudiantes
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink teacherColor" href="{{ url('home/user/post') }}">
+              <a class="flexIconLink teacherColor" href="{{ url('home/teacher/post') }}">
                 <img src="/images/icons/app/post.svg" alt="Ver calendario">
                 <br/>Posteo
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink teacherColor" href="{{ url('home/user/calendar') }}">
+              <a class="flexIconLink teacherColor" href="{{ url('home/school/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
                 <br/>Eventos
               </a>
