@@ -279,7 +279,6 @@ class ComposerStaticInitc39e87c4ba098e01dfd797c15aa8f0d5
 
     public static $classMap = array (
         'AddPostTypeIdColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_191724_add_post-type_id_column.php',
-        'AddProfilePicColumnToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_26_212455_AddProfilePicColumnToUsersTable.php',
         'AddSchoolIdColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_190041_add_school_id_column.php',
         'CreateKidRoomTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_192742_create_kid_room_table.php',
         'CreateKidsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_054447_create_kids_table.php',
@@ -365,6 +364,8 @@ class ComposerStaticInitc39e87c4ba098e01dfd797c15aa8f0d5
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Kid_RoomTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Kid_RoomTableSeeder.php',
+        'KidsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/KidsTableSeeder.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
@@ -740,6 +741,11 @@ class ComposerStaticInitc39e87c4ba098e01dfd797c15aa8f0d5
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'Post_KidTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Post_KidTableSeeder.php',
+        'PostsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PostsTableSeeder.php',
+        'PosttypesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PosttypesTableSeeder.php',
+        'Room_SchoolTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Room_SchoolTableSeeder.php',
+        'RoomsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RoomsTableSeeder.php',
         'SchoolsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SchoolsTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
@@ -822,6 +828,8 @@ class ComposerStaticInitc39e87c4ba098e01dfd797c15aa8f0d5
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'User_KidTableSeeder' => __DIR__ . '/../..' . '/database/seeds/User_KidTableSeeder.php',
+        'User_RoomTableSeeder' => __DIR__ . '/../..' . '/database/seeds/User_RoomTableSeeder.php',
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
     );
 

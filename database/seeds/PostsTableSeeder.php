@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SchoolsTableSeeder extends Seeder
+class PostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class SchoolsTableSeeder extends Seeder
      */
       public function run()
       {
-        factory(App\School::class, 10)->create();
+          factory(App\Post::class, 10)->create();
       }
 }

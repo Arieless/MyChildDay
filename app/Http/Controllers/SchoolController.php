@@ -12,18 +12,9 @@ class SchoolController extends Controller
       return view ('private.feed.school');
   }
 
-  /*
-
-  function editSchoolTemp () {
-
-    return view('private.profile.edit.school');
-  }
-
   function editSchool () {
-
       return view ('private.profile.edit.school');
   }
 
-  */
 
 }

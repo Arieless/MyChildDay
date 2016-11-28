@@ -42,5 +42,5 @@ Route::group(['middleware' => ['auth']], function(){ // auth pages goes here
     Route::get('/home/teacher/post', 'TeacherController@post');
     // Route::group(['middleware' => ['auth', 'authSchool']], function(){}
     Route::get('/home/school/feed', 'SchoolController@feed');
-    Route::get('/home/profile/edit/school', 'ProfileController@editSchoolTemp');
+    Route::get('/home/profile/edit/school', 'SchoolController@editSchool');
 });
