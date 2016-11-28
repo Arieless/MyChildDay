@@ -1,25 +1,25 @@
-.dropdown {
+.loggedBar nav .dropdown {
   cursor: pointer;
   cursor: hand;
 }
 
-.dropdown {
+.loggedBar nav .dropdown {
   position: relative;
   width: 100px;
 }
 
-.dropdown a{
+.loggedBar nav .dropdown a{
   width: 100%;
 }
 
-.dropdown-content {
+.loggedBar nav .dropdown-content {
     position: absolute;
     top: 72px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     overflow: hidden;
 }
 
-.dropdown-content li h5 {
+.loggedBar nav .dropdown-content li h5 {
   white-space: nowrap;
   font-size: 12px;
   line-height: 20px;
@@ -28,82 +28,83 @@
   text-align: center;
 }
 
-.dropdown-content li  {
+.loggedBar nav .dropdown-content li  {
   height: 70px;
 }
 
-.dropdown-content li.parentColor img,
-.dropdown-content li.schoolColor img,
-.dropdown-content li.teacherColor img{
-  filter: brightness(100%);
-}
-.dropdown-content li.neutralColor img {
-  filter: brightness(140%);
-}
-
-.dropdown-content li.parentColor:hover img,
-.dropdown-content li.schoolColor:hover img,
-.dropdown-content li.teacherColor:hover img{
-  filter: brightness(140%);
-}
-.dropdown-content li.neutralColor:hover img {
+.loggedBar nav .dropdown-content li.parentColor img,
+.loggedBar nav .dropdown-content li.schoolColor img,
+.loggedBar nav .dropdown-content li.teacherColor img{
   filter: brightness(100%);
 }
 
-.dropdown-content li.parentColor:hover img,
-.dropdown-content li.schoolColor:hover img,
-.dropdown-content li.teacherColor:hover img{
+.loggedBar nav .dropdown-content li.neutralColor img {
+  filter: brightness(140%);
+}
+
+.loggedBar nav .dropdown-content li.parentColor:hover img,
+.loggedBar nav .dropdown-content li.schoolColor:hover img,
+.loggedBar nav .dropdown-content li.teacherColor:hover img{
+  filter: brightness(140%);
+}
+.loggedBar nav .dropdown-content li.neutralColor:hover img {
+  filter: brightness(100%);
+}
+
+.loggedBar nav .dropdown-content li.parentColor:hover img,
+.loggedBar nav .dropdown-content li.schoolColor:hover img,
+.loggedBar nav .dropdown-content li.teacherColor:hover img{
   color: white;
 }
 
-.dropdown-content li.neutralColor:hover h5 {
+.loggedBar nav .dropdown-content li.neutralColor:hover h5 {
   color: #1F1F1F
 }
 
-.dropdown-content li.parentColor:hover h5,
-.dropdown-content li.schoolColor:hover h5,
-.dropdown-content li.teacherColor:hover h5{
+.loggedBar nav .dropdown-content li.parentColor:hover h5,
+.loggedBar nav .dropdown-content li.schoolColor:hover h5,
+.loggedBar nav .dropdown-content li.teacherColor:hover h5{
   color: white;
 }
 
-.dropdown-content.neutralColor {
+.loggedBar nav .dropdown-content.neutralColor {
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: solid 1px lightgrey;
 }
 
-.dropdown-content.parentColor {
+.loggedBar nav .dropdown-content.parentColor {
   background-color: rgba(9, 111, 125, 1);
 }
 
-.dropdown-content.schoolColor {
+.loggedBar nav .dropdown-content.schoolColor {
   background-color: rgba(44, 22, 97, 1)
 }
 
-.dropdown-content.teacherColor {
+.loggedBar nav .dropdown-content.teacherColor {
   background-color: rgba(226, 18, 49, 1);
 }
 
-.dropdown-content {
+.loggedBar nav .dropdown-content {
     display: none;
 }
 
-.dropdown-content img {
+.loggedBar nav .dropdown-content img {
   display: block;
   margin: auto;
 }
 
 @media (min-width: 620px){
-  .dropdown-content img{
+  .loggedBar nav .dropdown-content img{
     height: 35px;
   }
 }
 @media (max-width: 620px){
-  .dropdown-content img{
+  .loggedBar nav .dropdown-content img{
     height: 28px;
   }
 }
 
-.dropdown-content .navButton {
+.loggedBar nav .dropdown-content .navButton {
   color: #24ABA6;
   width: 100%;
   padding-top: 5px;
