@@ -1,7 +1,10 @@
+
 .profileContainerMain {
-  width: 100%;
   color: white;
-  margin-top: 120px;
+  margin: auto;
+
+  padding-top: 20px;
+  margin-top: 70px;
 }
 
 .profileTitles h3 {
@@ -11,11 +14,11 @@
 }
 
 .profileTitles h3.main {
-  background-color: rgb(130, 130, 130);
+  background-color: rgba(55, 55, 55, 0.5);
 }
 
 .profileTitles h3.secondary {
-  background-color: darkgrey;
+  background-color: rgba(55, 55, 55, 0.2);
 }
 
 .profileContainerMain .profileSection {
@@ -108,7 +111,12 @@
   border: none;
 }
 
-.profileContainerMain .profileInputs button{
+.profileContainerMain .update {
+  padding: 30px;
+  overflow: hidden;
+}
+
+.profileContainerMain .update button{
   display: block;
   margin: auto;
   padding: 10px 20px;
@@ -118,7 +126,6 @@
   font-size: 14px;
 
   text-align: center;
-
   font-weight: bold;
 
   letter-spacing: 0.5px;
@@ -130,9 +137,11 @@
   border: none;
   outline:none;
   cursor: pointer;
+
+  float: right;
 }
 
-.profileContainerMain .profileInputs button:hover {
+.profileContainerMain .update button:hover {
   font-weight: bolder;
   font-size: 14.2px;
   color: #3F9643;
@@ -147,21 +156,23 @@
 }
 
 .profileContainerMain .inputError {
+
 }
 
 
 
 @media (max-width: 1280px){ /*  <----------------------------------- HASTA DE 1280 -------------------------------> */
-  .profileContainerMain {
-
-  }
 
   .profileContainerMain .profileInputs label{
     width: 130px;
     padding-right: 30px;
+  }
+
 }
 
 @media (max-width: 550px) {  /*  <----------HASTA 550  -------------------------------> */
+
+
   .profileContainerMain .profileTitles {
     width: 100%;
   }
@@ -177,20 +188,23 @@
 
 }
 
-@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
-  .profileContainerMain {
+@media (max-width: 350px){
 
+  .profileContainerMain .profileInputs input {
+    width: 100%;
   }
 
 }
 
-@media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+
+}
+
+@media (min-width: 550px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+
   .profileContainerMain {
     color: white;
-    width: 720px;
-    padding-left: 25%;
-    padding-right: 25%;
+    width: 550px;
   }
-
 
 }

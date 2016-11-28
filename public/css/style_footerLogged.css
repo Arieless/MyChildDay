@@ -1,0 +1,45 @@
+.loggedFooter  {
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  background-color: #1F1F1F;
+  width: 100%;
+  color: white;
+  clear: both;
+}
+
+.loggedFooter .mainFooterNav p {
+  float: right;
+  padding-top: 20px;
+  padding-bottom: 2px;
+  font-size: 10px;
+}
+
+@media (max-width: 1280px){
+
+  .loggedFooter {
+    height: 40px;
+  }
+
+  .loggedFooter .mainFooterNav {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+}
+
+@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+
+}
+
+
+@media (min-width: 1280px) {
+
+  .loggedFooter {
+    height: 35px;
+  }
+
+  .loggedFooter .mainFooterNav {
+    width: 1200px;
+    margin: auto;
+  }
+}

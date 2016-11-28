@@ -5,28 +5,33 @@
 
 .dropdown {
   position: relative;
+  width: 100px;
+}
+
+.dropdown a{
+  width: 100%;
 }
 
 .dropdown-content {
     position: absolute;
-    top: 59px;
-
+    top: 72px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
-    padding-top: 5px;
-    padding-bottom: 5px;
-
     overflow: hidden;
 }
 
 .dropdown-content li h5 {
   white-space: nowrap;
   font-size: 12px;
-  line-height: 20px; /* SHOULD BE THE SAME *1 */
+  line-height: 20px;
   width: 100%;
   color: lightgrey;
   text-align: center;
 }
+
+.dropdown-content li  {
+  height: 70px;
+}
+
 .dropdown-content li.parentColor img,
 .dropdown-content li.schoolColor img,
 .dropdown-content li.teacherColor img{
@@ -67,15 +72,15 @@
 }
 
 .dropdown-content.parentColor {
-  background-color: rgba(36, 171, 166, 0.95);
+  background-color: rgba(9, 111, 125, 1);
 }
 
 .dropdown-content.schoolColor {
-  background-color: rgba(44, 22, 97, 0.95)
+  background-color: rgba(44, 22, 97, 1)
 }
 
 .dropdown-content.teacherColor {
-  background-color: rgba(253, 52, 56, 0.95);
+  background-color: rgba(226, 18, 49, 1);
 }
 
 .dropdown-content {
@@ -87,9 +92,19 @@
   margin: auto;
 }
 
+@media (min-width: 620px){
+  .dropdown-content img{
+    height: 35px;
+  }
+}
+@media (max-width: 620px){
+  .dropdown-content img{
+    height: 28px;
+  }
+}
+
 .dropdown-content .navButton {
   color: #24ABA6;
-  display: block;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
