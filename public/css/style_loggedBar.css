@@ -1,10 +1,17 @@
 .loggedBar {
   width: 100%;
   height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  clear: both;
+  box-shadow: 6px 0px 5px #888888;
 }
 
 .loggedBar.neutralColor {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: white;
   border-bottom: solid 1px lightgrey;
 }
 
@@ -48,11 +55,11 @@
 }
 
 .loggedBar nav .navFlexContainer .flexList li .flexIconLink.neutralColor{
-  color: darkgrey;
+  color: lightgrey;
 }
 
 .loggedBar nav .navFlexContainer .flexList li .flexIconLink.neutralColor:hover {
-  color: #1F1F1F
+  color: white;
 }
 
 .loggedBar nav .navFlexContainer .flexList li .flexIconLink.parentColor:hover,
