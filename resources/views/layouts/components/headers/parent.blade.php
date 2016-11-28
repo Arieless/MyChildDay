@@ -19,26 +19,26 @@
               <img class="logo" src="/images/logoWhite.svg" alt="logotype" />
             </a>
         </li>
-        <li class="optionIcon">
+        <li>
           <ul class="flexList center">
-            <li>
+            <li class="optionIcon">
               <a class="flexIconLink parentColor" href="{{ url('home/parent/feed') }}">
                 <img src="/images/icons/app/feed.svg" alt="Ver noticias">
                 <br/>Novedades
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink parentColor" href="{{ url('home/user/calendar') }}">
+              <a class="flexIconLink parentColor" href="{{ url('home/school/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
                 <br/>Eventos
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink parentColor" href="{{ url('home/parent/messages') }}">
+              <a class="flexIconLink parentColor" href="{{ url('home/user/messages') }}">
                 <img src="/images/icons/app/messages.svg" alt="Ver lista de mensajes">
-                <br/>Mensajes privados
+                <br/>Mensajes
               </a>
-              </li>
+            </li>
           </ul>
         </li>
         <li class="dropdown userPicture">
