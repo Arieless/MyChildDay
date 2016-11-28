@@ -22,10 +22,10 @@ class School extends Model
    */
   public function owner() {
 
-    return $this->belongsTo(Class::User, 'user_id');
+    return $this->belongsTo(User::class, 'user_id');
   }
 
   public function rooms () {
-    return $this->hasMany(Class::Room, 'school_id');  }
+    return $this->hasMany(Room::class, 'school_id');  }
 
 }

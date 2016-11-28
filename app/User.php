@@ -32,16 +32,16 @@ class User extends Authenticatable
     }
 
     public function kids() {
-        return $this->belongsToMany(Class::Kid, 'user_kid', 'user_id', 'kid_id');
+        return $this->belongsToMany(Kid::class, 'user_kid', 'user_id', 'kid_id');
     }
 
     public function isTeacher () {
-      return ($this->teacherRol > 0 && $this->teacherInRooms().count() > 0) true : false;
+      return ($this->teacherRol > 0 && $this->teacherInRooms().count() > 0)? true : false;
     }
 
     public function teacherInRooms () {
 
-        return $this->belongsToMany(Class::Room; 'user_room', 'user_id', 'room_id');
+        return $this->belongsToMany(Room::class, 'user_room', 'user_id', 'room_id');
     }
 
 
