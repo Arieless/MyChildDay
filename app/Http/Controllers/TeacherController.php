@@ -12,4 +12,8 @@ class TeacherController extends Controller
       return view ('private.feed.teacher');
   }
 
+  function post () {
+      return view ('private.post.teacher');
+  }
+
 }
