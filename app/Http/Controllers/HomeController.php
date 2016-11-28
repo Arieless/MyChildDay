@@ -23,7 +23,7 @@ class HomeController extends Controller
           if (Auth::user()->teacherRol) return view ('private.feed.teacher');
 
         }else if ($numberOfRols > 1){
-
+          
           return view('private.rol.login');
         }
 

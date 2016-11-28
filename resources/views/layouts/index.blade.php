@@ -48,7 +48,7 @@
 
     <!-- FOOTER -->
 
-    @include('layouts.components.footers.home')
+    @include('layouts.components.footers.index')
 
   </body>
   </html>

@@ -94,7 +94,7 @@
             @endif
 
           </p>
-          <label for="phone">Telefono de contacto</label>
+          <label for="phone">Telefono</label>
           <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
         </div>
 
@@ -172,12 +172,12 @@
           <label for="password-confirm">Verificacion <br/>de contraseña:</label>
           <input type="password" id="password-confirm" placeholder="Ingrese su nueva contraseña" name="password-confirm" required/>
         </div>
-
-        <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>ACTUALIZAR</strong></button>
-
-
       </article>
     </section>
+    
+    <div class="update">
+        <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>ACTUALIZAR</strong></button>
+    </div>
 
   </form>
 

@@ -5,9 +5,9 @@
     </a>
     <div class="navFlexContainer" style="width: auto; float: right;">
       <ul class="flexList spaceAround">
-        <li class="dropdown">
+        <li class="dropdown userPicture">
           <a class="flexIconLink neutralColor">
-            <img class="userPicture roundPicture" src="{{ Auth::user()->profilePicture }}" alt="Ver lista de mensajes">
+            <img class="roundPicture userPicture" src="{{ Auth::user()->profilePicture }}" alt="Ver lista de mensajes">
             <br/>{{ strtolower(Auth::user()->firstName) }}
           </a>
           @include ('layouts.components.headers.components.profileDropdown', ['color' => 'neutralColor'])
