@@ -10,19 +10,19 @@ class Post extends Model
     protected $fillable = ['contentText'];
 
     public function user() {
-      return $this->belongsTo(Class::User, 'user_id');
+      return $this->belongsTo(User::class, 'user_id');
     }
 
     public function school() {
-      return $this->belongsTo(Class::School, 'school_id');
+      return $this->belongsTo(School::class, 'school_id');
     }
 
     public function postType () {
-      return $this->hasOne(Class::Posttype, 'posttype_id');
+      return $this->hasOne(Posttype::class, 'posttype_id');
     }
 
     public function tagged () {
-      return $this->belongsToMany(Class::Kid, 'post_kid', 'post_id', 'kid_id');
+      return $this->belongsToMany(Kid::class, 'post_kid', 'post_id', 'kid_id');
     }
 
     public function lastTen($query) {

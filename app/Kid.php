@@ -21,19 +21,19 @@ class Kid extends Model
    * @var array
    */
   public function school() {
-    return $this->belongsTo(Class::School, 'school_id');
+    return $this->belongsTo(School::class, 'school_id');
   }
 
   public function room() {
-    return $this->belongsToMany(Class::Room, 'kid_room', 'kid_id', 'room_id');
+    return $this->belongsToMany(Room::class, 'kid_room', 'kid_id', 'room_id');
   }
 
   public function guardians () {
-    return $this->belongsToMany(Class::Users, 'user_kids', 'kid_id', 'user_id');
+    return $this->belongsToMany(Users::class, 'user_kids', 'kid_id', 'user_id');
   }
 
   public function taggedIn() {
-    return $this->belongsToMany(Class::Post, 'post_kid', 'kid_id', 'post_id')
+    return $this->belongsToMany(Post::class, 'post_kid', 'kid_id', 'post_id')
   }
 
 }

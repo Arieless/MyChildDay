@@ -21,7 +21,7 @@ class Room extends Model
    * @var array
    */
   public function school() {
-    return $this->belongsTo(Class::School, 'school_id');
+    return $this->belongsTo(School::class, 'school_id');
   }
 
 }
