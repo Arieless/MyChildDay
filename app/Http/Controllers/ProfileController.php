@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
+use Validator;
 
 class ProfileController extends Controller
 {
@@ -30,11 +32,10 @@ class ProfileController extends Controller
         return Validator::make($data, [
             'firstName' => 'required|max:255',
             'lastName' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
             'address' => 'required|max:255',
             'phone' => 'required|max:255',
-            'password_confirmation' => 'required',
             'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required',
         ]);
     }
 
@@ -44,7 +45,6 @@ class ProfileController extends Controller
 
       $user->firstName = $data['firstName'];
       $user->lastName = $data['lastName'];
-      $user->email = $data['email'];
       $user->address = $data['address'];
       $user->phone = $data['phone'];
       $user->password = bcrypt($data['password']);
