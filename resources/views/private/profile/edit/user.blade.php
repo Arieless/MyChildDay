@@ -133,21 +133,42 @@
           <label class="checkbox" for="change-password">Quiero cambiar mi contraseña</label>
         </div>
 
+
+
         <div class="inputContainer newPassword">
-          <p class="inputError" id="new-passwordError">
+          <div class="inputContainer">
+            <p class="inputError" id="new-passwordError">
 
-            @if (isset($errors))
-              @if ($errors->has('new-password'))
-                @foreach ($errors->get('new-password') as $message)
-                    {{ $message }} <br/>
-                @endforeach
+              @if (isset($errors))
+                @if ($errors->has('new-password'))
+                  @foreach ($errors->get('new-password') as $message)
+                      {{ $message }} <br/>
+                  @endforeach
+                @endif
               @endif
-            @endif
 
-          </p>
-          <label for="new-password">Nueva contraseña:</label>
-          <input type="password" id="new-password" placeholder="Ingrese su nueva contraseña" name="new-password"/>
+            </p>
+            <label for="new-password">Nueva contraseña:</label>
+            <input type="password" id="new-password" placeholder="Ingrese su nueva contraseña" name="new-password"/>
+          </div>
+
+          <div class="inputContainer">
+            <p class="inputError" id="password-confirmError">
+
+              @if (isset($errors))
+                @if ($errors->has('new-password-confirm'))
+                  @foreach ($errors->get('password-confirm') as $message)
+                      {{ $message }} <br/>
+                  @endforeach
+                @endif
+              @endif
+
+            </p>
+            <label for="password-confirm">Verificacion de su <br/> nueva contraseña:</label>
+            <input type="password" id="password-confirm" placeholder="Ingrese su nueva contraseña" name="new-password_confirmation" />
+          </div>
         </div>
+
 
         <div class="inputContainer">
           <p class="inputError" id="passwordError">
@@ -161,25 +182,11 @@
             @endif
 
           </p>
-          <label for="password">Contraseña:</label>
+          <label id="passwordLabel" for="password">Contraseña:</label>
           <input type="password" id="password" placeholder="Ingrese su contraseña" name="password" required/>
         </div>
 
-        <div class="inputContainer">
-          <p class="inputError" id="password-confirmError">
 
-            @if (isset($errors))
-              @if ($errors->has('password-confirm'))
-                @foreach ($errors->get('password-confirm') as $message)
-                    {{ $message }} <br/>
-                @endforeach
-              @endif
-            @endif
-
-          </p>
-          <label for="password-confirm">Verificacion <br/>de contraseña:</label>
-          <input type="password" id="password-confirm" placeholder="Ingrese su nueva contraseña" name="password-confirm" required/>
-        </div>
       </article>
     </section>
 
@@ -191,6 +198,38 @@
 
 </div>
 
+
+
+
+<!--  Show input to change password -->
+
+<script type="text/javascript">
+
+window.addEventListener('load', function (evt){
+
+  document.getElementById('change-password').addEventListener('click', function (evt){
+    if (evt.target.checked){
+      document.querySelector('.profileContainerMain .profileInputs .inputContainer.newPassword').style.display ='block';
+      document.getElementById('passwordLabel').innerText = 'Contraseña actual';
+      document.getElementById('password').placeholder = 'Ingrese su contraseña actual';
+
+    }else{
+      document.querySelector('.profileContainerMain .profileInputs .inputContainer.newPassword').style.display ='none';
+      document.querySelector('.profileContainerMain .profileInputs .inputContainer.newPassword input').value ="";
+
+      document.getElementById('passwordLabel').innerText = 'Contraseña';
+      document.getElementById('password').placeholder = 'Ingrese su contraseña';
+    }
+  });
+
+});
+
+</script>
+
+
+
+<!--  Loading profile picture -->
+
 <script>
 
 window.addEventListener('load', function (evt){
@@ -198,6 +237,7 @@ window.addEventListener('load', function (evt){
     document.getElementById('profilePicInput').click();
   });
 });
+
 
 window.addEventListener('load', function (evt) {
   var updateInfoInputs = document.querySelectorAll('form.userUpdateInfoForm input');
@@ -209,20 +249,8 @@ window.addEventListener('load', function (evt) {
 
   });
 
-  document.getElementById('change-password').addEventListener('click', function (evt){
-    if (evt.target.checked){
-      document.querySelector('.profileContainerMain .profileInputs .inputContainer.newPassword').style.display ='block';
-    }else{
-      document.querySelector('.profileContainerMain .profileInputs .inputContainer.newPassword').style.display ='none';
-      document.querySelector('.profileContainerMain .profileInputs .inputContainer.newPassword input').value ="";
-    }
-  });
-
-  // FUNCION PARA IMAGE FILE
-
   var imageLoader = document.getElementById('profilePicInput');
       imageLoader.addEventListener('change', handleImage, false);
-      // imageLoader.addEventListener('change', defaultImage, false);
 
   function handleImage(e) {
       var reader = new FileReader();
@@ -231,14 +259,6 @@ window.addEventListener('load', function (evt) {
       }
       reader.readAsDataURL(e.target.files[0]);
   }
-
-  // function defaultImage(e) {
-  //   if (imageLoader === "") {
-  //     reader.onload = function (event) {
-  //         $('#profilePicImgContainer img').attr('src', event.target."/images/icons/profile_default.png");
-  //     }
-  //   }
-  // }
 
   var dropImg = document.getElementById("profilePicImg");
   dropImg.addEventListener("dragenter", dragenter, false);

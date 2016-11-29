@@ -108,7 +108,8 @@
 
   .postContainer .tags,
   .postContainer .mediaOptions {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
