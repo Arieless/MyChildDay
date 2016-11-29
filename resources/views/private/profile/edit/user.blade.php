@@ -30,6 +30,7 @@
 
           </p>
           <label for="firstName">Nombre</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
           <input id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
         </div>
 
@@ -46,6 +47,7 @@
 
         </p>
         <label for="lastName">Apellido</label>
+        <img class="editImg" src="/images/icons/app/edit.svg">
         <input id="lastName" type="text" placeholder="Ingrese su apellido" name="lastName" value="{{ Auth::user()->lastName }}" readonly/ >
         </div>
 
@@ -62,7 +64,8 @@
 
           </p>
           <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ Auth::user()->email }}" readonly/>
+          <img class="editImg" src="/images/icons/app/edit.svg">
+          <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ Auth::user()->email }}" readonly disabled/>
         </div>
         <div class="inputContainer">
           <p class="inputError" id="addressError">
@@ -80,6 +83,7 @@
 
 
           <label for="address">Domicilio</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
           <input id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ Auth::user()->address }}" readonly />
         </div>
         <div class="inputContainer">
@@ -95,6 +99,7 @@
 
           </p>
           <label for="phone">Telefono</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
           <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
         </div>
 
@@ -108,11 +113,11 @@
       </header>
       <article class="profileInputs">
 
-        
+
           <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
             <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
           </div>
-          <div id="fakeSelectFile" class="fakeSelectFile">Select a file</div>
+          <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
           <input id="profilePicInput" type="file" class="profilePicInput">
       </article>
     </section>
