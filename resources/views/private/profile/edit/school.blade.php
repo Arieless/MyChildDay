@@ -30,6 +30,7 @@
 
           </p>
           <label for="firstName">Nombre</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
           <input id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
         </div>
 
@@ -46,7 +47,8 @@
 
           </p>
           <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ Auth::user()->email }}" readonly/>
+          <img class="editImg" src="/images/icons/app/edit.svg">
+          <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ Auth::user()->email }}" readonly disabled/>
         </div>
         <div class="inputContainer">
           <p class="inputError" id="addressError">
@@ -64,6 +66,7 @@
 
 
           <label for="address">Dirección</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
           <input id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ Auth::user()->address }}" readonly />
         </div>
         <div class="inputContainer">
@@ -79,6 +82,7 @@
 
           </p>
           <label for="phone">Telefono</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
           <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
         </div>
 

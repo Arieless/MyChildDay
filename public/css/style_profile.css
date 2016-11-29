@@ -11,6 +11,7 @@ body {
   margin-top: 70px;
 
   background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
 }
 
 .profileTitles h3 {
@@ -150,9 +151,9 @@ body {
 }
 
 .profileContainerMain .profileInputs input:hover {
-  color: black
+  color: #4caf50;
+  cursor: text;
 }
-
 .profileContainerMain .profileInputs input:active {
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -204,6 +205,11 @@ body {
   box-shadow: none;
 }
 
+.profileContainerMain .editImg {
+  width: 8%;
+  float: right;
+}
+
 .profileContainerMain .inputError {
   color: #bb6767;
   font-size: 14px;
@@ -253,6 +259,7 @@ body {
   .profileContainerMain .profileSection .profileInputs .profilePicInput {
     margin-left: 25%;
   }
+
 
 }
 
