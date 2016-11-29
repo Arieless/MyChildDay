@@ -4,200 +4,199 @@
 
 @section('content')
 
+<div class="profileContainerBackgroundColor">
+  <div class="profileContainerMain">
+      <form class="userUpdateInfoForm" id="userUpdateInfoForm" role="form" method="POST" enctype="multipart/form-data" action="{{ url('home/profile/edit/user') }}">
 
-<div class="profileContainerMain">
-    <form class="userUpdateInfoForm" id="userUpdateInfoForm" role="form" method="POST" enctype="multipart/form-data" action="{{ url('home/profile/edit/user') }}">
-
-    <section class="profileSection">
-      <header class="profileTitles">
-        <h3 class="main">Datos Personales</h3>
-      </header>
-      <article class="profileInputs">
-
-
-        {{ csrf_field() }}
-
-        <div class="inputContainer">
-          <p class="inputError" id="firstNameError">
-
-            @if (isset($errors))
-              @if ($errors->has('firstName'))
-                @foreach ($errors->get('firstName') as $message)
-                    {{ $message }} <br/>
-                @endforeach
-              @endif
-            @endif
-
-          </p>
-          <label for="firstName">Nombre</label>
-          <img class="editImg" src="/images/icons/app/edit.svg">
-          <input id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
-        </div>
-
-        <div class="inputContainer">
-        <p class="inputError" id="lastNameError">
-
-          @if (isset($errors))
-            @if ($errors->has('lastName'))
-              @foreach ($errors->get('lastName') as $message)
-                  {{ $message }} <br/>
-              @endforeach
-            @endif
-          @endif
-
-        </p>
-        <label for="lastName">Apellido</label>
-        <img class="editImg" src="/images/icons/app/edit.svg">
-        <input id="lastName" type="text" placeholder="Ingrese su apellido" name="lastName" value="{{ Auth::user()->lastName }}" readonly/ >
-        </div>
-
-        <div class="inputContainer">
-          <p class="inputError" id="emailError">
-
-            @if (isset($errors))
-              @if ($errors->has('email'))
-                @foreach ($errors->get('email') as $message)
-                    {{ $message }} <br/>
-                @endforeach
-              @endif
-            @endif
-
-          </p>
-          <label for="email">E-mail</label>
-          <img class="editImg" src="/images/icons/app/edit.svg">
-          <input type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ Auth::user()->email }}" readonly disabled/>
-        </div>
-        <div class="inputContainer">
-          <p class="inputError" id="addressError">
-
-            @if (isset($errors))
-              @if ($errors->has('address'))
-                @foreach ($errors->get('address') as $message)
-                    {{ $message }} <br/>
-                @endforeach
-              @endif
-            @endif
-
-          </p>
+      <section class="profileSection">
+        <header class="profileTitles">
+          <h3 class="main">Datos Personales</h3>
+        </header>
+        <article class="profileInputs">
 
 
+          {{ csrf_field() }}
 
-          <label for="address">Domicilio</label>
-          <img class="editImg" src="/images/icons/app/edit.svg">
-          <input id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ Auth::user()->address }}" readonly />
-        </div>
-        <div class="inputContainer">
-          <p class="inputError" id="phoneError">
-
-            @if (isset($errors))
-              @if ($errors->has('phone'))
-                @foreach ($errors->get('phone') as $message)
-                    {{ $message }} <br/>
-                @endforeach
-              @endif
-            @endif
-
-          </p>
-          <label for="phone">Telefono</label>
-          <img class="editImg" src="/images/icons/app/edit.svg">
-          <input id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
-        </div>
-
-
-      </article>
-    </section>
-
-    <section class="profileSection">
-      <header class="profileTitles">
-        <h3 class="secondary">FOTO</h3>
-      </header>
-      <article class="profileInputs">
-
-
-          <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
-            <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
-          </div>
-          <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
-          <input id="profilePicInput" type="file" class="profilePicInput">
-      </article>
-    </section>
-
-    <section class="profileSection">
-      <header class="profileTitles">
-        <h3 class="secondary">CONTRASEÑA</h3>
-      </header>
-      <article class="profileInputs">
-
-        <div class="inputContainer checkbox">
-          <input class="checkbox" type="checkbox" id="change-password" name="change-password"/>
-          <label class="checkbox" for="change-password">Quiero cambiar mi contraseña</label>
-        </div>
-
-
-
-        <div class="inputContainer newPassword">
           <div class="inputContainer">
-            <p class="inputError" id="new-passwordError">
+            <p class="inputError" id="firstNameError">
 
               @if (isset($errors))
-                @if ($errors->has('new-password'))
-                  @foreach ($errors->get('new-password') as $message)
+                @if ($errors->has('firstName'))
+                  @foreach ($errors->get('firstName') as $message)
                       {{ $message }} <br/>
                   @endforeach
                 @endif
               @endif
 
             </p>
-            <label for="new-password">Nueva contraseña:</label>
-            <input type="password" id="new-password" placeholder="Ingrese su nueva contraseña" name="new-password"/>
+            <label for="firstName">Nombre</label>
+            <img class="editImg" src="/images/icons/app/edit.svg">
+            <input class="nonEditable" id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
           </div>
 
           <div class="inputContainer">
-            <p class="inputError" id="password-confirmError">
-
-              @if (isset($errors))
-                @if ($errors->has('new-password-confirm'))
-                  @foreach ($errors->get('password-confirm') as $message)
-                      {{ $message }} <br/>
-                  @endforeach
-                @endif
-              @endif
-
-            </p>
-            <label for="password-confirm">Verificacion de su <br/> nueva contraseña:</label>
-            <input type="password" id="password-confirm" placeholder="Ingrese su nueva contraseña" name="new-password_confirmation" />
-          </div>
-        </div>
-
-
-        <div class="inputContainer">
-          <p class="inputError" id="passwordError">
+          <p class="inputError" id="lastNameError">
 
             @if (isset($errors))
-              @if ($errors->has('password'))
-                @foreach ($errors->get('password') as $message)
+              @if ($errors->has('lastName'))
+                @foreach ($errors->get('lastName') as $message)
                     {{ $message }} <br/>
                 @endforeach
               @endif
             @endif
 
           </p>
-          <label id="passwordLabel" for="password">Contraseña:</label>
-          <input type="password" id="password" placeholder="Ingrese su contraseña" name="password" required/>
-        </div>
+          <label for="lastName">Apellido</label>
+          <img class="editImg" src="/images/icons/app/edit.svg">
+          <input class="nonEditable" id="lastName" type="text" placeholder="Ingrese su apellido" name="lastName" value="{{ Auth::user()->lastName }}" readonly/ >
+          </div>
+
+          <div class="inputContainer">
+            <p class="inputError" id="emailError">
+
+              @if (isset($errors))
+                @if ($errors->has('email'))
+                  @foreach ($errors->get('email') as $message)
+                      {{ $message }} <br/>
+                  @endforeach
+                @endif
+              @endif
+
+            </p>
+            <label for="email">E-mail</label>
+            <input class="nonEditable" type="email" id="email" placeholder="Ingrese su correo electronico" name="email" value="{{ Auth::user()->email }}" disabled/>
+          </div>
+          <div class="inputContainer">
+            <p class="inputError" id="addressError">
+
+              @if (isset($errors))
+                @if ($errors->has('address'))
+                  @foreach ($errors->get('address') as $message)
+                      {{ $message }} <br/>
+                  @endforeach
+                @endif
+              @endif
+
+            </p>
 
 
-      </article>
-    </section>
 
-    <div class="update">
-        <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>ACTUALIZAR</strong></button>
-    </div>
+            <label for="address">Domicilio</label>
+            <img class="editImg" src="/images/icons/app/edit.svg">
+            <input class="nonEditable" id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ Auth::user()->address }}" readonly />
+          </div>
+          <div class="inputContainer">
+            <p class="inputError" id="phoneError">
 
-  </form>
+              @if (isset($errors))
+                @if ($errors->has('phone'))
+                  @foreach ($errors->get('phone') as $message)
+                      {{ $message }} <br/>
+                  @endforeach
+                @endif
+              @endif
 
+            </p>
+            <label for="phone">Telefono</label>
+            <img class="editImg" src="/images/icons/app/edit.svg">
+            <input class="nonEditable" id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
+          </div>
+
+
+        </article>
+      </section>
+
+      <section class="profileSection">
+        <header class="profileTitles">
+          <h3 class="secondary">FOTO</h3>
+        </header>
+        <article class="profileInputs">
+
+
+            <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
+              <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
+            </div>
+            <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
+            <input id="profilePicInput" type="file" class="profilePicInput">
+        </article>
+      </section>
+
+      <section class="profileSection">
+        <header class="profileTitles">
+          <h3 class="secondary">CONTRASEÑA</h3>
+        </header>
+        <article class="profileInputs">
+
+          <div class="inputContainer checkbox">
+            <input class="checkbox" type="checkbox" id="change-password" name="change-password"/>
+            <label class="checkbox" for="change-password">Quiero cambiar mi contraseña</label>
+          </div>
+
+
+
+          <div class="inputContainer newPassword">
+            <div class="inputContainer">
+              <p class="inputError" id="new-passwordError">
+
+                @if (isset($errors))
+                  @if ($errors->has('new-password'))
+                    @foreach ($errors->get('new-password') as $message)
+                        {{ $message }} <br/>
+                    @endforeach
+                  @endif
+                @endif
+
+              </p>
+              <label for="new-password">Nueva contraseña:</label>
+              <input type="password" id="new-password" placeholder="Ingrese su nueva contraseña" name="new-password"/>
+            </div>
+
+            <div class="inputContainer">
+              <p class="inputError" id="password-confirmError">
+
+                @if (isset($errors))
+                  @if ($errors->has('new-password-confirm'))
+                    @foreach ($errors->get('password-confirm') as $message)
+                        {{ $message }} <br/>
+                    @endforeach
+                  @endif
+                @endif
+
+              </p>
+              <label for="password-confirm">Verificacion de su <br/> nueva contraseña:</label>
+              <input type="password" id="password-confirm" placeholder="Ingrese su nueva contraseña" name="new-password_confirmation" />
+            </div>
+          </div>
+
+
+          <div class="inputContainer">
+            <p class="inputError" id="passwordError">
+
+              @if (isset($errors))
+                @if ($errors->has('password'))
+                  @foreach ($errors->get('password') as $message)
+                      {{ $message }} <br/>
+                  @endforeach
+                @endif
+              @endif
+
+            </p>
+            <label id="passwordLabel" for="password">Contraseña:</label>
+            <input type="password" id="password" placeholder="Ingrese su contraseña" name="password" required/>
+          </div>
+
+
+        </article>
+      </section>
+
+      <div class="update">
+          <button id="registerFormSubmit" type="submit" name="registerFormSubmit"><strong>ACTUALIZAR</strong></button>
+      </div>
+
+    </form>
+
+  </div>
 </div>
-
 
 
 
@@ -226,7 +225,37 @@ window.addEventListener('load', function (evt){
 
 </script>
 
+<script type="text/javascript">
 
+// HAY QUE TERMINAR DE ARREGLAR, DEBERIA GUARDAR EL VALOR POR DEFECTO DE ENTRADA,
+// SI EL INPUT VUELVE A NOEDITABLE DEBERIA VOLVER AL VALOR POR DEFECTO,
+// EN EDITABLE VUELVE AL VALOR QUE SE EDITO
+
+
+window.addEventListener('load', function (evt) {
+  var updateInfoInputs = document.querySelectorAll('form.userUpdateInfoForm .inputContainer img');
+
+  updateInfoInputs.forEach (function (el){
+    el.addEventListener('click', function(evt) {
+      el.parentElement.childNodes.forEach(function(child){
+        if(child.tagName == 'INPUT'){
+          console.log (child);
+          if (child.readOnly) {
+            child.readOnly = false;
+            child.classList.remove ('nonEditable');
+          }else {
+            child.readOnly = true;
+            child.classList.add ('nonEditable');
+          }
+
+          child.focus();
+        }
+      });
+    });
+  });
+});
+
+</script>
 
 <!--  Loading profile picture -->
 
@@ -240,14 +269,6 @@ window.addEventListener('load', function (evt){
 
 
 window.addEventListener('load', function (evt) {
-  var updateInfoInputs = document.querySelectorAll('form.userUpdateInfoForm input');
-
-  updateInfoInputs.forEach (function (el){
-    el.addEventListener('click', function(evt) {
-      if (el.readOnly) el.readOnly = false;
-    });
-
-  });
 
   var imageLoader = document.getElementById('profilePicInput');
       imageLoader.addEventListener('change', handleImage, false);

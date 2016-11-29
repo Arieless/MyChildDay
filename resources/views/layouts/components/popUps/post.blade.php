@@ -1,18 +1,4 @@
-@extends('layouts.teacher')
-@section('title','MyChildDay - Noticias!')
-
-
-
-@section('content')
-
 <style media="screen">
-
-  .postContainer {
-    width: 720px;
-    margin: auto;
-    margin-top: 100px;
-    border: 1px solid lightgrey;
-  }
 
   .postContainer hr {
     width: 90%;
@@ -23,7 +9,7 @@
 
   .postContainer .postText{
       padding: 20px;
-      width: 100%;
+      width: calc(100% - 16px);
       resize: none;
       font-family: 'Source Sans Pro', sans-serif;
       color: #333333;
@@ -34,28 +20,20 @@
   }
 
   .postContainer .postText::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 22;
     font-weight: bold;
-    color: #999999;
   }
   .postContainer .postText::-moz-placeholder { /* Firefox 19+ */
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 22;
     font-weight: bold;
-    color: #999999;
   }
   .postContainer .postText:-ms-input-placeholder { /* IE 10+ */
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 22;
     font-weight: bold;
-    color: #999999;
   }
   .postContainer .postText:-moz-placeholder { /* Firefox 18- */
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 22;
     font-weight: bold;
-    color: #999999;
   }
 
   .postContainer .dropdown {
@@ -91,6 +69,9 @@
   }
 
   .postContainer .optionItem{
+
+    padding: 10px 5px 5px 5px;
+
     display: inline-flex;
     line-height: 20px;
     font-size: 14px;
@@ -115,21 +96,37 @@
     align-items: center;
   }
 
+  .postContainer .mediaOptions,
+  .postContainer .optionItem label {
+    cursor: pointer;
+    cursor: hand;
+  }
+
+  .postContainer .mediaOptions:hover ,
+  .postContainer .optionItem:hover {
+    color: #333333;
+  }
+
+  .postContainer .mediaOptions.active ,
+  .postContainer .optionItem.active {
+    color: #333333;
+  }
+
+
+
   .postContainer .mediaOptions .optionItem h5 {
     display: inline-block;
   }
-  .postContainer .tags .optionItem input {
+  .postContainer .tags .optionItem input[type=radio] {
     display: none;
   }
 
 </style>
 
-{{--  TEACHER SHOULD ONLY MAKE POST IF HAVE ASSIGNED CLASSROOMS  --}}
-
-<div class="postContainer" style="">
-
-  <form class="" action="index.html" method="post">
-    <textarea class="postText" rows="4" cols="50" placeholder="Que deseas contar?"/></textarea>
+<div id="popUpContainerPost" class="popUpContainer loggedPopUp postContainer" style="display: {{ isset($display)? $display : 'none' }}" >
+  <img id="buttonCloseRegister" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
+  <form class="" action="index.html" method="post" enctype="multipart/form-data">
+    <textarea name="postText" class="postText" rows="4" cols="50" placeholder="Que deseas contar?" required/></textarea>
 
 
 
@@ -159,14 +156,15 @@
 
     <div class="mediaOptions">
 
-      <div class="optionItem">
+      <div class="optionItem" id="buttonUploadPicture">
         <img src="/images/icons/app/close.svg" alt="">
-        <h5>Picture / Video</h5>
+        <h5>Agregar una foto o video</h5>
+        <input id="uploadPicturePost" type="file" class="" style="display:none">
       </div>
 
       <div class="optionItem">
         <img src="/images/icons/app/close.svg" alt="">
-        <h5>Galeria</h5>
+        <h5>Agregar una galeria</h5>
       </div>
 
     </div>
@@ -176,24 +174,73 @@
     <div class="tags">
       <div class="optionItem">
         <img src="/images/icons/app/close.svg" alt="Tag comida">
-        <input id="radioFood" type="radio" name="food" selected><label for="radioFood">Comida</label>
+        <input id="radioFood" type="radio" name="tag" required><label for="radioFood">Comida</label>
       </div>
       <div class="optionItem">
         <img src="/images/icons/app/close.svg" alt="Tag siesta">
-        <input id="radioNap" type="radio" name="nap" selected><label for="radioNap">Siesta</label>
+        <input id="radioNap" type="radio" name="tag"><label for="radioNap">Siesta</label>
       </div>
       <div class="optionItem">
         <img src="/images/icons/app/close.svg" alt="Tag toillete">
-        <input id="radioPotty" type="radio" name="potty" selected><label for="radioPotty">Toilette</label>
+        <input id="radioPotty" type="radio" name="tag"><label for="radioPotty">Toilette</label>
       </div>
       <div class="optionItem">
         <img src="/images/icons/app/close.svg" alt="Tag aprendizaje">
-        <input id="radioLearn" type="radio" name="learn" selected><label for="radioLearn">Aprendizaje</label>
+        <input id="radioLearn" type="radio" name="tag"><label for="radioLearn">Aprendizaje</label>
+      </div>
+      <div class="optionItem">
+        <img src="/images/icons/app/close.svg" alt="Tag aprendizaje">
+        <input id="radioLearn" type="radio" name="tag"><label for="radioLearn">Juegos</label>
+      </div>
+      <div class="optionItem">
+        <img src="/images/icons/app/close.svg" alt="Tag aprendizaje">
+        <input id="radioLearn" type="radio" name="tag"><label for="radioLearn">Clase</label>
       </div>
     </div>
+
+    <div class="submit" style="overflow: hidden; margin-top: 20px;">
+      <button type="submit" name="button" style="float: right;">Enviar</button>
+    </div>
+
   </form>
 </div>
 
+<!-- Loading image -->
 
+<script type="text/javascript">
 
-@endsection
+window.addEventListener('load', function (evt){
+  document.getElementById('buttonUploadPicture').addEventListener('click', function (evt){
+    document.getElementById('uploadPicturePost').click();
+  });
+});
+
+</script>
+
+<!-- Radio buttons -->
+
+<script type="text/javascript">
+
+  window.addEventListener('load', function () {
+    document.getElementById('popUpButtonPost').onclick = () => {
+      document.getElementById('popUpContainerPost').style.display = 'block';
+      document.getElementById('popUpContainerBackground').style.display = 'block';
+    }
+
+  });
+
+  window.addEventListener('load', function () {
+    document.querySelectorAll('.tags .optionItem input').forEach( function (el){
+
+      el.addEventListener('change', function (evt) {
+        if (evt.target.checked) evt.target.parentElement.classList.add('active');
+
+        document.querySelectorAll('.tags .optionItem input').forEach(function (elem){
+        if (!elem.checked) elem.parentElement.classList.remove('active');
+        });
+
+      });
+    });
+  });
+
+</script>

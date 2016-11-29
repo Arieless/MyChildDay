@@ -25,16 +25,11 @@ window.onload = function () {
   // elements to hide in resolutions less than 1280 so it looks like a new page
   toHide = document.getElementsByClassName('toHide');
 
-  // close on login buttonClose click
-  document.getElementById('buttonCloseLogin').onclick = popUpClose;
-  // close on register buttonClose click
-  document.getElementById('buttonCloseRegister').onclick = popUpClose;
-  // close on emailReset buttonClose click
-  document.getElementById('buttonCloseEmailReset').onclick = popUpClose;
-  // close on passReset buttonClose click
-  document.getElementById('buttonClosePassReset').onclick = popUpClose;
-  // close on contact buttonClose click
-  document.getElementById('buttonCloseContact').onclick = popUpClose;
+  var buttonsClose = document.querySelectorAll('.buttonClose');
+
+  for (var button in buttonsClose){
+    buttonsClose[button].onclick = popUpClose;
+  }
 
   // pop up on button register click
   document.getElementById('containerLoginRegisterText').onclick = popUpRegister;
@@ -49,6 +44,7 @@ window.onload = function () {
   window.onkeydown = popUpEscapeClose;
   // close pop ups on background click
   popUpContainerBackground.onclick = popUpClickClose;
+
   // pops register form
   document.getElementById('popUpButtonRegister').onclick = popUpRegister;
   // pops login form

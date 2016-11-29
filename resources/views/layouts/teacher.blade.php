@@ -13,6 +13,7 @@
       <link rel="stylesheet" type="text/css" href="/css/style_footerLogged.css">
 
       <link rel="stylesheet" type="text/css" href="/css/style_parentFeed.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
 
       <title>@yield('title')</title>
   </head>
@@ -21,6 +22,19 @@
     @include('layouts.components.headers.teacher')
 
     <!-- POPUPS -->
+    @if ( (isset($displayPost) && $displayPost))
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
+    @else
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
+    @endif
+
+        <!-- REG -->
+        @include ('layouts.components.popUps.post', (isset($displayPost) && $displayPost)? ['display' => 'block'] : ['display' => 'none'])
+        <!-- LOG -->
+
+      </div>
+
+
 
     <!-- CONTENT -->
     @yield('content')
@@ -28,5 +42,48 @@
 
     @include('layouts.components.footers.home')
 
+
+
   </body>
+
+
+  <script type="text/javascript">
+
+  window.addEventListener('load', function () {
+    var buttonsClose = document.querySelectorAll('.buttonClose');
+
+    for (var button in buttonsClose){
+
+      buttonsClose[button].onclick = function () {
+        document.getElementById('popUpContainerBackground').style.display = 'none';
+        closeAllPopUpsContainers();
+      };
+    };
+  });
+
+  window.addEventListener('load', function () {
+
+    document.getElementById('popUpContainerBackground').addEventListener('click', function (evt){
+
+      var bg = document.getElementById('popUpContainerBackground');
+      if (evt.target == bg){
+        bg.style.display = 'none';
+        closeAllPopUpsContainers();
+      }
+
+    });
+  });
+
+  function closeAllPopUpsContainers(){
+
+    var popUpContainers = document.querySelectorAll('.popUpContainer');
+
+    popUpContainers.forEach (function (el){
+      el.style.display = 'none';
+    });
+
+  }
+
+  </script>
+
   </html>

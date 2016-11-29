@@ -1,4 +1,4 @@
-<div id="popUpContainerRegister" class="popUpContainer" style="display: {{ isset($display)? $display : 'none' }}" >
+<div id="popUpContainerRegister" class="popUpContainer indexPopUp popUpRegister" style="display: {{ isset($display)? $display : 'none' }}" >
   <img id="buttonCloseRegister" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Ingrese sus datos para registrarse</h4>
   <form id="registerForm" role="form" method="POST" action="{{ url('/register') }}">
