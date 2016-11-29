@@ -8,6 +8,14 @@
 
 <div class="parentFeedContainer" style="height: 800px;">
 
+{{--
+@foreach ($posts as $post)
+
+
+
+@endforeach
+--}}
+
 </div>
 
 

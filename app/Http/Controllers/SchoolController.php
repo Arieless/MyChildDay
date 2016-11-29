@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class SchoolController extends Controller
 {
 
-  function feed () {
+  static function feed () {
       return view ('private.feed.school');
   }
 

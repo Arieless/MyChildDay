@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App;
 
 class HomeController extends Controller
 {
@@ -18,12 +19,12 @@ class HomeController extends Controller
 
         if ($numberOfRols == 1){
 
-          if (Auth::user()->parentRol) return view('private.feed.parent');
-          if (Auth::user()->schoolRol) return view('private.feed.school');
-          if (Auth::user()->teacherRol) return view ('private.feed.teacher');
+          if (Auth::user()->parentRol) return redirect('/home/parent/feed');
+          if (Auth::user()->schoolRol) return redirect('/home/school/feed');
+          if (Auth::user()->teacherRol) return redirect('/home/teacher/feed');
 
         }else if ($numberOfRols > 1){
-          
+
           return view('private.rol.login');
         }
 
