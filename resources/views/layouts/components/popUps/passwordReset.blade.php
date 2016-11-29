@@ -1,4 +1,4 @@
-<div id="popUpContainerPassReset" class="popUpContainer" style="display: {{ isset($display)? $display : 'none' }}">
+<div id="popUpContainerPassReset" class="popUpContainer indexPopUp popUpReset" style="display: {{ isset($display)? $display : 'none' }}">
   <img id="buttonClosePassReset" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Recuperar Contraseña</h4>
   <form id="passResetForm" role="form" method="POST" action="{{ url('/password/reset') }}">
