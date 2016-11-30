@@ -52,7 +52,4 @@
     </div>
 
     </nav>
-
-
-
 </header>

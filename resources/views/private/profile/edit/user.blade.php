@@ -227,26 +227,38 @@ window.addEventListener('load', function (evt){
 
 <script type="text/javascript">
 
-// HAY QUE TERMINAR DE ARREGLAR, DEBERIA GUARDAR EL VALOR POR DEFECTO DE ENTRADA,
-// SI EL INPUT VUELVE A NOEDITABLE DEBERIA VOLVER AL VALOR POR DEFECTO,
-// EN EDITABLE VUELVE AL VALOR QUE SE EDITO
 
+// THE PENCIL SHOULD CHANGE COLOR....
+
+var arrInputsValue = [];
 
 window.addEventListener('load', function (evt) {
   var updateInfoInputs = document.querySelectorAll('form.userUpdateInfoForm .inputContainer img');
-
   updateInfoInputs.forEach (function (el){
+
+    el.parentElement.childNodes.forEach(function(child){
+      arrInputsValue[child.name] = [];
+      arrInputsValue[child.name]['original'] = child.value;
+      arrInputsValue[child.name]['modified'] = child.value;
+    });
+
     el.addEventListener('click', function(evt) {
       el.parentElement.childNodes.forEach(function(child){
         if(child.tagName == 'INPUT'){
-          console.log (child);
           if (child.readOnly) {
+            el.src = '/images/icons/app/editable.svg'
             child.readOnly = false;
+            child.value = arrInputsValue[child.name]['modified'];
             child.classList.remove ('nonEditable');
           }else {
+            el.src = '/images/icons/app/edit.svg'
             child.readOnly = true;
+            arrInputsValue[child.name]['modified'] = child.value;
+            child.value = arrInputsValue[child.name]['original'];
             child.classList.add ('nonEditable');
           }
+
+          console.log (el.src);
 
           child.focus();
         }
