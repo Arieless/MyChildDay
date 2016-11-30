@@ -68,7 +68,7 @@ class ProfileController extends Controller
     }
 
     private function changeData ($data) {
-
+      dd($_FILES);
       Auth::user()->fill([
         'firstName' => $data['firstName'],
         'lastName' => $data['lastName'],
