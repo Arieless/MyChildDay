@@ -45,18 +45,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Room::class, 'user_room', 'user_id', 'room_id');
     }
 
-    public function getPosts () {
-      $kids = $this->kids();
-
-      $collection = collect([]);
-
-      foreach ($kids as $kid) {
-        $collegion->merge($kid->taggedIn());
-      }
-
-      return $collection;
-    }
-
     public function hasRooms() {
       return ($this->isTeacher() && $this->teacherInRooms().count() > 0)? true : false;
     }

@@ -8,11 +8,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_general.css">
+
       <link rel="stylesheet" type="text/css" href="/css/style_loggedBar.css">
       <link rel="stylesheet" type="text/css" href="/css/style_loggedBar_dropdown.css">
       <link rel="stylesheet" type="text/css" href="/css/style_footerLogged.css">
 
-      <link rel="stylesheet" type="text/css" href="/css/style_parentFeed.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_feed.css">
 
       <title>@yield('title')</title>
   </head>

@@ -28,13 +28,6 @@
 }
 
 
-.loggedBar .roundPicture {
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-}
-
-
 .loggedBar nav .navFlexContainer .flexList .logoItem {
   filter: opacity(70%);
 }
@@ -93,11 +86,11 @@
 /*  -------------------------  IMPLEMENTAR ------------------------- */
 
 .loggedBar nav .navFlexContainer .flexList li .flexIconLink:hover img{
-  filter: brightness(80%);
+  filter: brightness(100%);
 }
 
 .loggedBar nav .navFlexContainer .flexList li .flexIconLink img {
-  filter: brightness(100%);
+  filter: brightness(90%);
 }
 
 .loggedBar nav .navFlexContainer .flexList li.userPicture img.userPicture{
