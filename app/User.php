@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Collection;
 
 class User extends Authenticatable
 {
@@ -42,6 +43,22 @@ class User extends Authenticatable
     public function teacherInRooms () {
 
         return $this->belongsToMany(Room::class, 'user_room', 'user_id', 'room_id');
+    }
+
+    public function getPosts () {
+      $kids = $this->kids();
+
+      $collection = collect([]);
+
+      foreach ($kids as $kid) {
+        $collegion->merge($kid->taggedIn());
+      }
+
+      return $collection;
+    }
+
+    public function hasRooms() {
+      return ($this->isTeacher() && $this->teacherInRooms().count() > 0)? true : false;
     }
 
 

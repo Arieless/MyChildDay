@@ -8,12 +8,12 @@ use App\Http\Controllers\Controller;
 class TeacherController extends Controller
 {
 
-  function feed () {
+  static function feed () {
       return view ('private.feed.teacher');
   }
 
   function post () {
-      return view ('private.post.teacher');
+      return view ('private.feed.teacher', [ 'displayPost' => 'true']);
   }
 
 }

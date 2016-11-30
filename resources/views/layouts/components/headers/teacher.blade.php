@@ -33,12 +33,14 @@
                 <br/>Estudiantes
               </a>
             </li>
-            <li class="optionIcon">
-              <a class="flexIconLink teacherColor" href="{{ url('home/teacher/post') }}">
+            {{-- @if (user()->hasRooms()) --}}
+            <li class="optionIcon" id="popUpButtonPost">
+              <a class="flexIconLink teacherColor" href="#">
                 <img src="/images/icons/app/post.svg" alt="Ver calendario">
                 <br/>Posteo
               </a>
             </li>
+
             <li class="optionIcon">
               <a class="flexIconLink teacherColor" href="{{ url('home/school/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">

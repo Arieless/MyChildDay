@@ -1,6 +1,6 @@
 
-body {
-    background-color: #4140a0;
+.profileContainerBackgroundColor {
+  background-color: #4140a0;
 }
 
 .profileContainerMain {
@@ -11,7 +11,6 @@ body {
   margin-top: 70px;
 
   background-color: rgba(0, 0, 0, 0.03);
-  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
 }
 
 .profileTitles h3 {
@@ -39,7 +38,7 @@ body {
 }
 
 .profileContainerMain .profileTitles{
-  width: 30%;
+  width: 20%;
   margin: auto;
 }
 
@@ -49,7 +48,7 @@ body {
 
 .profileContainerMain .profileInputs {
   color: white;
-  width: 70%;
+  width: 80%;
   margin: auto;
   padding-top: 40px;
   padding-bottom: 20px;
@@ -120,7 +119,7 @@ body {
 .profileContainerMain .profileInputs label{
   float: left;
   display: block;
-  width: 160px;
+  width: 150px;
   text-align: left;
   white-space: nowrap;
   margin-right: 10px;
@@ -133,13 +132,13 @@ body {
 }
 
 .profileContainerMain .profileInputs input {
-  width: calc(100% - 180px);
+  width: calc(100% - 215px);
   float: left;
   color: #dddddd;
   box-sizing: border-box;
-  border: 1px solid  rgba(255, 255, 255, 0.1);
+  border: 1px solid  rgba(255, 255, 255, 0.15);
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
 
   padding-top: 12px;
   padding-bottom: 12px;
@@ -151,16 +150,21 @@ body {
 }
 
 .profileContainerMain .profileInputs input:hover {
-  color: #4caf50;
+  color: lightgrey;
   cursor: text;
 }
 .profileContainerMain .profileInputs input:active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .profileContainerMain .profileInputs input:focus{
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
+}
+
+.profileContainerMain .profileInputs input.nonEditable {
+  background-color: transparent;
+  color: darkgrey;
 }
 
 .profileContainerMain .update {
@@ -206,8 +210,15 @@ body {
 }
 
 .profileContainerMain .editImg {
-  width: 8%;
+  width: 55px;
   float: right;
+  padding: 15px 15px 15px 15px;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.profileContainerMain .editImg:hover {
+  filter: brightness(160%);
 }
 
 .profileContainerMain .inputError {

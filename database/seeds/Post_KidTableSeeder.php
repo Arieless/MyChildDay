@@ -12,7 +12,7 @@ class Post_KidTableSeeder extends Seeder
      public function run()
      {
        $i = 0;
-       while ($i++ < 10){
+       while ($i++ < 600){
          DB::table('post_kid')->insert([
            'post_id' => App\Post::all()->random()->id,
            'kid_id' => App\Kid::all()->random()->id,

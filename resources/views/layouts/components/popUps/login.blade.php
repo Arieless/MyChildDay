@@ -1,4 +1,4 @@
-<div id="popUpContainerLogin" class="popUpContainer" style="display: {{ isset($display)? $display : 'none' }}">
+<div id="popUpContainerLogin" class="popUpContainer indexPopUp popUpLogin" style="display: {{ isset($display)? $display : 'none' }}">
   <img id="buttonCloseLogin" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Inicie sesion</h4>
   <form id="loginForm" role="form" method="POST" action="{{ url('/login') }}">
@@ -21,7 +21,7 @@
     <label for="loginPassword">Contraseña:</label>
     <input id="loginPassword" type="password" placeholder="Ingrese su clave" name="password" required />
     <div class="rememberCheckbox" name="rememberMe">
-      <input id="loginRememberMe" type="checkbox" checked="checked" />
+      <input id="loginRememberMe" name="remember" type="checkbox" checked="checked" />
       <label for="loginRememberMe">Quiero que recuerden mi contraseña.</label>
     </div>
     <div class="containerOptions">
