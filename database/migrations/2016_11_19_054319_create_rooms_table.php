@@ -20,6 +20,7 @@ class CreateRoomsTable extends Migration
           $table->string('name');
           $table->integer('school_id')->unsigned();
           $table->foreign('school_id')->references('id')->on('schools');
+          $table->profilePicture('name', 100);
           $table->tinyInteger('deactivated')->unsigned()->default('0');
           $table->timestamps();
       });

@@ -25,6 +25,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
 $factory->define(App\School::class, function (Faker\Generator $faker) {
   return [
     'name' => $faker->country,
@@ -34,6 +35,7 @@ $factory->define(App\School::class, function (Faker\Generator $faker) {
     'user_id' => App\User::all()->random()->id,
   ];
 });
+
 $factory->define(App\Kid::class, function (Faker\Generator $faker) {
     return [
         'firstName' => $faker->firstName,
@@ -44,17 +46,22 @@ $factory->define(App\Kid::class, function (Faker\Generator $faker) {
         'school_id' => App\School::all()->random()->id,
     ];
 });
+
 $factory->define(App\Room::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->city,
         'school_id' => App\School::all()->random()->id,
+        'profilePicture' => $faker->imageUrl($width = 640, $height = 480),
     ];
 });
+
 $factory->define(App\Posttype::class, function (Faker\Generator $faker) {
   return [
     'type' => $faker->word,
+    'icon' => $faker->imageUrl($width = 50, $height = 50),
   ];
 });
+
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
         'contentText' => $faker->text,
