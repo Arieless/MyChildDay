@@ -117,7 +117,7 @@
               <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
             </div>
             <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
-            <input id="profilePicInput" type="file" class="profilePicInput">
+            <input id="profilePicInput" type="file" name="profilePicInput" class="profilePicInput">
         </article>
       </section>
 
