@@ -8,6 +8,7 @@ use App\User;
 use Validator;
 use Illuminate\Support\Facades\Auth;
 use  Illuminate\Support\Facades\Hash;
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -57,6 +58,7 @@ class ProfileController extends Controller
             'address' => 'required|max:255',
             'phone' => 'required|max:255',
             'password' => 'required|min:6|',
+            'profilePicture' => ''
         ]);
     }
 
@@ -68,17 +70,39 @@ class ProfileController extends Controller
     }
 
     private function changeData ($data) {
-      dd($_FILES);
       Auth::user()->fill([
         'firstName' => $data['firstName'],
         'lastName' => $data['lastName'],
         'address' => $data['address'],
         'phone' => $data['phone'],
-      ])->save();
+      ]);
 
+      $this->savePicture($data);
 
-  //    $user->profilePicture = $data['profilePicture']; // FIX THIS!!!!!!!!!! should be saved
+      Auth::user()->save();
 
+    }
+
+    protected function savePicture($data) {
+      $user = Auth::user();
+      if (isset($_FILES['profilePicInput']) && $_FILES['profilePicInput']['name'] !== '') {
+  			$info = pathinfo($_FILES['profilePicInput']['name']);
+  			$extension =  $info['extension'];
+  			$newName = $user->id . '.' . $extension;
+  			$route = 'images/users/profilePictures/'.$newName;
+        $this->removeLastPicture($user);
+  			move_uploaded_file($_FILES['profilePicInput']['tmp_name'], $route);
+  			unset($_FILES['profilePicInput']);
+  			$user->profilePicture = $route;
+  		}
+    }
+
+    private function removeLastPicture($user){
+      $defaultImg = $user->profilePicture;
+      $default = explode("/", $defaultImg);
+      if ($default[2] !== 'avatars') {
+        unlink($user->profilePicture);
+      }
     }
 
     private function changePassword ($data) {
