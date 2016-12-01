@@ -20,7 +20,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'address' => $faker->secondaryAddress,
         'phone' => '1165578099',
-        'profilePicture' => '/images/users/avatars/default_avatar_'.rand(0,20).'.svg',
+        'profilePicture' => 'images/users/avatars/default_avatar_'.rand(0,20).'.svg',
         'password' =>  bcrypt('123456789a'),
         'remember_token' => str_random(10),
     ];
