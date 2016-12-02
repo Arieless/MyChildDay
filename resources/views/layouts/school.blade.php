@@ -22,7 +22,22 @@
     <!-- HEADER -->
     @include('layouts.components.headers.school')
 
+
+@if(isset($displayPost))
     <!-- POPUPS -->
+    @if ( (isset($displayPost) && $displayPost))
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
+    @else
+      <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
+    @endif
+
+        <!-- REG -->
+        @include ('layouts.components.popUps.post', (isset($displayPost) && $displayPost)? ['display' => 'block'] : ['display' => 'none'])
+        <!-- LOG -->
+
+      </div>
+@endif
+
 
     <!-- CONTENT -->
     @yield('content')
