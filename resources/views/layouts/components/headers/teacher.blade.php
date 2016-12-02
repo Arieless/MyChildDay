@@ -40,7 +40,6 @@
                 <br/>Posteo
               </a>
             </li>
-
             <li class="optionIcon">
               <a class="flexIconLink teacherColor" href="{{ url('home/school/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
