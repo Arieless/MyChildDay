@@ -5,12 +5,6 @@
         <h5>Perfil</h5>
       </a>
     </li>
-    <li id='logoutButton' class="navButton {{isset($color)? $color:""}}">
-      <a class="navButton" href=#>
-        <img src="/images/icons/app/close.svg" alt="">
-        <h5>Cerrar sesion</h5>
-      </a>
-    </li>
     @if (Auth::user()->parentRol)
     <li class="navButton {{isset($color)? $color:""}}">
       <a class="navButton" href="{{ url('/home/profile/edit/children') }}">
@@ -27,6 +21,12 @@
       </a>
     </li>
     @endif
+    <li id='logoutButton' class="navButton {{isset($color)? $color:""}}">
+      <a class="navButton" href=#>
+        <img src="/images/icons/app/close.svg" alt="">
+        <h5>Cerrar sesion</h5>
+      </a>
+    </li>
   </ul>
 
 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -54,5 +54,26 @@
         }
     });
   });
+
+  document.addEventListener('click', function (evt) {
+        var profileArr = [];
+
+        profileArr.push (document.getElementById('userProfileDropDownContent').parentElement);
+        var childs = profileArr[0].getElementsByTagName("*");
+
+        for (el in childs){
+          profileArr.push(childs[el]);
+        }
+
+        var flag = true;
+        profileArr.forEach(function (el){
+          flag = flag && evt.target !== el;
+        });
+
+        if (flag && document.getElementById('userProfileDropDownContent').style.display == 'block'){
+          document.getElementById('userProfileDropDownContent').style.display = 'none';
+        }
+
+      });
 
 </script>
