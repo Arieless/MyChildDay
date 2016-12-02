@@ -114,7 +114,7 @@
 
 
             <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
-              <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
+              <img id="profilePicImg" src="{{ asset(Auth::user()->profilePicture) }}" alt="profilePic" >
             </div>
             <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
             <input id="profilePicInput" type="file" name="profilePicInput" class="profilePicInput">
@@ -288,6 +288,7 @@ window.addEventListener('load', function (evt) {
   function handleImage(e) {
       var reader = new FileReader();
       reader.onload = function (event) {
+        var newImg = event.target.result;
           $('#profilePicImgContainer img').attr('src',event.target.result);
       }
       reader.readAsDataURL(e.target.files[0]);

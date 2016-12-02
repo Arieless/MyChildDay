@@ -97,7 +97,7 @@
 
 
             <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
-              <img id="profilePicImg" src="{{ Auth::user()->profilePicture }}" alt="profilePic" >
+              <img id="profilePicImg" src="{{ asset(Auth::user()->profilePicture) }}" alt="profilePic" >
             </div>
             <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
             <input id="profilePicInput" type="file" class="profilePicInput">

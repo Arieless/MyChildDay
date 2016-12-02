@@ -10,7 +10,7 @@ class RoomsTableSeeder extends Seeder
      * @return void
      */
       public function run()
-      { 
+      {
           factory(App\Room::class, 10)->create();
       }
 }
