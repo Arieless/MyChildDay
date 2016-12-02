@@ -33,6 +33,7 @@ $factory->define(App\School::class, function (Faker\Generator $faker) {
     'telephone' => '1165578099',
     'email' => $faker->email,
     'user_id' => App\User::all()->random()->id,
+    'profilePicture' => $faker->imageUrl($width = 640, $height = 480),
   ];
 });
 

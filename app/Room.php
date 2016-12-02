@@ -28,4 +28,8 @@ class Room extends Model
     return $this->belongsToMany (User::class, 'user_room', 'room_id', 'user_id');
   }
 
+  public function kids() {
+    return $this->belongsToMany (Kid::class, 'kid_room', 'room_id', 'kid_id');
+  }
+
 }

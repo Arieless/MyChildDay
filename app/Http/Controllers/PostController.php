@@ -10,8 +10,6 @@ class PostController extends Controller
 {
     function uploadPost (Request $request) {
 
-
-
       if (Auth::user()->teacherInRooms()->where('id', $request->input('room_id'))->get())
       {
         $validator = $this->validate($request->all())

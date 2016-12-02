@@ -10,17 +10,17 @@
 
   <div class="flexContainer">
 
-    <div class="rol" id="chooseTeacher">
+    <div class="rol hand" id="chooseTeacher">
         <img src="{{url ('images/icons/big/teacher.svg')}}" alt="">
         <h1>Docente</h1>
     </div>
 
-    <div class="rol" id="chooseSchool">
+    <div class="rol hand" id="chooseSchool">
         <img src="{{url ('images/icons/big/school.svg')}}" alt="">
         <h1>Escuela</h1>
     </div>
 
-    <div class="rol" id="chooseParent">
+    <div class="rol hand" id="chooseParent">
       <img src="{{url ('images/icons/big/parent.svg')}}" alt="">
       <h1>Padre</h1>
     </div>

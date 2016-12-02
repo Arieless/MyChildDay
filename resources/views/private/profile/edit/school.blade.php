@@ -1,16 +1,16 @@
 @extends('layouts.home')
-@section('title','MyChildDay - Editar perfil')
+@section('title','MyChildDay - Editar perfil de escuela')
 
 
 @section('content')
 
 <div class="profileContainerBackgroundColor">
   <div class="profileContainerMain">
-      <form class="userUpdateInfoForm" id="userUpdateInfoForm" role="form" method="POST" enctype="multipart/form-data" action="{{ url('home/profile/edit/user') }}">
+      <form class="schoolUpdateInfo" id="schoolUpdateInfo" role="form" method="POST" enctype="multipart/form-data" action="{{ url('home/profile/edit/school') }}">
 
       <section class="profileSection">
         <header class="profileTitles">
-          <h3 class="main">Datos de la Institución</h3>
+          <h3 class="main">Institución</h3>
         </header>
         <article class="profileInputs">
 
@@ -30,7 +30,7 @@
 
             </p>
             <label for="firstName">Nombre</label>
-            <img class="editImg" src="/images/icons/app/edit.svg">
+            <img class="editImg hand" src="/images/icons/app/edit.svg">
             <input class="nonEditable" id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
           </div>
 
@@ -65,7 +65,7 @@
 
 
             <label for="address">Dirección</label>
-            <img class="editImg" src="/images/icons/app/edit.svg">
+            <img class="editImg hand" src="/images/icons/app/edit.svg">
             <input class="nonEditable" id="address" type="text" placeholder="Ingrese domicilio" name="address" value="{{ Auth::user()->address }}" readonly />
           </div>
           <div class="inputContainer">
@@ -81,7 +81,7 @@
 
             </p>
             <label for="phone">Teléfono</label>
-            <img class="editImg" src="/images/icons/app/edit.svg">
+            <img class="editImg hand" src="/images/icons/app/edit.svg">
             <input class="nonEditable" id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
           </div>
 
@@ -96,11 +96,11 @@
         <article class="profileInputs">
 
 
-            <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
+            <div class="profilePicImgContainer hand" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
               <img id="profilePicImg" src="{{ asset(Auth::user()->profilePicture) }}" alt="profilePic" >
             </div>
-            <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
-            <input id="profilePicInput" type="file" class="profilePicInput">
+            <div id="fakeSelectFile" class="fakeSelectFile hand">Seleccione archivo</div>
+            <input id="profilePicInput" type="file" accept="image/*" name="profilePicInput" class="profilePicInput">
         </article>
       </section>
 
@@ -210,24 +210,34 @@ window.addEventListener('load', function (evt){
 
 <script type="text/javascript">
 
-// HAY QUE TERMINAR DE ARREGLAR, DEBERIA GUARDAR EL VALOR POR DEFECTO DE ENTRADA,
-// SI EL INPUT VUELVE A NOEDITABLE DEBERIA VOLVER AL VALOR POR DEFECTO,
-// EN EDITABLE VUELVE AL VALOR QUE SE EDITO
 
+// THE PENCIL SHOULD CHANGE COLOR....
+
+var arrInputsValue = [];
 
 window.addEventListener('load', function (evt) {
-  var updateInfoInputs = document.querySelectorAll('form.userUpdateInfoForm .inputContainer img');
-
+  var updateInfoInputs = document.querySelectorAll('form.schoolUpdateInfo .inputContainer img');
   updateInfoInputs.forEach (function (el){
+
+    el.parentElement.childNodes.forEach(function(child){
+      arrInputsValue[child.name] = [];
+      arrInputsValue[child.name]['original'] = child.value;
+      arrInputsValue[child.name]['modified'] = child.value;
+    });
+
     el.addEventListener('click', function(evt) {
       el.parentElement.childNodes.forEach(function(child){
         if(child.tagName == 'INPUT'){
-          console.log (child);
           if (child.readOnly) {
+            el.src = '/images/icons/app/editable.svg'
             child.readOnly = false;
+            child.value = arrInputsValue[child.name]['modified'];
             child.classList.remove ('nonEditable');
           }else {
+            el.src = '/images/icons/app/edit.svg'
             child.readOnly = true;
+            arrInputsValue[child.name]['modified'] = child.value;
+            child.value = arrInputsValue[child.name]['original'];
             child.classList.add ('nonEditable');
           }
 
@@ -239,7 +249,6 @@ window.addEventListener('load', function (evt) {
 });
 
 </script>
-
 <!--  Loading profile picture -->
 
 <script>

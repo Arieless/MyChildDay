@@ -13,6 +13,7 @@ class ParentController extends Controller
 {
 
   static function feed () {
+        // check if has kids, if not, redirect to add kids.
 
     $postTypes = Posttype::orderBy('type')->get()->all();
     $kids = Auth::user()->kids()->get();
@@ -22,5 +23,5 @@ class ParentController extends Controller
 
     return view ('private.feed.parent', ['posts' => $posts, 'kids' => $kids ,'postTypes' => $postTypes]);
   }
-  
+
 }

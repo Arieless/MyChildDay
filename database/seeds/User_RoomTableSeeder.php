@@ -12,7 +12,7 @@ class User_RoomTableSeeder extends Seeder
      public function run()
      {
        $i = 0;
-       while ($i++ < 10){
+       while ($i++ < 50){
          DB::table('user_room')->insert([
            'user_id' => App\User::all()->random()->id,
            'room_id' => App\Room::all()->random()->id,
