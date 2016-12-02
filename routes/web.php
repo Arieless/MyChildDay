@@ -28,19 +28,29 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function(){
 
     Route::get('/home', 'HomeController@index');
-    Route::post('/home/chooseRol', 'HomeController@chooseRol');
+    Route::post('/home', 'HomeController@chooseRol');
     Route::get('/home/profile/edit/user', 'ProfileController@editUser');
     Route::post('/home/profile/edit/user', 'ProfileController@updateUser');
 
     // Route::group(['middleware' => ['authParent']], function(){}
     Route::get('/home/parent/feed', 'ParentController@feed');
+
     // Route::group(['middleware' => ['authTeacher']], function(){}
     Route::get('/home/teacher/feed', 'TeacherController@feed');
+
     Route::get('/home/teacher/post', 'TeacherController@post');
     Route::post('/home/teacher/post', 'PostController@uploadPost');
+
+    Route::get('/home/teacher/rooms', 'TeacherController@rooms');
+
     // Route::group(['middleware' => ['authSchool']], function(){}
     Route::get('/home/school/feed', 'SchoolController@feed');
-    Route::get('/home/profile/edit/school', 'SchoolController@editSchool');
+
+    Route::get('/home/school/post', 'SchoolController@post');
     Route::post('/home/school/post', 'PostController@uploadPost');
+
+    Route::get('/home/school/rooms', 'SchoolController@rooms');
+
+    Route::get('/home/school/edit', 'SchoolController@editSchool');
 
 });

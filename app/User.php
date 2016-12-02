@@ -28,6 +28,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function school () {
+      return $this->hasOne(School::class);
+    }
+
     public function hasKids(){
       return $this->kids()->count() > 0? true : false;
     }
