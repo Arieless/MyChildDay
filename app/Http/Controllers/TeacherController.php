@@ -26,7 +26,13 @@ class TeacherController extends Controller
                                     ->orderBy('room_id')
                                     ->get();
 
+                                     // terminar y arreglar con SchoolController
+
       return view ('private.feed.teacher', [ 'displayPost' => 'true', 'kids' => $kids, 'rooms' => $rooms]);
+  }
+
+  function students () {
+
   }
 
 

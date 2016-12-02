@@ -23,8 +23,10 @@
     <!-- HEADER -->
     @include('layouts.components.headers.teacher')
 
+
+@if(isset($displayPost))
     <!-- POPUPS -->
-    @if ( (isset($displayPost) && $displayPost))
+    @if ($displayPost))
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">
@@ -35,7 +37,7 @@
         <!-- LOG -->
 
       </div>
-
+@endif
 
 
     <!-- CONTENT -->

@@ -199,10 +199,10 @@
         <input id="radioClass" type="radio" name="tag"><label class="hand" for="radioClass">Clase</label>
       </div>
     </div>
-
-
   @if (isset($rooms) && $rooms->count() > 1)
     <hr>
+
+
 
     <div class="selectRooms">
       <div class="title">
@@ -225,7 +225,7 @@
       @endforeach
 
       </div>
-
+      
     @if ($kids->count() > 1)
 
       <div class="selectStudents">

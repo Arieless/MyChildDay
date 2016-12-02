@@ -29,7 +29,7 @@
 </div>
 
 
-<form id="choose-form" action="{{ url('/home/chooseRol') }}" method="POST" style="display: none;">
+<form id="choose-form" action="{{ url('/home') }}" method="POST" style="display: none;">
     {{ csrf_field() }}
     <input id="choose-input" type="text" name="choose-input" value="">
 </form>
