@@ -30,7 +30,7 @@
 
             </p>
             <label for="firstName">Nombre</label>
-            <img class="editImg" src="/images/icons/app/edit.svg">
+            <img class="editImg hand" src="/images/icons/app/edit.svg">
             <input class="nonEditable" id="firstName" type="text" placeholder="Ingrese su nombres" name="firstName" value="{{ Auth::user()->firstName }}" readonly/>
           </div>
 
@@ -47,7 +47,7 @@
 
           </p>
           <label for="lastName">Apellido</label>
-          <img class="editImg" src="/images/icons/app/edit.svg">
+          <img class="editImg hand" src="/images/icons/app/edit.svg">
           <input class="nonEditable" id="lastName" type="text" placeholder="Ingrese su apellido" name="lastName" value="{{ Auth::user()->lastName }}" readonly/ >
           </div>
 
@@ -98,7 +98,7 @@
 
             </p>
             <label for="phone">Telefono</label>
-            <img class="editImg" src="/images/icons/app/edit.svg">
+            <img class="editImg hand" src="/images/icons/app/edit.svg">
             <input class="nonEditable" id="phone" type="text" placeholder="Ingrese Teléfono de Contacto" name="phone" value="{{ Auth::user()->phone }}"  readonly />
           </div>
 
@@ -113,11 +113,11 @@
         <article class="profileInputs">
 
 
-            <div class="profilePicImgContainer" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
+            <div class="profilePicImgContainer hand" id="profilePicImgContainer" onclick="$('#profilePicInput').click()">
               <img id="profilePicImg" src="{{ asset(Auth::user()->profilePicture) }}" alt="profilePic" >
             </div>
-            <div id="fakeSelectFile" class="fakeSelectFile">Seleccione archivo</div>
-            <input id="profilePicInput" type="file" name="profilePicInput" class="profilePicInput">
+            <div id="fakeSelectFile" class="fakeSelectFile hand">Seleccione archivo</div>
+            <input id="profilePicInput" type="file" accept="image/*" name="profilePicInput" class="profilePicInput">
         </article>
       </section>
 
@@ -257,8 +257,6 @@ window.addEventListener('load', function (evt) {
             child.value = arrInputsValue[child.name]['original'];
             child.classList.add ('nonEditable');
           }
-
-          console.log (el.src);
 
           child.focus();
         }

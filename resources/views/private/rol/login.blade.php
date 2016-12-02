@@ -10,7 +10,7 @@
 <div class="flexContainer">
 
   @if (Auth::user()->teacherRol)
-  <div class="rol">
+  <div class="rol hand">
     <a href="{{ url ('/home/teacher/feed') }}">
       <img src="{{url ('images/icons/big/teacher.svg')}}" alt="">
       <h1>Docente</h1>
@@ -19,7 +19,7 @@
   @endif
 
   @if (Auth::user()->schoolRol)
-  <div class="rol">
+  <div class="rol hand">
     <a href="{{ url ('/home/school/feed') }}">
       <img src="{{url ('images/icons/big/school.svg')}}" alt="">
       <h1>Escuela</h1>
@@ -30,7 +30,7 @@
 
   @if (Auth::user()->parentRol)
   <a href="{{ url ('/home/parent/feed') }}">
-    <div class="rol">
+    <div class="rol hand">
       <img src="{{url ('images/icons/big/parent.svg')}}" alt="">
       <h1>Padre</h1>
     </div>

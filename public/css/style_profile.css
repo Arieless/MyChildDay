@@ -67,8 +67,6 @@
   text-align: center;
   display: inline-text;
   margin-top: 10px;
-  cursor: pointer;
-  cursor: hand;
 }
 
 .profileContainerMain .profileInputs .profilePicImgContainer img {
@@ -83,8 +81,6 @@
 }
 
 .profileContainerMain .profileInputs .profilePicImgContainer img:hover {
-  cursor: pointer;
-  cursor: hand;
   filter: brightness(90%);
 }
 
@@ -213,8 +209,6 @@
   width: 55px;
   float: right;
   padding: 15px 15px 15px 15px;
-  cursor: hand;
-  cursor: pointer;
 }
 
 .profileContainerMain .editImg:hover {

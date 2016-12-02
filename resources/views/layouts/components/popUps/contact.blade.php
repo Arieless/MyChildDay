@@ -1,5 +1,5 @@
 <div id="popUpContainerContact" class="popUpContainer indexPopUp popUpContact" style="display: {{ isset($display)? $display : 'none' }}">
-  <img id="buttonCloseContact" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
+  <img id="buttonCloseContact" class="buttonClose hand" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Contacto</h4>
   <form id="contactForm" role="form" method="POST" action="{{ url ('/contact/send') }}">
 

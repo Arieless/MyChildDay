@@ -9,6 +9,8 @@ class SchoolController extends Controller
 {
 
   static function feed () {
+        // check if has schools, if not, redirect to add school or choose another rol.
+
       return view ('private.feed.school');
   }
 

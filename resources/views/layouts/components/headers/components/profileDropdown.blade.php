@@ -33,6 +33,9 @@
     {{ csrf_field() }}
 </form>
 
+
+<!-- LOGOUT BUTTON -->
+
 <script type="text/javascript">
 
   window.addEventListener('load', function (){
@@ -41,6 +44,14 @@
        document.getElementById('logout-form').submit();
     })
   });
+
+</script>
+
+<!--  DROPDOWN FROM BAR -->
+
+<script type="text/javascript">
+
+  // SHOW DROPDOWN
 
   window.addEventListener('load', function (evt) {
     document.getElementById('userProfileDropDownContent').parentElement.addEventListener('click', function () {
@@ -55,25 +66,28 @@
     });
   });
 
-  document.addEventListener('click', function (evt) {
-        var profileArr = [];
+  // HIDE DROPDOWN IF CLICK SOMEWHERE ELSE
 
-        profileArr.push (document.getElementById('userProfileDropDownContent').parentElement);
-        var childs = profileArr[0].getElementsByTagName("*");
+  window.addEventListener('load', function (evt) {
+    document.addEventListener('click', function (evt) {
+      var profileArr = [];
 
-        for (el in childs){
-          profileArr.push(childs[el]);
-        }
+      profileArr.push (document.getElementById('userProfileDropDownContent').parentElement);
+      var childs = profileArr[0].getElementsByTagName("*");
 
-        var flag = true;
-        profileArr.forEach(function (el){
-          flag = flag && evt.target !== el;
-        });
+      for (el in childs){
+        profileArr.push(childs[el]);
+      }
 
-        if (flag && document.getElementById('userProfileDropDownContent').style.display == 'block'){
-          document.getElementById('userProfileDropDownContent').style.display = 'none';
-        }
-
+      var flag = true;
+      profileArr.forEach(function (el){
+        flag = flag && evt.target !== el;
       });
+
+      if (flag && document.getElementById('userProfileDropDownContent').style.display == 'block'){
+        document.getElementById('userProfileDropDownContent').style.display = 'none';
+      }
+    });
+  });
 
 </script>
