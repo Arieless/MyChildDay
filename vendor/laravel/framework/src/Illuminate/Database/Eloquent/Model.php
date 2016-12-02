@@ -1902,6 +1902,11 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         return str_replace('\\', '', Str::snake(Str::plural(class_basename($this))));
     }
 
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
+
     /**
      * Set the table associated with the model.
      *

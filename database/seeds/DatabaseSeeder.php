@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
       //PIVOT TABLES
       $this->call(User_RoomTableSeeder::class);
       $this->call(User_KidTableSeeder::class);
-      $this->call(Room_SchoolTableSeeder::class);
       $this->call(Kid_RoomTableSeeder::class);
       $this->call(Post_KidTableSeeder::class);
     }

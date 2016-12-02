@@ -1,0 +1,107 @@
+
+.parentFeedContainer {
+  max-width: 960px;
+  margin: auto;
+}
+
+
+.feedOptionsContainer {
+  position: fixed;
+  padding-top: 10px;
+  top: 70px;
+  width: 960px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.feedOptions {
+  width: 100%;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  overflow: hidden;
+
+}
+
+.feedOptions .activityOptions {
+  float: right;
+  padding: 8px;
+}
+
+.feedOptions .kidOptions .kidFilterContainer{
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.feedOptions .kidOptions .kidFilterContainer img{
+  height: 35px;
+  width: 35px;
+  border: 1px solid lightgrey;
+}
+
+.feedOptions .kidOptions .kidFilterContainer h3 {
+  line-height: 35px;
+  text-align: center;
+  vertical-align: 35px;
+  font-weight: bold;
+  color: #333333;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* MAKE ACTIVE CLASS */
+
+.feedOptions .kidOptions .kidFilterContainer:hover h3{
+  color: darkgrey;
+}
+
+.feedOptions .kidOptions .kidFilterContainer:hover img{
+  filter: brightness(130%);
+  border: 1px solid #666666;
+}
+
+.feedOptions .activityOptions select {
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 12px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url('/images/icons/triangle.png');
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  overflow: hidden;
+  padding: 2px 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  min-width: 130px;
+  max-width: 250px;
+
+  font-size: 12px;
+}
+
+
+
+@media (max-width: 1280px) { /*  <----------------------------------- MENOS DE 1280 -------------------------------> */
+
+  .parentFeedContainer {
+    height: calc(100vh - 180px);
+    min-height: calc(550px - 180px)
+  }
+
+}
+
+@media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+
+  .containerRols {
+    height: calc(100vh - 80px);
+    min-height: calc(660px - 80px);
+  }

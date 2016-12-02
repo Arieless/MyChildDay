@@ -67,7 +67,7 @@
         </li>
         <li class="dropdown userPicture">
           <a class="flexIconLink schoolColor">
-            <img class="roundPicture userPicture" src="{{ Auth::user()->profilePicture  }}" alt="Ver perfil">
+            <img class="roundPicture userPicture" src="{{ asset(Auth::user()->profilePicture) }}" alt="Ver perfil">
             <br/>{{ strtolower(Auth::user()->firstName) }}
           </a>
           @include ('layouts.components.headers.components.profileDropdown', ['color' => 'schoolColor'])
