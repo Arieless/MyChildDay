@@ -37,11 +37,6 @@
   filter: brightness(500%);
 }
 
-.containerRols .flexContainer .rol{
-  cursor: pointer;
-  cursor: hand;
-}
-
 .containerRols .flexContainer .rol:hover h1 {
   color: black;
 }

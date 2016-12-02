@@ -35,14 +35,13 @@
             </li>
             {{-- @if (user()->hasRooms()) --}}
             <li class="optionIcon" id="popUpButtonPost">
-              <a class="flexIconLink teacherColor" href="#">
-                <img src="/images/icons/app/post.svg" alt="Ver calendario">
+              <a class="flexIconLink teacherColor" href="{{ url('home/teacher/post') }}">
+                <img src="/images/icons/app/post.svg" alt="Hacer un nuevo post">
                 <br/>Posteo
               </a>
             </li>
-
             <li class="optionIcon">
-              <a class="flexIconLink teacherColor" href="{{ url('home/school/calendar') }}">
+              <a class="flexIconLink teacherColor" href="{{ url('home/teacher/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
                 <br/>Eventos
               </a>
@@ -66,7 +65,6 @@
     </div>
 
     </nav>
-
 
 
 </header>

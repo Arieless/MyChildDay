@@ -1,5 +1,5 @@
 <div id="popUpContainerLogin" class="popUpContainer indexPopUp popUpLogin" style="display: {{ isset($display)? $display : 'none' }}">
-  <img id="buttonCloseLogin" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
+  <img id="buttonCloseLogin" class="buttonClose hand" src="/images/icons/close.png" alt="cerrar" />
   <h4 class="popUpTitles">Inicie sesion</h4>
   <form id="loginForm" role="form" method="POST" action="{{ url('/login') }}">
 

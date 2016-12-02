@@ -12,7 +12,7 @@ class User_KidTableSeeder extends Seeder
      public function run()
      {
        $i = 0;
-       while ($i++ < 10){
+       while ($i++ < 50){
          DB::table('user_kid')->insert([
            'user_id' => App\User::all()->random()->id,
            'kid_id' => App\Kid::all()->random()->id,

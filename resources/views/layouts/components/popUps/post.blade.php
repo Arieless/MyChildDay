@@ -1,22 +1,15 @@
 <style media="screen">
 
-  .postContainer hr {
-    width: 90%;
-    border: 0;
-    height: 1px;
-    background: lightgrey;
-  }
-
   .postContainer .postText{
-      padding: 20px;
-      width: calc(100% - 16px);
-      resize: none;
-      font-family: 'Source Sans Pro', sans-serif;
-      color: #333333;
-      font-size: 22px;
-      font-weight: bold;
+    padding: 20px;
+    width: calc(100% - 16px);
+    resize: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333333;
+    font-size: 22px;
+    font-weight: bold;
 
-      border: none;
+    border: none;
   }
 
   .postContainer .postText::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -36,49 +29,89 @@
     font-weight: bold;
   }
 
-  .postContainer .dropdown {
-    position: relative;
+  .postContainer .submit {
+    overflow: hidden; margin-top: 20px;
   }
 
-  .postContainer .dropdown-content {
-      position: absolute;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      overflow: hidden;
-  }
-
-  .postContainer .flexColumn {
+  .postContainer .flexRow {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
 
-  .postContainer .flexColumn .flexItem{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .postContainer .selectRooms .title,
+  .postContainer .flexRow {
+    width: 90%;
+    margin: auto;
   }
 
-  .postContainer .flexColumn .flexItem input,
-  .postContainer .flexColumn .flexItem label{
+  .postContainer .selectRooms .title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
 
+  .postContainer .selectRooms .titleText {
+    font-weight: bold;
+    color: darkgrey;
+    display: inline-block;
+  }
+
+  .postContainer .selectRooms .title .titleOptions {
+    float: right;
+    display: inline-block;
+  }
+
+  .postContainer .selectRooms .title .titleOptions{
+    color: darkgrey;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .postContainer .flexRow .flexItem{
+    display: inline-flex;
+    padding: 10px 5px;
+    vertical-align: middle;
   }
 
   .postContainer .selectRooms {
     width: 100%;
   }
 
+  .postContainer .students img,
+  .postContainer .selectRooms .room img{
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin: auto;
+  }
+
+  .postContainer .selectRooms .students label,
+  .postContainer .selectRooms .room {
+    color: darkgrey;
+    font-size: 12px;
+  }
+
+  .postContainer .selectRooms .students label,
+  .postContainer .selectRooms .room label {
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+  }
+
+  .postContainer .selectRooms .room span {
+    font-weight: bold;
+  }
+
   .postContainer .optionItem{
-
-    padding: 10px 5px 5px 5px;
-
-    display: inline-flex;
     line-height: 20px;
     font-size: 14px;
-    vertical-align: middle;
-
     font-weight: bold;
     color: darkgrey;
+  }
+
+  .postContainer .mediaOptions {
+    padding-top: 20px;
   }
 
   .postContainer .tags .optionItem img,
@@ -87,36 +120,27 @@
     margin: 5px;
   }
 
-  .postContainer .tags,
-  .postContainer .mediaOptions {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .postContainer .mediaOptions,
-  .postContainer .optionItem label {
-    cursor: pointer;
-    cursor: hand;
-  }
-
+  .postContainer .selectRooms .room:hover,
+  .postContainer .selectRooms .title .titleOptions span:hover,
   .postContainer .mediaOptions:hover ,
-  .postContainer .optionItem:hover {
-    color: #333333;
-  }
-
+  .postContainer .optionItem:hover,
   .postContainer .mediaOptions.active ,
   .postContainer .optionItem.active {
     color: #333333;
   }
 
-
+  .postContainer .selectRooms .room:hover img,
+  .postContainer .mediaOptions:hover img,
+  .postContainer .optionItem.active {
+    filter: brightness(90%);
+  }
 
   .postContainer .mediaOptions .optionItem h5 {
     display: inline-block;
   }
+
+  .postContainer .students input[type=checkbox],
+  .postContainer .selectRooms .room input[type=checkbox],
   .postContainer .tags .optionItem input[type=radio] {
     display: none;
   }
@@ -124,88 +148,150 @@
 </style>
 
 <div id="popUpContainerPost" class="popUpContainer loggedPopUp postContainer" style="display: {{ isset($display)? $display : 'none' }}" >
-  <img id="buttonCloseRegister" class="buttonClose" src="/images/icons/close.png" alt="cerrar" />
-  <form class="" action="index.html" method="post" enctype="multipart/form-data">
-    <textarea name="postText" class="postText" rows="4" cols="50" placeholder="Que deseas contar?" required/></textarea>
+  <img id="buttonCloseRegister" class="buttonClose hand" src="/images/icons/close.png" alt="cerrar" />
+  <form class="" action="{{url('/home/post')}}" method="post" enctype="multipart/form-data">
 
+    <div class="mediaOptions flexRow">
 
-
-    <div class="selectRooms">
-    {{--
-      @if (isset($classRooms))
-    <hr>
-        @if ($classRooms.length > 1)
-          <div class="dropdown">
-            <div class="dropdown-content flexColumn">
-              @foreach ($classRooms as $class)
-                  <div class="flexItem">
-                    <input id="{{$class->id}}" type="checkbox" name="{{$class->id}}" value="{{$class->id}}"><label for="{{$class->id}}">{{$class->name}}</label>
-                  </div>
-              @endforeach
-            </div>
-          </div>
-        @elseif
-        <input id="{{$classRooms[0]->id}}" type="checkbox" name="{{$classRooms[0]->id}}" value="{{$classRooms[0]->id}}" selected><label for="{{$classRooms[0]->id}}">{{$classRooms[0]->name}}</label>
-        @endif
-
-      @endif
-    --}}
-    </div>
-
-    <hr>
-
-    <div class="mediaOptions">
-
-      <div class="optionItem" id="buttonUploadPicture">
+      <div class="optionItem hand flexItem" id="buttonUploadPicture">
         <img src="/images/icons/app/close.svg" alt="">
         <h5>Agregar una foto o video</h5>
-        <input id="uploadPicturePost" type="file" class="" style="display:none">
+        <input id="uploadPicturePost" type="video/*,image/*" class="" style="display:none">
       </div>
 
-      <div class="optionItem">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="">
         <h5>Agregar una galeria</h5>
+        <input id="uploadPicturePost" type="file multiple" accept="video/*,image/*" class="" style="display:none">
       </div>
 
     </div>
 
     <hr>
 
-    <div class="tags">
-      <div class="optionItem">
+    <textarea name="postText" class="postText" rows="4" cols="50" placeholder="Que deseas contar?" required/></textarea>
+
+    <hr>
+
+    <div class="tags flexRow">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="Tag comida">
-        <input id="radioFood" type="radio" name="tag" required><label for="radioFood">Comida</label>
+        <input id="radioFood" type="radio" name="tag" required><label class="hand" for="radioFood">Comida</label>
       </div>
-      <div class="optionItem">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="Tag siesta">
-        <input id="radioNap" type="radio" name="tag"><label for="radioNap">Siesta</label>
+        <input id="radioNap" type="radio" name="tag"><label class="hand" for="radioNap">Siesta</label>
       </div>
-      <div class="optionItem">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="Tag toillete">
-        <input id="radioPotty" type="radio" name="tag"><label for="radioPotty">Toilette</label>
+        <input id="radioPotty" type="radio" name="tag"><label class="hand" for="radioPotty">Toilette</label>
       </div>
-      <div class="optionItem">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="Tag aprendizaje">
-        <input id="radioLearn" type="radio" name="tag"><label for="radioLearn">Aprendizaje</label>
+        <input id="radioLearn" type="radio" name="tag"><label class="hand" for="radioLearn">Aprendizaje</label>
       </div>
-      <div class="optionItem">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="Tag aprendizaje">
-        <input id="radioLearn" type="radio" name="tag"><label for="radioLearn">Juegos</label>
+        <input id="radioGames" type="radio" name="tag"><label class="hand" for="radioGames">Juegos</label>
       </div>
-      <div class="optionItem">
+      <div class="optionItem hand flexItem">
         <img src="/images/icons/app/close.svg" alt="Tag aprendizaje">
-        <input id="radioLearn" type="radio" name="tag"><label for="radioLearn">Clase</label>
+        <input id="radioClass" type="radio" name="tag"><label class="hand" for="radioClass">Clase</label>
       </div>
     </div>
 
-    <div class="submit" style="overflow: hidden; margin-top: 20px;">
-      <button type="submit" name="button" style="float: right;">Enviar</button>
-    </div>
+
+  @if (isset($rooms) && $rooms->count() > 1)
+    <hr>
+
+    <div class="selectRooms">
+      <div class="title">
+        <div class="titleText">
+          Selecciona el aula
+        </div>
+        <div class="titleOptions">
+          <span class="hand">Marcar todos</span> - <span class="hand">Desmarcar todos</span>
+        </div>
+      </div>
+      <div class="flexRow">
+
+      @foreach ($rooms as $room)
+        <div class="room flexItem hand">
+          <div class="imgContainer">
+            <img class="roundPicture" src="{{$room->profilePicture}}" alt="{{$room->name}}">
+            <label for="{{$room->id}}"> <span>{{$room->name}}</span> <br/>{{$room->school->name}}</label>
+          </div>
+        </div>
+      @endforeach
+
+      </div>
+
+    @if ($kids->count() > 1)
+
+      <div class="selectStudents">
+        <div class="titleText">
+          Selecciona el aula
+        </div>
+        <div class="titleOptions">
+          <span class="hand">Marcar todos</span> - <span class="hand">Desmarcar todos</span>
+        </div>
+
+          @foreach ($kids as $kid)
+          <div class="student flexItem hand">
+            <div class="imgContainer" id="students_{{$room->id}}">
+              <img class="roundPicture" src="{{$kid->profilePicture}}" alt="{{$kid->firstName." ".$kid->lastName}}">
+              <label for="{{$kid->id}}"> <span>{{$kid->firstName." ".$kid->lastName}}</span></label>
+            </div>
+          </div>
+          @endforeach
+
+
+
+        </div>
+
+      </div>
+
+      <input style="display:none" type="number" name="kid" value="" />
+    @endif
+
+    @if (!$kids->count() > 1)
+      <input style="display:none" type="number" name="kid" value="{{$kids->first()}}" />
+    @endif
+
+      <input style="display:none" type="text" name="school" value="" />
+  @else
+      <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
+  @endif
+  </div>
+
+
+
+
+
+  <div class="submit">
+    <button type="submit" name="button" style="float: right;">Enviar</button>
+  </div>
 
   </form>
 </div>
 
-<!-- Loading image -->
+
+<script type="text/javascript">
+/*
+
+window.addEventListener('load', function () {
+  document.getElementById('popUpButtonPost').onclick = () => {
+    document.getElementById('popUpContainerPost').style.display = 'block';
+    document.getElementById('popUpContainerBackground').style.display = 'block';
+  }
+
+});
+*/
+</script>
+
+</script>
+
+<!-- BUTTON UPLOAD IMAGE -->
 
 <script type="text/javascript">
 
@@ -217,29 +303,29 @@ window.addEventListener('load', function (evt){
 
 </script>
 
-<!-- Radio buttons -->
+<!-- RADIO BUTTONS STYLE CHANGE -->
 
 <script type="text/javascript">
 
   window.addEventListener('load', function () {
-    document.getElementById('popUpButtonPost').onclick = () => {
-      document.getElementById('popUpContainerPost').style.display = 'block';
-      document.getElementById('popUpContainerBackground').style.display = 'block';
-    }
-
-  });
-
-  window.addEventListener('load', function () {
     document.querySelectorAll('.tags .optionItem input').forEach( function (el){
+
+      el.parentElement.querySelector('label').addEventListener('click', function (evt){
+        evt.preventDefault();
+      })
+
+      el.parentElement.addEventListener('click', function (evt){
+        this.querySelector('input').click();
+      });
 
       el.addEventListener('change', function (evt) {
         if (evt.target.checked) evt.target.parentElement.classList.add('active');
-
         document.querySelectorAll('.tags .optionItem input').forEach(function (elem){
         if (!elem.checked) elem.parentElement.classList.remove('active');
         });
 
       });
+
     });
   });
 

@@ -65,6 +65,7 @@
 
   <div class="feedPostsContainer">
   @foreach ($posts as $post)
+  
     <div class="feedPost">
       <div class="">
       {{-- $post->postType()->get() --}}
