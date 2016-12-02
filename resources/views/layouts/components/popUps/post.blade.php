@@ -225,7 +225,7 @@
       @endforeach
 
       </div>
-      
+
     @if ($kids->count() > 1)
 
       <div class="selectStudents">
@@ -262,7 +262,6 @@
   @else
       <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
   @endif
-  </div>
 
 
 
