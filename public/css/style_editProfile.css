@@ -3,6 +3,8 @@
   background-color: #4140a0;
 }
 
+
+
 .profileContainerMain {
   color: white;
   margin: auto;
@@ -11,6 +13,18 @@
   margin-top: 70px;
 
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 960px){
+  .profileContainerMain {
+    width: 960px;
+  }
+}
+
+@media (max-width: 960px) {  /*  <----------HASTA 550  -------------------------------> */
+  .profileContainerMain {
+    width: 100%;
+  }
 }
 
 .profileTitles h3 {
@@ -240,15 +254,19 @@
   .profileContainerMain .profileTitles {
     width: 100%;
   }
+
   .profileContainerMain .profileInputs {
     width: 100%;
   }
+
   .profileContainerMain .profileTitles h3 {
     text-align: center;
   }
+
   .profileContainerMain .profileInputs .profilePicImgContainer  {
     margin: auto;
   }
+
   .profileContainerMain .profileSection .profileInputs .profilePicInput {
     width: 155px;
     margin-left: 35%;
@@ -261,6 +279,7 @@
   .profileContainerMain .profileInputs input {
     width: 100%;
   }
+
   .profileContainerMain .profileSection .profileInputs .profilePicInput {
     margin-left: 25%;
   }
@@ -269,14 +288,5 @@
 }
 
 @media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
-
-}
-
-@media (min-width: 550px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
-
-  .profileContainerMain {
-    color: white;
-    width: 550px;
-  }
 
 }
