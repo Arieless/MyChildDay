@@ -20,8 +20,7 @@
       <link rel="stylesheet" type="text/css" href="/css/style_editProfile.css">
       <link rel="stylesheet" type="text/css" href="/css/style_viewProfile.css">
 
-      <link rel="stylesheet" type="text/css" href="/css/style_listRooms.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_listKids.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_lists.css">
 
       <script src="/js/jquery-3.1.1.js" charset="utf-8"></script>
 

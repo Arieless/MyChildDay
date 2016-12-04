@@ -27,5 +27,8 @@ class School extends Model
 
   public function rooms () {
     return $this->hasMany(Room::class, 'school_id');  }
+}
 
+  public function kids () {
+    return $this->hasMany(Room::class, 'school_id');  }
 }
