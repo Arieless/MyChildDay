@@ -32,11 +32,11 @@
         <div class="dataItem"><p>Descripcion:</p> {{ Auth::user()->phone }}</div>
         <div class="dataItem"><p>Cumpleaños:</p> {{ Auth::user()->address }}</div>
       </div>
-      <h3>Sala</h3>
+      <h3>Aula</h3>
       <div class="roomsContainer">
-        <div class="dataItem">SalaA en school ?</div>
-        <div class="dataItem">SalaA en school ?</div>
-        <div class="dataItem">SalaA en school ?</div>
+        <div class="dataItem">Aula A en school ?</div>
+        <div class="dataItem">Aula B en school ?</div>
+        <div class="dataItem">Aula C en school ?</div>
       </div>
     </section>
   </div>

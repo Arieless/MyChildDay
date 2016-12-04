@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="listRoomsContainerMain">
-  <h3>Salas</h3>
+  <h3>Aulas</h3>
   <div class="listImgContainer">
     <div class="dataRoom">
       <div class="roomImgContainer">

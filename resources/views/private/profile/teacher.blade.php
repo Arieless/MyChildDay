@@ -18,11 +18,11 @@
         <div class="dataItem"><p>Telefono:</p> {{ Auth::user()->phone }}</div>
         <div class="dataItem"><p>Email:</p> {{ Auth::user()->email }}</div>
       </div>
-      <h3>Sala</h3>
+      <h3>Aulas</h3>
       <div class="roomsContainer">
-        <div class="dataItem">SalaA en school ?</div>
-        <div class="dataItem">SalaA en school ?</div>
-        <div class="dataItem">SalaA en school ?</div>
+        <div class="dataItem">AulaA en school ?</div>
+        <div class="dataItem">AulaA en school ?</div>
+        <div class="dataItem">AulaA en school ?</div>
       </div>
     </section>
   </div>
