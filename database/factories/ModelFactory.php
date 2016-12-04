@@ -33,7 +33,7 @@ $factory->define(App\School::class, function (Faker\Generator $faker) {
     'telephone' => '1165578099',
     'email' => $faker->email,
     'user_id' => App\User::all()->random()->id,
-    'profilePicture' => $faker->imageUrl($width = 640, $height = 480),
+    'profilePicture' => 'images/schools/avatars/default_avatar_'.rand(0,10).'.svg',
   ];
 });
 
@@ -43,7 +43,7 @@ $factory->define(App\Kid::class, function (Faker\Generator $faker) {
         'lastName' => $faker->lastName,
         'birthdate' => $faker->date($format = 'd-m-Y', $max = 'now'),
         'description' => $faker->text,
-        'profilePicture' => $faker->imageUrl($width = 640, $height = 480),
+        'profilePicture' => 'images/kids/avatars/default_avatar_'.rand(0,20).'.svg',
         'school_id' => App\School::all()->random()->id,
     ];
 });
@@ -52,7 +52,7 @@ $factory->define(App\Room::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->city,
         'school_id' => App\School::all()->random()->id,
-        'profilePicture' => $faker->imageUrl($width = 640, $height = 480),
+        'profilePicture' => 'images/users/avatars/default_avatar_'.rand(0,11).'.svg',
     ];
 });
 

@@ -18,10 +18,10 @@ class PostController extends Controller
           //do something
         }
 
-        no fails.
+        // no fails.
       }
 
-      return redirect('home')->withErrors
+      return redirect('home')->withErrors(); // finish
 
     }
 
