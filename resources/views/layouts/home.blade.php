@@ -16,7 +16,12 @@
       <link rel="stylesheet" type="text/css" href="/css/style_footerLogged.css">
 
       <link rel="stylesheet" type="text/css" href="/css/style_rols.css">
-      <link rel="stylesheet" type="text/css" href="/css/style_profile.css">
+
+      <link rel="stylesheet" type="text/css" href="/css/style_editProfile.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_viewProfile.css">
+
+      <link rel="stylesheet" type="text/css" href="/css/style_listRooms.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_listKids.css">
 
       <script src="/js/jquery-3.1.1.js" charset="utf-8"></script>
 
