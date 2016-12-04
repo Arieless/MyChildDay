@@ -29,8 +29,41 @@
     font-weight: bold;
   }
 
-  .postContainer .submit {
-    overflow: hidden; margin-top: 20px;
+  .submit {
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  .submit button{
+    display: block;
+    padding: 10px 20px;
+    min-width: 10%;
+    max-width: 120px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+
+    text-align: center;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    color: white;
+    background-color: #4CAF50;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 2px #3F9643;
+    outline:none;
+    cursor: pointer;
+
+    float: right;
+
+    margin-bottom: 30px;
+    margin-right: 30px;
   }
 
   .postContainer .flexRow {
@@ -145,6 +178,15 @@
     display: none;
   }
 
+
+
+.postContainer .imgContainer img{
+  margin-top: 5%;
+  width: 25px;
+  height: 25px;
+}
+  }
+
 </style>
 
 <div id="popUpContainerPost" class="popUpContainer loggedPopUp postContainer" style="display: {{ isset($display)? $display : 'none' }}" >
@@ -199,7 +241,7 @@
         <input id="radioClass" type="radio" name="tag"><label class="hand" for="radioClass">Clase</label>
       </div>
     </div>
-  @if (isset($rooms) && $rooms->count() > 1)
+    @if (isset($rooms) && $rooms->count() > 1)
     <hr>
 
 
@@ -222,11 +264,11 @@
             <label for="{{$room->id}}"> <span>{{$room->name}}</span> <br/>{{$room->school->name}}</label>
           </div>
         </div>
-      @endforeach
+        @endforeach
 
       </div>
-      
-    @if ($kids->count() > 1)
+
+      @if ($kids->count() > 1)
 
       <div class="selectStudents">
         <div class="titleText">
@@ -236,41 +278,41 @@
           <span class="hand">Marcar todos</span> - <span class="hand">Desmarcar todos</span>
         </div>
 
-          @foreach ($kids as $kid)
+        @foreach ($kids as $kid)
           <div class="student flexItem hand">
             <div class="imgContainer" id="students_{{$room->id}}">
               <img class="roundPicture" src="{{$kid->profilePicture}}" alt="{{$kid->firstName." ".$kid->lastName}}">
               <label for="{{$kid->id}}"> <span>{{$kid->firstName." ".$kid->lastName}}</span></label>
             </div>
           </div>
-          @endforeach
+        @endforeach
 
 
-
-        </div>
 
       </div>
 
-      <input style="display:none" type="number" name="kid" value="" />
+    </div>
+
+    <input style="display:none" type="number" name="kid" value="" />
     @endif
 
     @if (!$kids->count() > 1)
-      <input style="display:none" type="number" name="kid" value="{{$kids->first()}}" />
+    <input style="display:none" type="number" name="kid" value="{{$kids->first()}}" />
     @endif
 
-      <input style="display:none" type="text" name="school" value="" />
-  @else
-      <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
-  @endif
+    <input style="display:none" type="text" name="school" value="" />
+      @else
+    <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
+    @endif
+
+    <div class="submit">
+      <button type="submit" name="button" style="float: right;">Enviar</button>
+    </div>
   </div>
 
 
 
 
-
-  <div class="submit">
-    <button type="submit" name="button" style="float: right;">Enviar</button>
-  </div>
 
   </form>
 </div>
