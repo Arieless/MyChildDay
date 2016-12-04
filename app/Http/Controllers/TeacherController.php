@@ -33,7 +33,7 @@ class TeacherController extends Controller
     return view ('private.feed.teacher', ['posts' => $posts, 'kids' => $kids]);
   }
 
-  function profileTeacher(){
+  function profile(){
       return view ('private.profile.teacher');
   }
 

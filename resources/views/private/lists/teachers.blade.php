@@ -4,7 +4,7 @@
 @section('content')
 <div class="listContainerMain">
   <div class="listDataContainer">
-    <h3>Kids</h3>
+    <h3>Teachers</h3>
     <div class="itemList">
       <div class="itemData">
         <div class="itemOrigin">
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="itemAction">
-          <p>Mensaje</p>
+          <p>Ver</p>
         </div>
       </div>
     </div>

@@ -49,19 +49,21 @@ class SchoolController extends Controller
       return view ('private.feed.school', [ 'displayPost' => 'true', 'kids' => $kids, 'rooms' => $rooms]);
   }
 
-  function profileSchool(){
+  function profile(){
       return view ('private.profile.school');
   }
 
-  function editSchool () {
+  function edit () {
       return view ('private.profile.edit.school');
   }
-  function rooms(){
+  function rooms() {
       return view ('private.lists.rooms');
   }
-  function kids(){
+  function kids() {
       return view ('private.lists.kids');
   }
-
+  function teachers() {
+      return view ('private.lists.teachers');
+  }
 
 }

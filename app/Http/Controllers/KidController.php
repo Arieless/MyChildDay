@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class KidController extends Controller
 {
-  function profileKid(){
+  function profile(){
       return view ('private.profile.kid');
   }
 }

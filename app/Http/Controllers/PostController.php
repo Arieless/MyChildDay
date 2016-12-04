@@ -8,7 +8,7 @@ use App;
 
 class PostController extends Controller
 {
-    function uploadPost (Request $request) {
+    function upload (Request $request) {
 
       if (Auth::user()->teacherInRooms()->where('id', $request->input('room_id'))->get())
       {
