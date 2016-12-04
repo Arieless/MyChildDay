@@ -268,7 +268,7 @@
 
       </div>
 
-      @if ($kids->count() > 1)
+    @if ($kids->count() > 1)
 
       <div class="selectStudents">
         <div class="titleText">
@@ -300,10 +300,10 @@
     <input style="display:none" type="number" name="kid" value="{{$kids->first()}}" />
     @endif
 
-    <input style="display:none" type="text" name="school" value="" />
-      @else
-    <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
-    @endif
+      <input style="display:none" type="text" name="school" value="" />
+  @else
+      <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
+  @endif
 
     <div class="submit">
       <button type="submit" name="button" style="float: right;">Enviar</button>

@@ -13,9 +13,25 @@ class SchoolController extends Controller
 {
 
   static function feed () {
-        // check if has schools, if not, redirect to add school or choose another rol.
 
-      return view ('private.feed.school');
+    $posts = DB::table('schools')->where('schools.user_id', '=', Auth::user()->id)
+                                  ->select('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
+                                  ->join('posts', 'posts.school_id', '=', 'schools.user_id')
+                                  ->addSelect('posts.contentText as contentText', 'posts.created_at as date' )
+                                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
+                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                                  ->join('users', 'posts.user_id', "=", 'users.id')
+                                  ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
+                                  ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
+                                  ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
+                                  ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture')
+                                  ->orderBy('date')
+                                  ->get();
+
+    $kids = $posts->unique('kidFirstName'); // arreglar esto, capaz desde la vista.
+
+    return view ('private.feed.school', ['posts' => $posts, 'kids' => $kids]);
+
   }
 
   function post () {
