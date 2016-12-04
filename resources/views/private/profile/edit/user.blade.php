@@ -10,7 +10,7 @@
 
       <section class="profileSection">
         <header class="profileTitles">
-          <h3 class="main">Datos Personales</h3>
+          <h3 class="main">Datos</h3>
         </header>
         <article class="profileInputs">
 
