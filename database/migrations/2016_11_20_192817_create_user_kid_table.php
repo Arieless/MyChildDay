@@ -19,6 +19,7 @@ class CreateUserKidTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('kid_id')->unsigned();
             $table->foreign('kid_id')->references('id')->on('kids');
+            //$table->unique('kid_id', 'user_id');
             $table->timestamps();
         });
     }

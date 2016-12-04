@@ -19,6 +19,7 @@ class CreateKidRoomTable extends Migration
             $table->foreign('kid_id')->references('id')->on('kids');
             $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms');
+            //$table->unique('kid_id', 'room_id');
             $table->timestamps();
         });
     }

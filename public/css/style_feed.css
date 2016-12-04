@@ -1,16 +1,115 @@
 
 .parentFeedContainer {
-  max-width: 960px;
   margin: auto;
 }
-
 
 .feedOptionsContainer {
   position: fixed;
   padding-top: 10px;
   top: 70px;
-  width: 960px;
   background-color: rgba(255, 255, 255, 0.9);
+
+  transform: translateX(50%);
+  right: 50%;
+}
+
+.feedPostsContainer{
+  margin-top: calc(70px + 57px + 10px);
+}
+
+.feedPostsContainer .feedPost{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px 30px;
+  border: 1px solid lightgrey;
+
+}
+
+.feedPostsContainer .feedPost hr {
+  border: 0;
+  height: 1px;
+  background: lightgrey;
+}
+
+.feedPostsContainer .feedPost .postOriginContainer{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedPostsContainer .feedPost .postOriginContainer .postOrigin {
+  display:flex;
+  justify-content:
+  flex-start;
+  align-items: center;
+}
+
+.feedPostsContainer .feedPost .postOriginContainer .postOrigin div div.dateContainer {
+  padding: 4px 4px 2px 4px;
+}
+
+.feedPostsContainer .feedPost .postTypeContainer {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.feedPostsContainer .feedPost .postOriginContainer .postOrigin span.name {
+  color: #555555;
+  padding: 3px;
+  font-weight: bold;
+}
+
+.feedPostsContainer .feedPost .postOriginContainer .postOrigin span.date {
+  font-size: 12px;
+  color: darkgrey;
+}
+
+.feedPostsContainer .feedPost span.triangle {
+  font-size: 10px;
+  color: darkgrey;
+}
+
+.feedPostsContainer .feedPost .postTypeContainer span {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: darkgrey;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.feedPostsContainer .feedPost .contentText {
+  color: #333;
+}
+
+
+.feedPostsContainer .feedPost .avatar,
+.feedPostsContainer .feedPost .postType {
+  height: 35px
+}
+
+
+
+@media (max-width: 960px) {
+  .parentFeedContainer {
+    width: 100%;
+    margin: auto;
+  }
+  .feedOptionsContainer {
+    width: 100%;
+  }
+}
+
+@media (min-width: 960px) {
+  .parentFeedContainer {
+    width: 960px;
+
+  }
+  .feedOptionsContainer {
+    width: 960px;
+  }
 }
 
 .feedOptions {
@@ -23,12 +122,16 @@
   padding-bottom: 5px;
 
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 
 }
 
-.feedOptions .activityOptions {
-  float: right;
-  padding: 8px;
+
+@media (min-width: 400px) {
+  .feedOptions .activityOptions {
+    padding: 8px;
+  }
 }
 
 .feedOptions .kidOptions .kidFilterContainer{
@@ -43,15 +146,41 @@
   border: 1px solid lightgrey;
 }
 
+@media (min-width: 400px) {
+  .feedOptions .kidOptions .kidFilterContainer img{
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .feedOptions .kidOptions .kidFilterContainer img{
+    height: 20px;
+    width: 20px;
+  }
+}
+
 .feedOptions .kidOptions .kidFilterContainer h3 {
-  line-height: 35px;
   text-align: center;
-  vertical-align: 35px;
+  vertical-align: middle;
   font-weight: bold;
   color: #333333;
   padding-left: 5px;
   padding-right: 5px;
 }
+
+@media (min-width: 400px) {
+  .feedOptions .kidOptions .kidFilterContainer h3 {
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .feedOptions .kidOptions .kidFilterContainer h3 {
+    line-height: 20px;
+  }
+}
+
 
 /* MAKE ACTIVE CLASS */
 
@@ -82,26 +211,24 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  min-width: 130px;
-  max-width: 250px;
-
   font-size: 12px;
 }
 
-
-
-@media (max-width: 1280px) { /*  <----------------------------------- MENOS DE 1280 -------------------------------> */
-
-  .parentFeedContainer {
-    height: calc(100vh - 180px);
-    min-height: calc(550px - 180px)
+@media (min-width: 400px) {
+  .feedOptions .activityOptions select {
+    min-width: 130px;
+    max-width: 250px;
   }
-
 }
 
-@media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
-
-  .containerRols {
-    height: calc(100vh - 80px);
-    min-height: calc(660px - 80px);
+@media (max-width: 400px) {
+  .feedOptions .activityOptions select {
+    min-width: 80px;
+    max-width: 150px;
   }
+}
+
+
+.parentFeedContainer {
+  min-height: calc(100vh - 180px) /* 180 = NavBar + FeedBar */
+}

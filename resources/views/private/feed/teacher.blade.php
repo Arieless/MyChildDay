@@ -6,9 +6,7 @@
 @section('content')
 
 
-<div class="parentFeedContainer" style="height: 800px;">
-
-</div>
+  @include ('layouts.components.contents.feed')
 
 
 @endsection
