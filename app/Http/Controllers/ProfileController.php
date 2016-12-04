@@ -12,6 +12,7 @@ use Storage;
 
 class ProfileController extends Controller
 {
+
     function editUser () {
 
       return view('private.profile.edit.user');
@@ -89,7 +90,7 @@ class ProfileController extends Controller
   			$info = pathinfo($_FILES['profilePicInput']['name']);
   			$extension =  $info['extension'];
   			$newName = $user->id . '.' . $extension;
-  			$route = 'images/users/profilePictures/'.$newName;
+  			$route = 'images/users/profilePictures/users'.$newName;
         $this->removeLastPicture($user);
   			move_uploaded_file($_FILES['profilePicInput']['tmp_name'], $route);
   			unset($_FILES['profilePicInput']);

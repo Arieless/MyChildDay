@@ -31,8 +31,14 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/home/profile/edit/user', 'ProfileController@editUser');
     Route::post('/home/profile/edit/user', 'ProfileController@updateUser');
 
+
+    Route::get('/home/profile/kid', 'KidController@profileKid');
+    Route::get('/home/profile/teacher', 'TeacherController@profileTeacher');
+
     // Route::group(['middleware' => ['authParent']], function(){}                  Kids should also be > 0
+
     Route::get('/home/parent/feed', 'ParentController@feed');
+    Route::get('/home/profile/parent', 'ParentController@profileParent');
 
     // Route::group(['middleware' => ['authTeacher']], function(){}                 Rooms should also be > 0
     Route::get('/home/teacher/feed', 'TeacherController@feed');
@@ -49,7 +55,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/home/school/post', 'PostController@uploadPost');
 
     Route::get('/home/school/rooms', 'SchoolController@rooms');
+    Route::get('/home/school/kids', 'SchoolController@kids');
 
-    Route::get('/home/school/edit', 'SchoolController@editSchool');
+    Route::get('/home/profile/school', 'SchoolController@profileSchool');
+    Route::get('/home/profile/edit/school', 'SchoolController@editSchool');
 
 });

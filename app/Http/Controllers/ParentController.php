@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class ParentController extends Controller
 {
-
+  function profileParent(){
+      return view ('private.profile.parent');
+  }
   static function feed () {
     
         // check if has kids, if not, redirect to add kids.
