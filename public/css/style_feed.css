@@ -23,7 +23,6 @@
   margin-bottom: 10px;
   padding: 20px 30px;
   border: 1px solid lightgrey;
-
 }
 
 .feedPostsContainer .feedPost hr {
@@ -33,7 +32,7 @@
 }
 
 .feedPostsContainer .feedPost .postOriginContainer{
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -79,18 +78,14 @@
   font-weight: bold;
 }
 
-
 .feedPostsContainer .feedPost .contentText {
   color: #333;
 }
-
 
 .feedPostsContainer .feedPost .avatar,
 .feedPostsContainer .feedPost .postType {
   height: 35px;
 }
-
-
 
 @media (max-width: 960px) {
   .parentFeedContainer {
@@ -126,7 +121,6 @@
   justify-content: space-between;
 
 }
-
 
 @media (min-width: 400px) {
   .feedOptions .activityOptions {
@@ -227,7 +221,6 @@
     max-width: 150px;
   }
 }
-
 
 .parentFeedContainer {
   min-height: calc(100vh - 180px) /* 180 = NavBar + FeedBar */

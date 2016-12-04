@@ -5,7 +5,7 @@
   <div class="viewProfileContainerMain">
     <div class="profileHeader userColor">
       <div class="profilePicImgContainer">
-        <img src="{{ asset(Auth::user()->profilePicture) }}" alt="profilePic" >
+        <img src="{{ asset(Auth::user()->profilePicture) }}" alt="Foto de perfíl" >
       </div>
       <div class="profileName">
         <h3>{{ Auth::user()->firstName }} {{ Auth::user()->lastName }}</h3>

@@ -34,13 +34,19 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::get('/home/profile/kid', 'KidController@profileKid');
     Route::get('/home/profile/teacher', 'TeacherController@profileTeacher');
+    Route::get('/home/profile/parent', 'ParentController@profileParent');
+    Route::get('/home/profile/school', 'SchoolController@profileSchool');
+    Route::get('/home/profile/edit/school', 'SchoolController@editSchool');
+
 
     // Route::group(['middleware' => ['authParent']], function(){}                  Kids should also be > 0
 
+    Route::get('/home/parent', 'ParentController@feed');
     Route::get('/home/parent/feed', 'ParentController@feed');
-    Route::get('/home/profile/parent', 'ParentController@profileParent');
 
     // Route::group(['middleware' => ['authTeacher']], function(){}                 Rooms should also be > 0
+
+    Route::get('/home/teacher', 'TeacherController@feed');
     Route::get('/home/teacher/feed', 'TeacherController@feed');
 
     Route::get('/home/teacher/post', 'TeacherController@post');
@@ -49,6 +55,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/home/teacher/rooms', 'TeacherController@rooms');
 
     // Route::group(['middleware' => ['authSchool']], function(){}                 Schools should also be > 0
+
+    Route::get('/home/school', 'SchoolController@feed');
     Route::get('/home/school/feed', 'SchoolController@feed');
 
     Route::get('/home/school/post', 'SchoolController@post');
@@ -57,7 +65,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/home/school/rooms', 'SchoolController@rooms');
     Route::get('/home/school/kids', 'SchoolController@kids');
 
-    Route::get('/home/profile/school', 'SchoolController@profileSchool');
-    Route::get('/home/profile/edit/school', 'SchoolController@editSchool');
+
 
 });
