@@ -43,6 +43,7 @@ class HomeController extends Controller
       }else if ($result == 'school'){
         Auth::user()->schoolRol = 1;
         Auth::user()->save();
+        return redirect('/home/profile/edit/school');
 
       }else if ($result == 'parent'){
         Auth::user()->parentRol = 1;

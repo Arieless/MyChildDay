@@ -1,0 +1,121 @@
+.viewProfileContainerMain {
+  width: 550px;
+  padding-top: 70px;
+  color: white;
+  margin: auto;
+}
+.viewProfileContainerMain .profileHeader {
+  width: 100%;
+  padding: 25px;
+}
+.viewProfileContainerMain .schoolColor {
+background-color:rgba(44, 22, 97, 0.95);
+}
+.viewProfileContainerMain .userColor {
+background-color:rgba(0, 74, 138, 0.95);
+}
+.viewProfileContainerMain .kidColor {
+background-color:rgba(0, 138, 42, 0.95);
+}
+.viewProfileContainerMain .teacherColor {
+background-color:rgba(173, 24, 24, 0.95);
+}
+.viewProfileContainerMain .profileHeader .profilePicImgContainer {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-color: ghostwhite;
+  border-radius: 50%;
+}
+.viewProfileContainerMain .profileHeader .profilePicImgContainer img {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+}
+.viewProfileContainerMain .profileHeader .profileName {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.viewProfileContainerMain .dataSection {
+  background-color: white;
+  color: black;
+  margin-top: 20px;
+}
+.viewProfileContainerMain .dataSection h3{
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.viewProfileContainerMain .dataSection .infoContainer {
+  border-bottom: 1px solid #b7b7b7;
+  margin-bottom: 20px;
+}
+.viewProfileContainerMain .dataSection .dataItem {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  }
+  .viewProfileContainerMain .dataSection .dataItem p {
+    display: inline-block;
+    font-weight: bold;
+  }
+  .viewProfileContainerMain .dataSection .dataItem a {
+    color: rgba(41, 131, 210, 0.72);
+    font-weight: 600;
+    display: inline-block;
+    padding: 5px;
+  }
+  .viewProfileContainerMain .dataSection .dataItem a:hover {
+    cursor: pointer;
+    filter: brightness(50%);
+  }
+  .viewProfileContainerMain .dataSection .dataItem .dataParent {
+      width: 100px;
+      display: inline-block;
+      margin: 5px;
+  }
+  .viewProfileContainerMain .dataSection .dataItem .dataImgContainer {
+    width: 100px;
+    height: 100px;
+    background-color: ghostwhite;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin: auto;
+  }
+  .viewProfileContainerMain .dataSection .dataItem .dataImgContainer img {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 1280px){ /*  <----------------------------------- HASTA DE 1280 -------------------------------> */
+
+
+
+}
+
+@media (max-width: 550px) {  /*  <----------HASTA 550  -------------------------------> */
+  .viewProfileContainerMain {
+    width: 100%;
+  }
+
+
+
+}
+
+@media (max-width: 350px){
+
+
+
+}
+
+@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+
+}
+
+@media (min-width: 550px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+
+
+
+}

@@ -17,6 +17,10 @@ class TeacherController extends Controller
       return view ('private.feed.teacher');
   }
 
+  function profileTeacher(){
+      return view ('private.profile.teacher');
+  }
+
   function post () {
 
       $rooms = Auth::user()->teacherInRooms;

@@ -16,7 +16,9 @@
     </div>
 
     <div class="rol hand" id="chooseSchool">
+      <a href="{{ url('/home/profile/edit/school') }}">
         <img src="{{url ('images/icons/big/school.svg')}}" alt="">
+      </a>
         <h1>Escuela</h1>
     </div>
 
