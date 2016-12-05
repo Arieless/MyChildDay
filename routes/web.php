@@ -34,8 +34,8 @@ Route::group(['middleware' => ['auth']], function(){
 //-----------PROBLEMA CON ESTOS 2, FUNCIONA EL QUE ESTE PRIMERO, OSEA AHORA FUNCIONA EL DEL ROOM CONTROLLER.
 //----------PROBLEMA CON EL ORDEN DE ESTAS RUTAS, SI VAS A LA LISTA DE TEACHERS SI QUERES VER ALGUNO TE MANDA A UN ROOM PROFILE
 
-    Route::get('/home/profile/{idRoom}/{roomName}', 'RoomController@profile');
-    Route::get('/home/profile/{idTeacher}/{teacherName}', 'TeacherController@profile');
+Route::get('/home/profile/teachers/{idTeacher}/{teacherName}', 'TeacherController@profile');
+Route::get('/home/profile/rooms/{idRoom}/{roomName}', 'RoomController@profile');
 
 //--------------WARNING
 

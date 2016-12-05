@@ -8,7 +8,10 @@
 
 
     @foreach ($rooms as $room)
-    <?php $roomName = $room->name ?>
+    <?php
+      $roomName = $room->name;
+      $teachersInRoom = $room->teachers()->get();
+    ?>
       <div class="itemList">
         <div class="itemData">
           <div class="itemOrigin">
@@ -18,13 +21,13 @@
               <div class="itemInfo">
                 @foreach ($teachersInRoom as $teacher)
                 <?php $teacherName = $teacher->firstName . $teacher->lastName ?>
-                <span><a href="/home/profile/{{$teacher->id}}/{{$teacherName}}">{{ $teacherName }}</a></span>
+                <span><a href="/home/profile/teachers/{{$teacher->id}}/{{$teacherName}}">{{ $teacherName }}</a></span>
                 @endforeach
               </div>
             </div>
           </div>
           <div class="itemAction">
-            <a href="/home/profile/{{$room->id}}/{{$roomName}}">Ver</a>
+            <a href="/home/profile/rooms/{{$room->id}}/{{$roomName}}">Ver</a>
           </div>
         </div>
       </div>

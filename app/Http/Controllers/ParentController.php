@@ -24,7 +24,7 @@ class ParentController extends Controller
                                   ->join(Post::getTableName(), 'posts.id', '=', 'post_kid.post_id')
                                   ->select('posts.contentText as contentText', 'posts.created_at as date' )
                                   ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
                                   ->join('users', 'posts.user_id', "=", 'users.id')
                                   ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
                                   ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
