@@ -32,22 +32,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/home/profile/edit/user', 'ProfileController@update');
 
 
-// Q:
-//-----------PROBLEMA CON ESTOS 2, FUNCIONA EL QUE ESTE PRIMERO, OSEA AHORA FUNCIONA EL DEL ROOM CONTROLLER.
-//----------PROBLEMA CON EL ORDEN DE ESTAS RUTAS, SI VAS A LA LISTA DE TEACHERS SI QUERES VER ALGUNO TE MANDA A UN ROOM PROFILE
+    Route::get('/home/profile/teachers/{idTeacher}/{teacherName}', 'TeacherController@profile');
+    Route::get('/home/profile/rooms/{idRoom}/{roomName}', 'RoomController@profile');
 
-
-// A:
-// y sí... pensa que /home/profile/cualquiercosa/cualquiercosa es igual a /home/profile/cualquiercosa/cualquiercosa
-// organiza las rutas más prolijas, las 2 de arriba pasalas a /home/profile/user/edit
-// las de abajo organizalas en /home/profile/rooms/{roomId} ¿No entiendo el por que room name?
-//                             en /home/profile/teachers/{teacherId} ¿No entiendo el por que teacher name?
-
-
-    Route::get('/home/profile/{idRoom}/{roomName}', 'RoomController@profile');
-    Route::get('/home/profile/{idTeacher}/{teacherName}', 'TeacherController@profile');
-
-//--------------WARNING
 
     Route::get('/home/profile/kid', 'KidController@profile');
     Route::get('/home/profile/parent', 'ParentController@profile');
