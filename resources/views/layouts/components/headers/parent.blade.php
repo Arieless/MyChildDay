@@ -1,17 +1,6 @@
 <header class="loggedBar parentColor">
   <nav class="loggedBarNav">
 
-    {{-- Ver si implementar...
-
-    @if (user()->hasChildren)
-    <ul>
-      @foreach (user()->getChildren as children)
-      <li><img class="childrenPicture roundPicture" src="{{ children->picture }}" alt=""></li>
-      @endforeach
-    </ul>
-    @endif
-    --}}
-
     <div class="navFlexContainer">
       <ul class="flexList spaceAround">
         <li class="logoItem">
@@ -27,13 +16,13 @@
                 <br/>Novedades
               </a>
             </li>
-            <li class="optionIcon">
+            <li class="optionIcon notActiveLink">
               <a class="flexIconLink parentColor" href="{{ url('home/parent/calendar') }}">
                 <img src="/images/icons/app/calendar.svg" alt="Ver calendario">
                 <br/>Eventos
               </a>
             </li>
-            <li class="optionIcon">
+            <li class="optionIcon notActiveLink">
               <a class="flexIconLink parentColor" href="{{ url('home/user/messages') }}">
                 <img src="/images/icons/app/messages.svg" alt="Ver lista de mensajes">
                 <br/>Mensajes

@@ -52,7 +52,7 @@ $factory->define(App\Room::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->city,
         'school_id' => App\School::all()->random()->id,
-        'profilePicture' => 'images/users/avatars/default_avatar_'.rand(0,11).'.svg',
+        'profilePicture' => 'images/rooms/avatars/default_avatar_'.rand(0,11).'.svg',
     ];
 });
 

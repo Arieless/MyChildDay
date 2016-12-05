@@ -1,194 +1,3 @@
-<style media="screen">
-
-  .postContainer .postText{
-    padding: 20px;
-    width: calc(100% - 16px);
-    resize: none;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #333333;
-    font-size: 22px;
-    font-weight: bold;
-
-    border: none;
-  }
-
-  .postContainer .postText::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-size: 22;
-    font-weight: bold;
-  }
-  .postContainer .postText::-moz-placeholder { /* Firefox 19+ */
-    font-size: 22;
-    font-weight: bold;
-  }
-  .postContainer .postText:-ms-input-placeholder { /* IE 10+ */
-    font-size: 22;
-    font-weight: bold;
-  }
-  .postContainer .postText:-moz-placeholder { /* Firefox 18- */
-    font-size: 22;
-    font-weight: bold;
-  }
-
-  .submit {
-    overflow: hidden;
-    margin-top: 20px;
-  }
-
-  .submit button{
-    display: block;
-    padding: 10px 20px;
-    min-width: 10%;
-    max-width: 120px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-
-    text-align: center;
-    font-weight: bold;
-
-    letter-spacing: 0.5px;
-
-    color: white;
-    background-color: #4CAF50;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0px 2px #3F9643;
-    outline:none;
-    cursor: pointer;
-
-    float: right;
-
-    margin-bottom: 30px;
-    margin-right: 30px;
-  }
-
-  .postContainer .flexRow {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .postContainer .selectRooms .title,
-  .postContainer .flexRow {
-    width: 90%;
-    margin: auto;
-  }
-
-  .postContainer .selectRooms .title{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-
-  .postContainer .selectRooms .titleText {
-    font-weight: bold;
-    color: darkgrey;
-    display: inline-block;
-  }
-
-  .postContainer .selectRooms .title .titleOptions {
-    float: right;
-    display: inline-block;
-  }
-
-  .postContainer .selectRooms .title .titleOptions{
-    color: darkgrey;
-    font-size: 10px;
-    line-height: 16px;
-  }
-
-  .postContainer .flexRow .flexItem{
-    display: inline-flex;
-    padding: 10px 5px;
-    vertical-align: middle;
-  }
-
-  .postContainer .selectRooms {
-    width: 100%;
-  }
-
-  .postContainer .students img,
-  .postContainer .selectRooms .room img{
-    height: 30px;
-    width: 30px;
-    display: block;
-    margin: auto;
-  }
-
-  .postContainer .selectRooms .students label,
-  .postContainer .selectRooms .room {
-    color: darkgrey;
-    font-size: 12px;
-  }
-
-  .postContainer .selectRooms .students label,
-  .postContainer .selectRooms .room label {
-    padding-top: 5px;
-    display: block;
-    text-align: center;
-  }
-
-  .postContainer .selectRooms .room span {
-    font-weight: bold;
-  }
-
-  .postContainer .optionItem{
-    line-height: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    color: darkgrey;
-  }
-
-  .postContainer .mediaOptions {
-    padding-top: 20px;
-  }
-
-  .postContainer .tags .optionItem img,
-  .postContainer .mediaOptions .optionItem img {
-    height: 10px;
-    margin: 5px;
-  }
-
-  .postContainer .selectRooms .room:hover,
-  .postContainer .selectRooms .title .titleOptions span:hover,
-  .postContainer .mediaOptions:hover ,
-  .postContainer .optionItem:hover,
-  .postContainer .mediaOptions.active ,
-  .postContainer .optionItem.active {
-    color: #333333;
-  }
-
-  .postContainer .selectRooms .room:hover img,
-  .postContainer .mediaOptions:hover img,
-  .postContainer .optionItem.active {
-    filter: brightness(90%);
-  }
-
-  .postContainer .mediaOptions .optionItem h5 {
-    display: inline-block;
-  }
-
-  .postContainer .students input[type=checkbox],
-  .postContainer .selectRooms .room input[type=checkbox],
-  .postContainer .tags .optionItem input[type=radio] {
-    display: none;
-  }
-
-
-
-.postContainer .imgContainer img{
-  margin-top: 5%;
-  width: 25px;
-  height: 25px;
-}
-  }
-
-</style>
-
 <div id="popUpContainerPost" class="popUpContainer loggedPopUp postContainer" style="display: {{ isset($display)? $display : 'none' }}" >
   <img id="buttonCloseRegister" class="buttonClose hand" src="/images/icons/close.png" alt="cerrar" />
   <form class="" action="{{url('/home/post')}}" method="post" enctype="multipart/form-data">
@@ -241,12 +50,11 @@
         <input id="radioClass" type="radio" name="tag"><label class="hand" for="radioClass">Clase</label>
       </div>
     </div>
-    @if (isset($rooms) && $rooms->count() > 1)
+
     <hr>
 
-
-
     <div class="selectRooms">
+
       <div class="title">
         <div class="titleText">
           Selecciona el aula
@@ -255,68 +63,75 @@
           <span class="hand">Marcar todos</span> - <span class="hand">Desmarcar todos</span>
         </div>
       </div>
-      <div class="flexRow">
 
-      @foreach ($rooms as $room)
-        <div class="room flexItem hand">
+      <div class="flexRow">
+      @foreach ($roomsToPost as $roomToPost)
+        <div class="room flexItem hand" id="room_{{$roomToPost->roomId}}" room="{{$roomToPost->roomId}}">
           <div class="imgContainer">
-            <img class="roundPicture" src="{{$room->profilePicture}}" alt="{{$room->name}}">
-            <label for="{{$room->id}}"> <span>{{$room->name}}</span> <br/>{{$room->school->name}}</label>
+            <img class="roundPicture" src="{{url($roomToPost->roomProfilePicture)}}" alt="{{$roomToPost->roomName}}">
+            <label> <span>{{$roomToPost->name}}</span> <br/>{{$roomToPost->schoolName}}</label>
           </div>
         </div>
-        @endforeach
-
+      @endforeach
       </div>
 
-    @if ($kids->count() > 1)
+    @if ($kidsToPost->count() > 1)
 
       <div class="selectStudents">
-        <div class="titleText">
-          Selecciona el aula
-        </div>
-        <div class="titleOptions">
-          <span class="hand">Marcar todos</span> - <span class="hand">Desmarcar todos</span>
+
+        <div class="title">
+          <div class="titleText">
+            Selecciona los estudiantes
+          </div>
+          <div class="titleOptions">
+            <span class="hand">Marcar todos</span> - <span class="hand">Desmarcar todos</span>
+          </div>
         </div>
 
-        @foreach ($kids as $kid)
-          <div class="student flexItem hand">
-            <div class="imgContainer" id="students_{{$room->id}}">
-              <img class="roundPicture" src="{{$kid->profilePicture}}" alt="{{$kid->firstName." ".$kid->lastName}}">
-              <label for="{{$kid->id}}"> <span>{{$kid->firstName." ".$kid->lastName}}</span></label>
+        <div class="flexRow">
+          @foreach ($kidsToPost as $kidToPost)
+          <div class="student flexItem hand" id="student_{{$kidToPost->roomId}}" room="{{$kidToPost->roomId}}" student="{{$kidToPost->kidId}}" style="display:none">
+            <div class="imgContainer">
+              <img class="roundPicture" src="{{url($kidToPost->kidProfilePicture)}}" alt="{{$kidToPost->kidFirstName." ".$kidToPost->kidLastName}}">
+              <label> <span>{{$kidToPost->kidFirstName}}<br/>{{$kidToPost->kidLastName}}</span></label>
             </div>
           </div>
-        @endforeach
-
-
+          @endforeach
+        </div>
 
       </div>
 
     </div>
 
-    <input style="display:none" type="number" name="kid" value="" />
+    <input id="postKidsInput" style="display:none" type="text" name="kids_id" value="" />
     @endif
 
-    @if (!$kids->count() > 1)
-    <input style="display:none" type="number" name="kid" value="{{$kids->first()}}" />
+    @if (!$kidsToPost->count() > 1)
+    <input id="postKidsInput" style="display:none" type="text" name="kids_id" value="{{$kids->first()->kidId}}" />
     @endif
 
-      <input style="display:none" type="text" name="school" value="" />
-  @else
-      <input style="display:none" type="text" name="school" value="{{$kids->first()}}" />
-  @endif
 
     <div class="submit">
-      <button type="submit" name="button" style="float: right;">Enviar</button>
+      <button type="submit" id="postSubtmitButton" name="button" style="float: right;">Enviar</button>
     </div>
   </div>
-
-
-
 
 
   </form>
 </div>
 
+
+<style media="screen">
+
+.postContainer .selectRooms .room.active {
+  background: red;
+}
+
+.postContainer .selectStudents .student.active {
+  background: orange;
+}
+
+</style>
 
 <script type="text/javascript">
 /*
@@ -370,5 +185,100 @@ window.addEventListener('load', function (evt){
 
     });
   });
+
+</script>
+
+<!-- SELECT ROOM STYLE CHANGE (join with select student)-->
+
+<script type="text/javascript">
+
+  window.addEventListener('load', function () {
+    document.querySelectorAll('.postContainer .selectRooms .room').forEach( function (el){
+
+      el.addEventListener('click', function (evt){
+          selectRoom(el);
+      })
+    });
+  });
+
+  function selectRoom (element){
+
+    if (hasClass(element, 'active')){
+      element.classList.remove('active')
+      hideStudentsInRoom(element.getAttribute('room'));
+    }else{
+      element.classList.add('active');
+      showStudentsInRoom(element.getAttribute('room'));
+    }
+
+  }
+
+  function showStudentsInRoom (roomNumber){
+    document.querySelectorAll('.postContainer .selectStudents .student').forEach( function (el){
+      if (el.getAttribute('room') === roomNumber) {
+        el.style.display = 'block';
+      }
+    });
+  }
+
+  function hideStudentsInRoom (roomNumber){
+    document.querySelectorAll('.postContainer .selectStudents .student').forEach( function (el){
+      if (el.getAttribute('room') === roomNumber) {
+        deselectStudent(el);
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  function hasClass(el, cn){
+    var classes = el.classList;
+    for(var j = 0; j < classes.length; j++){
+        if(classes[j] == cn){
+            return true;
+        }
+    }
+    return false;
+  }
+
+</script>
+
+<!-- SELECT STUDENT STYLE CHANGE -->
+
+var StudentsSelected;
+
+<script type="text/javascript">
+
+var studentsSelected = [];
+
+  window.addEventListener('load', function () {
+    document.querySelectorAll('.postContainer .selectStudents .student').forEach( function (el){
+      el.addEventListener('click', function (evt){
+          if(hasClass(el, 'active')) deselectStudent(el);
+          else selectStudent(el);
+      })
+    });
+
+    document.getElementById('postSubtmitButton').addEventListener('click', function (evt) {
+
+      // make validation
+      document.getElementById('postKidsInput').value = studentsSelected.toString();
+      console.log (document.getElementById('postKidsInput').value);
+      evt.preventDefault();
+    })
+  });
+
+  function selectStudent (element){
+    element.classList.add('active');
+    var studentNumber = element.getAttribute('student');
+    if (studentsSelected.indexOf(studentNumber) === -1) studentsSelected.push(element.getAttribute('student'));
+  }
+
+  function deselectStudent(element){
+    var studentNumber = element.getAttribute('student');
+    studentsSelected = studentsSelected.filter ( function (el){
+      return el !== studentNumber;
+    });
+    element.classList.remove('active');
+  }
 
 </script>

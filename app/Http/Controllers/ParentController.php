@@ -12,11 +12,10 @@ use Illuminate\Support\Facades\DB;
 class ParentController extends Controller
 {
   function profile(){
+    
       return view ('private.profile.parent');
   }
   static function feed () {
-
-        // check if has kids, if not, redirect to add kids.
 
     $kids = Auth::user()->kids()->get(); // Join the query
 
@@ -34,7 +33,9 @@ class ParentController extends Controller
                                   ->orderBy('date')
                                   ->get();
 
-    $postTypes = $posts->pluck('typeName', 'typeId')->unique();
+
+    $postTypes = $posts->pluck('typeName', 'typeId');
+
 
     return view ('private.feed.parent', ['posts' => $posts, 'kids' => $kids ,'postTypes' => $postTypes]);
 
