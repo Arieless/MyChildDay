@@ -12,3 +12,8 @@
 label {
   cursor: inherit;
 }
+
+.notActiveLink {
+   pointer-events: none;
+   cursor: default;
+}

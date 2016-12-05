@@ -25,13 +25,13 @@ class PostController extends Controller
 
     }
 
-
     private function validate ($data) {
 
-      return Validator::make($data, [
+      return Validator::make($data, [ // finish validator
           'postText' => 'required|max:255',
           'room_id' => 'required|max:255',
           'tag' => 'required',
+          'kids_id' => 'required', // validate
       ]);
     }
 
@@ -42,7 +42,7 @@ class PostController extends Controller
             'postText' => $data['postText'],
             'room_id' => $data['room_id'],
             'tag' => $data['tag'],
-            'school_id' => Room::find($data['room_id']),
+            'school_id' => $data['room_id'],
             'user_id' => Auth::user()->id,
         ]);
     }

@@ -15,7 +15,8 @@
       <link rel="stylesheet" type="text/css" href="/css/style_footerLogged.css">
 
       <link rel="stylesheet" type="text/css" href="/css/style_feed.css">
-
+      <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
+      
       <title>@yield('title')</title>
   </head>
   <body>
