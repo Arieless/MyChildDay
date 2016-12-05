@@ -5,24 +5,32 @@
 <div class="listContainerMain">
   <div class="listDataContainer">
     <h3>Aulas</h3>
-    <div class="itemList">
-      <div class="itemData">
-        <div class="itemOrigin">
-          <img src="{{ asset(Auth::user()->profilePicture) }}" alt="parentPhoto" class="avatar roundPicture">
-          <div class="itemInfoContainer">
-            <span class="name">{{ Auth::user()->firstName}}</span>
-            <span class="triangle">&#9658;</span>
-            <span class="name">{{ Auth::user()->lastName}}</span>
-            <ul class="itemInfo">
-              <li>{{ Auth::user()->address }}</li>
-            </ul>
+
+
+    @foreach ($rooms as $room)
+    <?php $roomName = $room->name ?>
+      <div class="itemList">
+        <div class="itemData">
+          <div class="itemOrigin">
+            <img src="{{ asset($room->profilePicture) }}" alt="roomPhoto" class="avatar roundPicture">
+            <div class="itemInfoContainer">
+              <span class="name">{{ $room->name }}</span>
+              <div class="itemInfo">
+                @foreach ($teachersInRoom as $teacher)
+                <?php $teacherName = $teacher->firstName . $teacher->lastName ?>
+                <span><a href="/home/profile/{{$teacher->id}}/{{$teacherName}}">{{ $teacherName }}</a></span>
+                @endforeach
+              </div>
+            </div>
+          </div>
+          <div class="itemAction">
+            <a href="/home/profile/{{$room->id}}/{{$roomName}}">Ver</a>
           </div>
         </div>
-        <div class="itemAction">
-          <p>Ver</p>
-        </div>
       </div>
-    </div>
+    @endforeach
+
+
   </div>
 </div>
 @endsection

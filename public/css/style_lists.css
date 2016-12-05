@@ -55,7 +55,15 @@
   padding: 4px 4px 2px 4px;
 }
 
-.listContainerMain .itemData .itemAction p {
+.listContainerMain .itemData .itemInfoContainer .itemInfo a {
+  font-size: 12px;
+  color: darkgrey;
+}
+.listContainerMain .itemData .itemInfoContainer .itemInfo a:hover {
+  filter: brightness(80%);
+}
+
+.listContainerMain .itemData .itemAction a {
 
   padding: 10px 20px;
   min-width: 10%;

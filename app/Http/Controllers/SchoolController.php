@@ -56,14 +56,32 @@ class SchoolController extends Controller
   function edit () {
       return view ('private.profile.edit.school');
   }
+
   function rooms() {
-      return view ('private.lists.rooms');
+      $rooms = Auth::user()->school()->first()->rooms()->get();
+      $teachersCollect = collect();
+      foreach ($rooms as $room) {
+        $teachersCollect->push($room->teachers()->get());
+      }
+      $teachersInRoom = [];
+      foreach ($teachersCollect as $teacherTemp) {
+        foreach ($teacherTemp as $teacher) {
+          array_push($teachersInRoom, $teacher);
+        }
+      }
+      //falta saber qe teacher corresponde a que room
+      // dd($teachers[0]->firstName);
+      return view ('private.lists.rooms',['rooms' => $rooms, 'teachersInRoom' => $teachersInRoom]);
   }
+
   function kids() {
       return view ('private.lists.kids');
   }
+
   function teachers() {
-      return view ('private.lists.teachers');
+    //falta saber qe teacher corresponde a que room
+    $teacherInSchool = $this->rooms()->teachersInRoom;
+      return view ('private.lists.teachers', ['teachersInSchool' => $teacherInSchool]);
   }
 
 }
