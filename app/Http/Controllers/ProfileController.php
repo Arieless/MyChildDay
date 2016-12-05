@@ -13,12 +13,12 @@ use Storage;
 class ProfileController extends Controller
 {
 
-    function editUser () {
+    function edit () {
 
       return view('private.profile.edit.user');
     }
 
-    function updateUser (Request $request) {
+    function update (Request $request) {
 
 
       if(Hash::check($request->input('password'), Auth::user()->password)){

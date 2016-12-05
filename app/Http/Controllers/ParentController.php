@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class ParentController extends Controller
 {
-  function profileParent(){
+  function profile(){
       return view ('private.profile.parent');
   }
   static function feed () {
-    
+
         // check if has kids, if not, redirect to add kids.
 
     $kids = Auth::user()->kids()->get(); // Join the query

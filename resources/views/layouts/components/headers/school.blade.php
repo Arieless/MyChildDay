@@ -34,7 +34,7 @@
               </a>
             </li>
             <li class="optionIcon">
-              <a class="flexIconLink schoolColor" href="{{ url('home/school/students') }}">
+              <a class="flexIconLink schoolColor" href="{{ url('home/school/kids') }}">
                 <img src="/images/icons/app/students.svg" alt="Ver estudiantes">
                 <br/>Estudiantes
               </a>

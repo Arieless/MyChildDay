@@ -84,7 +84,7 @@
 
 .feedPostsContainer .feedPost .avatar,
 .feedPostsContainer .feedPost .postType {
-  height: 35px
+  height: 35px;
 }
 
 @media (max-width: 960px) {

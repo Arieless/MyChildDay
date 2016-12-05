@@ -4,29 +4,27 @@
 @section('content')
 <div class="listContainerMain">
   <div class="listDataContainer">
-    <h3>Kids</h3>
+    <h3>Teachers</h3>
 
-    {{-- @foreach ($kids as $kid) --}}
 
+    @foreach ($teachersInSchool as $teacher)
       <div class="itemList">
         <div class="itemData">
           <div class="itemOrigin">
             <img src="{{ asset(Auth::user()->profilePicture) }}" alt="parentPhoto" class="avatar roundPicture">
             <div class="itemInfoContainer">
-              <span class="name">{{ Auth::user()->firstName}}</span>
+              <?php $teacherName = $teacher->firstName . $teacher->lasttName ?>
+              <span class="name">{{ $teacher->firstName . " " . $teacher->lastName}}</span>
               <span class="triangle">&#9658;</span>
-              <span class="name">{{ Auth::user()->lastName}}</span>
-              <ul class="itemInfo">
-                <li>{{ Auth::user()->address }}</li>
-              </ul>
+              <span class="name">room</span>
             </div>
           </div>
           <div class="itemAction">
-            <a>Mensaje</a>
+            <a href="/home/profile/{{$teacher->id}}/{{$teacherName}}">Ver</a>
           </div>
         </div>
       </div>
-    {{-- @endforeach --}}
+    @endforeach
   </div>
 </div>
 @endsection

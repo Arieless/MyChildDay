@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Kid;
+use App\User;
 
 class TeacherController extends Controller
 {
@@ -33,8 +34,10 @@ class TeacherController extends Controller
     return view ('private.feed.teacher', ['posts' => $posts, 'kids' => $kids]);
   }
 
-  function profileTeacher(){
-      return view ('private.profile.teacher');
+  function profile($idTeacher, $teacherName){
+
+    $teacher = User::where("id", $idTeacher);
+      return view ('private.profile.teacher', ['teacher' => $teacher]);
   }
 
   function post () {

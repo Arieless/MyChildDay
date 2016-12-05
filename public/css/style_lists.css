@@ -1,0 +1,124 @@
+.listContainerMain {
+  margin: auto;
+}
+.listDataContainer{
+  margin-top: calc(70px + 30px + 10px);
+}
+
+.listDataContainer h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.listContainerMain .itemData {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px 30px;
+  border: 1px solid lightgrey;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listContainerMain .itemData .itemOrigin {
+  display:flex;
+  justify-content:
+  flex-start;
+  align-items: center;
+}
+
+.listContainerMain .itemData .avatar{
+  height: 35px;
+}
+
+.listContainerMain .itemData .itemOrigin  .itemInfoContainer span.name {
+  color: #555555;
+  padding: 3px;
+  font-weight: bold;
+}
+
+.listContainerMain .itemData .itemOrigin .itemInfoContainer  span.date {
+  font-size: 12px;
+  color: darkgrey;
+}
+
+.listContainerMain .itemData .itemOrigin  .itemInfoContainer span.triangle {
+  font-size: 10px;
+  color: darkgrey;
+}
+
+.listContainerMain .itemData .itemInfoContainer .itemInfo {
+  font-size: 12px;
+  color: darkgrey;
+  padding: 4px 4px 2px 4px;
+}
+
+.listContainerMain .itemData .itemInfoContainer .itemInfo a {
+  font-size: 12px;
+  color: darkgrey;
+}
+.listContainerMain .itemData .itemInfoContainer .itemInfo a:hover {
+  filter: brightness(80%);
+}
+
+.listContainerMain .itemData .itemAction a {
+
+  padding: 10px 20px;
+  min-width: 10%;
+  max-width: 120px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+
+  text-align: center;
+  font-weight: bold;
+
+  letter-spacing: 0.5px;
+
+  color: white;
+  background-color: #4CAF50;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0px 2px #3F9643;
+  outline:none;
+  cursor: pointer;
+
+}
+
+.listContainerMain .itemData .itemAction p:hover {
+  font-weight: bolder;
+  font-size: 12.2px;
+  background-color: #3F9643;
+}
+
+.feedPostsContainer .feedPost .itemAction {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .listContainerMain {
+    width: 100%;
+    margin: auto;
+  }
+  .feedOptionsContainer {
+    width: 100%;
+  }
+}
+
+@media (min-width: 960px) {
+  .listContainerMain {
+    width: 960px;
+
+  }
+  .feedOptionsContainer {
+    width: 960px;
+  }
+}
