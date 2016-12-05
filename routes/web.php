@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/home', 'HomeController@chooseRol');
     Route::get('/home/profile/edit/user', 'ProfileController@edit');
     Route::post('/home/profile/edit/user', 'ProfileController@update');
-    
+
     Route::get('/home/profile/teachers/{idTeacher}/{teacherName}', 'TeacherController@profile');
     Route::get('/home/profile/rooms/{idRoom}/{roomName}', 'RoomController@profile');
 
