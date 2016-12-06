@@ -20,7 +20,14 @@ class TeacherController extends Controller
     return view ('private.profile.teacher', ['teacher' => $teacher]);
   }
 
-  static function feed () { // Request->user() vs Auth::user()
+  function log (Request $request) {
+
+    $request->session()->put('rol', 'teacher');
+    return redirect()->action('ParentController@feed'); // Rol should be assigned in middleware this is for the moment
+  }
+
+
+  function feed () { // Request->user() vs Auth::user()
 
     $user = Auth::user();
 

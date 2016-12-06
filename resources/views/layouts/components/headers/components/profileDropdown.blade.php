@@ -13,11 +13,20 @@
       </a>
     </li>
     @endif
+
     @if (Auth::user()->schoolRol)
     <li class="navButton {{isset($color)? $color:""}}">
       <a class="navButton" href="{{ url('/home/profile/edit/school') }}">
         <img src="/images/icons/app/school.svg" alt="">
         <h5>Perfil Escuela</h5>
+      </a>
+    </li>
+    @endif
+    @if (Auth::user()->numberOfRols()>1)
+    <li id='logoutButton' class="navButton {{isset($color)? $color:""}}">
+      <a class="navButton" href="{{ url('/home') }}">
+        <img src="/images/icons/app/close.svg" alt="">
+        <h5>Cambiar rol</h5>
       </a>
     </li>
     @endif
@@ -28,7 +37,6 @@
       </a>
     </li>
   </ul>
-
 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
     {{ csrf_field() }}
 </form>

@@ -1,5 +1,7 @@
-@extends('layouts.home')
 @section('title','MyChildDay - Editar perfil')
+
+
+@extends($extendTemplate) {{-- this is wrong... in the middle should add session rol... --}}
 
 
 @section('content')

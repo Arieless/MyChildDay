@@ -12,7 +12,17 @@ use App\Room;
 class SchoolController extends Controller
 {
 
-  static function feed () {
+  function profile(){
+      return view ('private.profile.school');
+  }
+
+  function log (Request $request) {
+
+    $request->session()->put('rol', 'school');
+    return redirect()->action('SchoolController@feed'); // Rol should be assigned in middleware this is for the moment
+  }
+
+  function feed () {
 
     $posts = DB::table('schools')->where('schools.user_id', '=', Auth::user()->id)
                                   ->select('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
@@ -49,10 +59,6 @@ class SchoolController extends Controller
       return view ('private.feed.school', [ 'displayPost' => 'true', 'kids' => $kids, 'rooms' => $rooms]);
   }
 
-  function profile(){
-      return view ('private.profile.school');
-  }
-
   function edit () {
       return view ('private.profile.edit.school');
   }
@@ -85,7 +91,7 @@ class SchoolController extends Controller
           array_push($teachersInRoom, $teacher);
         }
       }
-      
+
       return view ('private.lists.rooms',['rooms' => $rooms, 'teachersInRoom' => $teachersInRoom]);
   }
 

@@ -17,6 +17,10 @@
       <link rel="stylesheet" type="text/css" href="/css/style_feed.css">
       <link rel="stylesheet" type="text/css" href="/css/style_popup.css">
 
+      <link rel="stylesheet" type="text/css" href="/css/style_editProfile.css">
+      <link rel="stylesheet" type="text/css" href="/css/style_viewProfile.css">
+
+
       <title>@yield('title')</title>
   </head>
   <body>
