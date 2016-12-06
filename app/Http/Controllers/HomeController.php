@@ -13,18 +13,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
-        $numberOfRols = $this->numberOfRols();
+        $numberOfRols = Auth::user()->numberOfRols();
 
         if ($numberOfRols == 1){
 
-          if (Auth::user()->parentRol) return redirect()->action('ParentController@feed');
-          if (Auth::user()->schoolRol) return redirect()->action('SchoolController@feed');
-          if (Auth::user()->teacherRol) return redirect()->action('TeacherController@feed');
+          if (Auth::user()->parentRol) return redirect()->action('ParentController@log');
+          if (Auth::user()->schoolRol) return redirect()->action('SchoolController@log');
+          if (Auth::user()->teacherRol) return redirect()->action('TeacherController@log');
 
         }else if ($numberOfRols > 1){
-
           return view('private.rol.login');
         }
 
@@ -55,22 +54,6 @@ class HomeController extends Controller
 
       return redirect('/home');
 
-    }
-
-    private function numberOfRols (){
-      $count = 0;
-
-      if (Auth::user()->parentRol){
-        $count++;
-      }
-      if (Auth::user()->schoolRol){
-        $count++;
-      }
-      if (Auth::user()->teacherRol){
-        $count++;
-      }
-
-      return $count;
     }
 
 }

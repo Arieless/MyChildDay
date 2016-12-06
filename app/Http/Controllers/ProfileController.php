@@ -9,17 +9,22 @@ use Validator;
 use Illuminate\Support\Facades\Auth;
 use  Illuminate\Support\Facades\Hash;
 use Storage;
+use Session;
 
 class ProfileController extends Controller
 {
 
     function edit () {
 
-      return view('private.profile.edit.user');
+      if (Session::get('rol') == 'parent') $extendTemplate = 'layouts.parent';
+      else if (Session::get('rol') == 'teacher') $extendTemplate = 'layouts.teacher';
+      else if (Session::get('rol') == 'school') $extendTemplate = 'layouts.school';
+      else $extendTemplate = 'layouts.home';
+
+      return view('private.profile.edit.user', ['extendTemplate' => $extendTemplate]);
     }
 
     function update (Request $request) {
-
 
       if(Hash::check($request->input('password'), Auth::user()->password)){
 
