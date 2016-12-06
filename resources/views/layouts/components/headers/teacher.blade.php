@@ -22,7 +22,6 @@
                 <br/>Estudiantes
               </a>
             </li>
-            {{-- @if (user()->hasRooms()) --}}
             <li class="optionIcon" id="popUpButtonPost">
               <a class="flexIconLink teacherColor" href="{{ url('home/teacher/post') }}">
                 <img src="/images/icons/app/post.svg" alt="Hacer un nuevo post">

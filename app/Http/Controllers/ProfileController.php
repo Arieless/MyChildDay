@@ -59,7 +59,7 @@ class ProfileController extends Controller
             'address' => 'required|max:255',
             'phone' => 'required|max:255',
             'password' => 'required|min:6|',
-            'profilePicture' => '' // here should validate the formtat. ¿?
+            'profilePicture' => '' // here should validate the format. ¿?
         ]);
     }
 

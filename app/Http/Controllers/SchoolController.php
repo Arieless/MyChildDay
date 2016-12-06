@@ -58,6 +58,21 @@ class SchoolController extends Controller
   }
 
   function rooms() {
+    $teachers = Auth::user()->school() // asi es la query
+                        ->select('schools.id as schoolId', 'schools.name as schoolName')
+                        ->join('rooms', 'rooms.school_id', '=', 'schools.id')
+                        ->addSelect('rooms.id as roomId', 'rooms.name as roomName')
+                        ->join('user_room', 'user_room.room_id', '=', 'rooms.id')
+                        ->join('users', 'users.id', '=', 'user_room.user_id')
+                        ->addSelect('users.id as teacherId', 'users.firstName as teacherFirstName', 'users.lastName as teacherLastName')
+                        ->orderBy('users.firstName')
+                        ->get();
+
+    $rooms = $teachers->unique('roomId'); // ahí tenes los rooms que tiene ese colegio
+
+    // arregla las vistas cambia los nombres de las selecciones de las querys, hace lo que quieras
+    // pero no iteres en querys
+
       $rooms = Auth::user()->school()->first()->rooms()->get();
       $teachersCollect = collect();
       foreach ($rooms as $room) {
@@ -69,6 +84,7 @@ class SchoolController extends Controller
           array_push($teachersInRoom, $teacher);
         }
       }
+
       //falta saber qe teacher corresponde a que room
       // dd($teachers[0]->firstName);
       return view ('private.lists.rooms',['rooms' => $rooms, 'teachersInRoom' => $teachersInRoom]);
