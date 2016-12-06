@@ -19,9 +19,9 @@ class HomeController extends Controller
 
         if ($numberOfRols == 1){
 
-          if (Auth::user()->parentRol) return redirect('/home/parent/feed');
-          if (Auth::user()->schoolRol) return redirect('/home/school/feed');
-          if (Auth::user()->teacherRol) return redirect('/home/teacher/feed');
+          if (Auth::user()->parentRol) return redirect()->action('ParentController@feed');
+          if (Auth::user()->schoolRol) return redirect()->action('SchoolController@feed');
+          if (Auth::user()->teacherRol) return redirect()->action('TeacherController@feed');
 
         }else if ($numberOfRols > 1){
 
