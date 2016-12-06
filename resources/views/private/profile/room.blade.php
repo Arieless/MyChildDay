@@ -2,13 +2,14 @@
 @section('title','MyChildDay')
 
 @section('content')
+<?php dd($room) ?>
   <div class="viewProfileContainerMain">
     <div class="profileHeader teacherColor">
       <div class="profilePicImgContainer">
-        <img src="{{ asset(Auth::user()->profilePicture) }}" alt="profilePic" >
+        <img src="{{ asset($room->profilePicture) }}" alt="profilePic" >
       </div>
       <div class="profileName">
-        <h3>nombre de aula</h3>
+        <h3>{{$room->name}}</h3>
       </div>
     </div>
     <section class="dataSection">

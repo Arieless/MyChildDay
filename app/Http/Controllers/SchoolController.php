@@ -59,6 +59,7 @@ class SchoolController extends Controller
 
   function rooms() {
       $rooms = Auth::user()->school()->first()->rooms()->get();
+
       $teachersCollect = collect();
       foreach ($rooms as $room) {
         $teachersCollect->push($room->teachers()->get());
@@ -69,8 +70,6 @@ class SchoolController extends Controller
           array_push($teachersInRoom, $teacher);
         }
       }
-      //falta saber qe teacher corresponde a que room
-      // dd($teachers[0]->firstName);
       return view ('private.lists.rooms',['rooms' => $rooms, 'teachersInRoom' => $teachersInRoom]);
   }
 
@@ -79,7 +78,6 @@ class SchoolController extends Controller
   }
 
   function teachers() {
-    //falta saber qe teacher corresponde a que room
     $teacherInSchool = $this->rooms()->teachersInRoom;
       return view ('private.lists.teachers', ['teachersInSchool' => $teacherInSchool]);
   }
