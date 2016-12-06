@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="itemAction">
-            <a href="/home/profile/{{$teacher->id}}/{{$teacherName}}">Ver</a>
+            <a href="/home/profile/teachers/{{$teacher->id}}/{{$teacherName}}">Ver</a>
           </div>
         </div>
       </div>
