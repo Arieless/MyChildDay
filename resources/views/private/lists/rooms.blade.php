@@ -8,27 +8,26 @@
 
 
     @foreach ($rooms as $room)
-    <?php $roomName = $room->name ?>
-      <div class="itemList">
-        <div class="itemData">
-          <div class="itemOrigin">
-            <img src="{{ asset($room->profilePicture) }}" alt="roomPhoto" class="avatar roundPicture">
-            <div class="itemInfoContainer">
-              <span class="name">{{ $room->name }}</span>
-              <div class="itemInfo">
-                @foreach ($teachersInRoom as $teacher)
-                <?php $teacherName = $teacher->firstName . $teacher->lastName ?>
-                <span><a href="/home/profile/teachers/{{$teacher->id}}/{{$teacherName}}">{{ $teacherName }}</a></span>
-                @endforeach
+          <div class="itemList">
+          <div class="itemData">
+            <div class="itemOrigin">
+              <img src="{{ asset($room->roomProfilePicture) }}" alt="roomPhoto" class="avatar roundPicture">
+              <div class="itemInfoContainer">
+                <span class="name">{{ $room->roomName }}</span>
+                <div class="itemInfo">
+
+                  <?php $teacherName = $room->teacherFirstName . $room->teacherLastName ?>
+                  <span><a href="/home/profile/teachers/{{$room->teacherId}}/{{$teacherName}}">{{ $teacherName }}</a></span>
+
+                </div>
               </div>
             </div>
-          </div>
-          <div class="itemAction">
-            <a href="/home/profile/rooms/{{$room->id}}/{{$roomName}}">Ver</a>
+            <div class="itemAction">
+              <a href="/home/profile/rooms/{{$room->roomId}}/{{$room->roomName}}">Ver</a>
+            </div>
           </div>
         </div>
-      </div>
-    @endforeach
+      @endforeach
 
 
   </div>

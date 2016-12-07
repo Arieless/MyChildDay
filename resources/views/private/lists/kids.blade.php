@@ -7,13 +7,12 @@
     <h3>Alumnos</h3> <a href="{{ url('/home/profile/create/kid') }}">AGREGAR ALUMNO</a>
 
     @foreach ($kids as $kid)
-    <?php $kidName = $kid->firstName . $kid->lastName; ?>
       <div class="itemList">
         <div class="itemData">
           <div class="itemOrigin">
-            <img src="{{ asset($kid->profilePicture) }}" alt="parentPhoto" class="avatar roundPicture">
+            <img src="{{ asset($kid->kidProfilePicture) }}" alt="kidPhoto" class="avatar roundPicture">
             <div class="itemInfoContainer">
-              <span class="name"><a href="/home/profile/kids/{{$kid->id}}/{{$kidName}}">{{ $kid->firstName . ' ' . $kid->lastName}}</a></span>
+              <span class="name"><a href="/home/profile/kids/{{$kid->kidId}}/{{$kid->kidFirstName . $kid->kidLastName}}">{{ $kid->kidFirstName . ' ' . $kid->kidLastName}}</a></span>
               <span class="triangle">&#9658;</span>
               <span class="name">Room</span>
               <span class="itemInfo">

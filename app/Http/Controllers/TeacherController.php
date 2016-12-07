@@ -30,7 +30,7 @@ class TeacherController extends Controller
   function log (Request $request) {
 
     $request->session()->put('rol', 'teacher');
-    return redirect()->action('ParentController@feed'); // Rol should be assigned in middleware this is for the moment
+    return redirect()->action('TeacherController@feed'); // Rol should be assigned in middleware this is for the moment
   }
 
 

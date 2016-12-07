@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/home/profile/user', 'ParentController@userProfile');
     Route::get('/home/profile/school', 'SchoolController@profile');
     Route::get('/home/profile/edit/school', 'SchoolController@edit');
+    Route::post('/home/profile/edit/school', 'ProfileController@update');
 
 
     // Route::group(['middleware' => ['authParent']], function(){}            make middleware      Kids should also be > 0 if not show a message
