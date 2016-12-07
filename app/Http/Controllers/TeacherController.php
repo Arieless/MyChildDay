@@ -9,63 +9,80 @@ use Illuminate\Support\Facades\DB;
 use App\Kid;
 use App\User;
 use App\School;
+use App\Posttype;
 
 class TeacherController extends Controller
 {
 
-  function profile($idTeacher, $teacherName){
+  function profile($teacherId){
 
-    $teacher = User::where("id", $idTeacher);
-    return view ('private.profile.teacher', ['teacher' => $teacher]);
+    $teacher = User::find($teacherId);
+
+    $rooms = User::Where('users.id', '=', $teacherId)->select('users.id as userId')
+                                      ->join('user_room', 'user_room.user_id', '=', 'users.id')
+                                      ->join('rooms', 'rooms.id', '=', 'user_room.room_id')
+                                      ->addSelect('rooms.id as roomId', 'rooms.name as roomName')
+                                      ->get();
+
+    return view ('private.profile.teacher', ['teacher' => $teacher, 'rooms' => $rooms]);
   }
 
-  static function feed (Request $request) { // Request->user() vs Auth::user()
+  function log (Request $request) {
 
-    $posts = $request->user()->postsWhereTeaches()->get(); // funciona mal ¿?  VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+    $request->session()->put('rol', 'teacher');
+    return redirect()->action('ParentController@feed'); // Rol should be assigned in middleware this is for the moment
+  }
 
 
-    // Forma alternativa incorrecta? ---------------------------
-    $roomsID = $request->user()->teacherInRooms()->select('rooms.id as roomId')->get();
-    $posts = DB::table('user_room')->where('user_room.room_id', '=', $roomsID->pluck('roomId')) // fix
-                                  ->join('posts', 'posts.room_id', '=', 'user_room.room_id')
-                                  ->select('posts.contentText as contentText', 'posts.created_at as date' )
-                                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
-                                  ->join('users', 'posts.user_id', "=", 'users.id')
-                                  ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
-                                  ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
-                                  ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
-                                  ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture', 'kids.id as kidId')
-                                  ->join('schools', 'posts.school_id', "=", 'schools.id')
-                                  ->addSelect('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
-                                  ->orderBy('date')
-                                  ->get();
-    // ----------------------------------------------------------
+  function feed () { // Request->user() vs Auth::user()
 
+    $user = Auth::user();
+
+    $posts = $user->postsWhereTeaches()->get()->unique(function ($item) {   // I dont really know what i have to filter it ...
+                                return $item['kidId']."-".$item['postId'];
+                            });
 
     $kids = $posts->unique('kidId');
 
     return view ('private.feed.teacher', ['posts' => $posts, 'kids' => $kids]);
+
   }
 
-  function post (Request $request) { // Request->user() vs Auth::user()
+  function post () { // Request->user() vs Auth::user()
 
-    $posts = $request->user()->postsWhereTeaches()->get(); // funciona mal ¿? VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+    $user = Auth::user();
+
+    $posts = $user->postsWhereTeaches()->get()->unique(function ($item) {   // I dont really know what i have to filter it ...
+                                return $item['kidId']."-".$item['postId'];
+                            });
+
     $kids = $posts->unique('kidFirstName');
 
-    $kidsToPost = $request->user()->teacherInRooms()
+
+    $kidsToPost = $user->teacherInRooms()
                         ->select('rooms.id as roomId', 'rooms.profilePicture as roomProfilePicture', 'rooms.name as roomName')
-                        ->join('kid_room', 'kid_room.kid_id', '=', 'rooms.id')
+                        ->join('kid_room', 'kid_room.room_id', '=', 'rooms.id')
                         ->join(Kid::getTableName(), 'kids.id', '=', 'kid_room.kid_id')
                         ->addSelect('kids.id as kidId', 'kids.firstName as kidFirstName', 'kids.LastName as kidLastName', 'kids.profilePicture as kidProfilePicture')
                         ->join(School::getTableName(), 'schools.id', '=', 'rooms.school_id')
                         ->addSelect('schools.id as schoolId', 'schools.name as schoolName')
-                        ->orderBy('kids.firstName')
                         ->get()
-                        ->unique('kidId'); // JUST BECAUSE THE SEEDERS ARE WRONG <----------------- WARNINGGGGGGGGGGGGGGGGGGGGGG
+                        ->unique(function ($item) {
+                            return $item['roomId']."-".$item['kidId'];
+                        });
 
     $roomsToPost = $kidsToPost->unique('roomId'); // you can not make a post in an empty room¿?
 
-    return view ('private.feed.teacher', ['displayPost' => 'true', 'kidsToPost' => $kidsToPost, 'roomsToPost' => $roomsToPost, 'posts' => $posts, 'kids' => $kids]);
+    $posttypes = Posttype::all();
+
+    return view ('private.feed.teacher', [
+                                          'displayPost' => 'true',
+                                          'kidsToPost' => $kidsToPost,
+                                          'roomsToPost' => $roomsToPost,
+                                          'posts' => $posts,
+                                          'kids' => $kids,
+                                          'formAction' => url('/home/teacher/post'),
+                                          'posttypes' => $posttypes,
+                                        ]);
   }
 }

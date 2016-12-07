@@ -45,17 +45,33 @@ class User extends Authenticatable
 
       return $this->teacherInRooms()
                   ->join('posts', 'posts.room_id', '=', 'user_room.room_id')
-                  ->select('posts.contentText as contentText', 'posts.created_at as date' )
-                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                  ->select('posts.contentText as contentText', 'posts.created_at as date', 'posts.id as postId' )
+                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
+                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
                   ->join('users', 'posts.user_id', "=", 'users.id')
                   ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
                   ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
                   ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
-                  ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture')
+                  ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture', 'kids.id as kidId')
                   ->join('schools', 'posts.school_id', "=", 'schools.id')
                   ->addSelect('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
-                  ->orderBy('date');
+                  ->orderBy('date', 'desc');
+    }
+
+    public function postsOfKidsHeHas(){
+
+      return $this->kids()
+                  ->select('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture', 'kids.id as kidId')
+                  ->join('post_kid', 'post_kid.kid_id', '=', 'kids.id')
+                  ->join(Post::getTableName(), 'posts.id', '=', 'post_kid.post_id')
+                  ->addSelect('posts.contentText as contentText', 'posts.created_at as date', 'posts.id as postId' )
+                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
+                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
+                  ->join('users', 'posts.user_id', "=", 'users.id')
+                  ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
+                  ->join('schools', 'posts.school_id', "=", 'schools.id')
+                  ->addSelect('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
+                  ->orderBy('date', 'desc');
     }
 
     public function isTeacher() {
@@ -69,6 +85,16 @@ class User extends Authenticatable
 
     public function hasRooms() {
       return ($this->isTeacher() && $this->teacherInRooms().count() > 0)? true : false;
+    }
+
+    public function numberOfRols (){
+      $count = 0;
+
+      if ($this->parentRol) $count++;
+      if ($this->schoolRol) $count++;
+      if ($this->teacherRol) $count++;
+
+      return $count;
     }
 
 

@@ -10,8 +10,8 @@
       @if ($kids->count() > 1)
       <div class="kidOptions">
         @foreach ($kids as $kid)
-        <div class="kidFilterContainer hand">
-          <img class="roundPicture" src="{{url($kid->profilePicture)}}" alt="{{$kid->firstName}}">
+        <div class="kidFilterContainer hand" title="{{$kid->kidFirstName}}">
+          <img class="roundPicture" src="{{url($kid->kidProfilePicture)}}" alt="{{$kid->kidFirstName}}">
         </div>
         @endforeach
         <div class="kidFilterContainer hand">
@@ -22,7 +22,7 @@
       @else
 
       <div class="kidFilterContainer">
-        <img class="roundPicture" src="{{url($kids[0]->profilePicture)}}" alt="{{$kids[0]->firstName}}">
+        <img class="roundPicture" src="{{url($kids->first()->kidProfilePicture)}}" alt="{{$kids->first()->kidFirstName}}">
       </div>
 
       @endif
@@ -31,8 +31,8 @@
         <form class="activityOptionsForm" method="post">
           <select id="activityOptions" class="" name="activityOptions">
             <option selected disabled>Actividad</option>
-            @foreach ($postTypes as $id => $type)
-              <option value="{{$id}}">{{$type}}</option>
+            @foreach ($posttypes as $posttype)
+              <option value="{{$posttype->typeId}}">{{$posttype->typeName}}</option>
             @endforeach
           </select>
           <button id="activityOptionsSubmit" type="submit" name="button" style="display:none"></button>
@@ -46,7 +46,7 @@
 
 <script type="text/javascript">
 
-window.addEventListener('load', function (){
+window.addEventListener('DOMContentLoaded', function (){
   document.getElementById('activityOptions').addEventListener('change', function(){
     document.getElementById('activityOptionsSubmit').click();
   })

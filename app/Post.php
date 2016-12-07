@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
-    protected $fillable = ['contentText'];
+    protected $fillable = ['contentText', 'user_id', 'school_id', 'posttype_id', 'room_id'];
 
     public function user() {
       return $this->belongsTo(User::class, 'user_id');
@@ -17,7 +17,7 @@ class Post extends Model
       return $this->belongsTo(School::class, 'school_id');
     }
 
-    public function postType () {
+    public function posttype () {
       return $this->hasOne(Posttype::class, 'posttype_id');
     }
 

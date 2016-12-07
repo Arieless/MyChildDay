@@ -7,37 +7,41 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Posttype;
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 class ParentController extends Controller
 {
-  function profile(){
-    
-      return view ('private.profile.parent');
+  function userProfile() {
+
+      return view ('private.profile.user');
   }
+
+  function parentProfile($guardianId) {
+    $parent = User::find($guardianId);
+      return view ('private.profile.parent', ['parent' => $parent]);
+  }
+
   static function feed () {
+>>>>>>> new lists in profile
 
-    $kids = Auth::user()->kids()->get(); // Join the query
+  function log (Request $request) {
 
-    $posts = DB::table('post_kid')->whereIn('kid_id', $kids->pluck('id'))
-                                  ->join(Post::getTableName(), 'posts.id', '=', 'post_kid.post_id')
-                                  ->select('posts.contentText as contentText', 'posts.created_at as date' )
-                                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
-                                  ->join('users', 'posts.user_id', "=", 'users.id')
-                                  ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
-                                  ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
-                                  ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture')
-                                  ->join('schools', 'posts.school_id', "=", 'schools.id')
-                                  ->addSelect('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
-                                  ->orderBy('date')
-                                  ->get();
+    $request->session()->put('rol', 'parent');
 
+    return redirect()->action('ParentController@feed'); // Rol should be assigned in middleware this is for the moment
+  }
 
-    $postTypes = $posts->pluck('typeName', 'typeId');
+<<<<<<< c45659478581205e9bfe1ca13ca76e63eb1fc08b
+  function feed () {
 
+    $posts = Auth::user()->postsOfKidsHeHas()->get();
 
-    return view ('private.feed.parent', ['posts' => $posts, 'kids' => $kids ,'postTypes' => $postTypes]);
+    $kids = $posts->unique('kidId');
+
+    $posttypes = $posts->unique('typeId');
+
+    return view ('private.feed.parent', ['posts' => $posts, 'kids' => $kids ,'posttypes' => $posttypes]);
 
   }
 

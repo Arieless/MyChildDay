@@ -6,14 +6,7 @@ var toHide;
 //var faqAnswers;
 //var faqImgs;
 
-var ruleMoreThan7 = new makeRule (/^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{7,}$/, "Por favor ingresa más de 7 digitos que tengan al menos una letra y un numero.");
-var ruleNotEmpty = new makeRule(/^[\s]*$/, "No puede estar vacio, ni ser solo espacios en blanco");
-var ruleEmail = new makeRule(/^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i, "Email no valido.");
-var ruleText = new makeRule (/^[a-zA-Z\s]{2,}$/, "Solo puede contener letras");
-var ruleAddress = new makeRule(/^\s*\S+(?:\s+\S+)/, "Ingrese un nombre de calle y su altura.");
-var ruleNumber = new  makeRule(/^\d{1,45}$/, "Solo puede contener numeros");
-
-window.onload = function () {
+window.addEventListener('DOMContentLoaded', function () {
   // pop ups
   popUpContainerBackground = document.getElementById('popUpContainerBackground');
   popUpContainerLogin = document.getElementById('popUpContainerLogin');
@@ -40,11 +33,6 @@ window.onload = function () {
   // pop up on button contact click
   document.getElementById('popUpContactButton').onclick = popUpContact;
 
-  // close popups on key escape down
-  window.onkeydown = popUpEscapeClose;
-  // close pop ups on background click
-  popUpContainerBackground.onclick = popUpClickClose;
-
   // pops register form
   document.getElementById('popUpButtonRegister').onclick = popUpRegister;
   // pops login form
@@ -55,18 +43,12 @@ window.onload = function () {
   document.getElementById('popUpContactButton').onclick = popUpContact;
 
 
-  // validate register form
-  document.getElementById('registerForm').addEventListener('submit', formValidation);
-  // validate login form
-  document.getElementById('loginForm').addEventListener('submit', loginValidation);
-  // validate emailReset form
-  document.getElementById('emailResetForm').addEventListener('submit', formValidation);
-  // validate passReset form
-  document.getElementById('passResetForm').addEventListener('submit', formValidation);
-  // validate contact form
-  document.getElementById('contactForm').addEventListener('submit', formValidation);
+  // close popups on key escape down
+  window.onkeydown = popUpEscapeClose;
+  // close pop ups on background click
+  popUpContainerBackground.onclick = popUpClickClose;
 
-};
+});
 
 function popUpClose (){
 
@@ -209,6 +191,28 @@ function getWidth() {
     return document.body.clientWidth;
   }
 }
+
+
+
+var ruleMoreThan7 = new makeRule (/^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{7,}$/, "Por favor ingresa más de 7 digitos que tengan al menos una letra y un numero.");
+var ruleNotEmpty = new makeRule(/^[\s]*$/, "No puede estar vacio, ni ser solo espacios en blanco");
+var ruleEmail = new makeRule(/^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i, "Email no valido.");
+var ruleText = new makeRule (/^[a-zA-Z\s]{2,}$/, "Solo puede contener letras");
+var ruleAddress = new makeRule(/^\s*\S+(?:\s+\S+)/, "Ingrese un nombre de calle y su altura.");
+var ruleNumber = new  makeRule(/^\d{1,45}$/, "Solo puede contener numeros");
+
+document.addEventListener('DOMContentLoaded', function (evt){
+  // validate register form
+  document.getElementById('registerForm').addEventListener('submit', formValidation);
+  // validate login form
+  document.getElementById('loginForm').addEventListener('submit', loginValidation);
+  // validate emailReset form
+  document.getElementById('emailResetForm').addEventListener('submit', formValidation);
+  // validate passReset form
+  document.getElementById('passResetForm').addEventListener('submit', formValidation);
+  // validate contact form
+  document.getElementById('contactForm').addEventListener('submit', formValidation);
+});
 
 function loginValidation (evt){
 

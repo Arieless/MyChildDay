@@ -7,26 +7,26 @@
       <div class="postHeader">
         <div class="postOriginContainer">
           <div class="postOrigin">
-            <img src="{{url($post->schoolProfilePicture)}}" alt="{{$post->schoolName}}" class="avatar roundPicture">
+            <img src="{{url($post->schoolProfilePicture)}}" alt="{{$post->schoolName}}" class="avatar roundPicture" title="Logo de la escuela">
             <div class="">
               <div>
-                <span class="name">{{$post->schoolName}}</span>
+                <span class="name" title="Escuela">{{$post->schoolName}}</span>
                 <span class="triangle">&#9658;</span>
-                <span class="name">{{$post->teacherFirstName}}</span>
+                <span class="name" title="Profesor">{{$post->teacherFirstName}}</span>
                 @if ($kids->count() > 1)
                   <span class="triangle">&#9658;</span>
-                  <span class="name">{{$post->kidFirstName}}</span>
+                  <span class="name" title="Alumno">{{$post->kidFirstName}}</span>
                 @endif
               </div>
               <div class="dateContainer">
-                <span class="date">{{$post->date}}</span>
+                <span class="date" title="Fecha">{{$post->date}}</span>
               </div>
             </div>
           </div>
 
-          <div class="postTypeContainer">
+          <div class="posttypeContainer">
             <span>{{$post->typeName}}</span>
-            <img src="{{url($post->typeIcon)}}" class="roundPicture postType" alt="{{$post->typeName}}">
+            <img src="{{url($post->typeIcon)}}" class="roundPicture posttype" alt="{{$post->typeName}}">
           </div>
 
         </div>

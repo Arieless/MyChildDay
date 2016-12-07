@@ -407,6 +407,12 @@
   align-items: center;
 }
 
+.postContainer .flexRowCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .postContainer .selectRooms .title,
 .postContainer .flexRow {
   width: 90%;
@@ -436,14 +442,20 @@
   line-height: 16px;
 }
 
-.postContainer .flexRow .flexItem{
-  display: inline-flex;
-  padding: 10px 5px;
-  vertical-align: middle;
-}
-
 .postContainer .selectRooms {
   width: 100%;
+}
+
+
+.postContainer .selectRooms .room.active,
+.postContainer .selectStudents .student.active {
+  color: #333;
+  opacity: 1;
+}
+
+.postContainer .selectRooms .room,
+.postContainer .selectStudents .student{
+  opacity: 0.8;
 }
 
 .postContainer .selectStudents img,
@@ -454,7 +466,7 @@
   margin: auto;
 }
 
-.postContainer .selectStudents label,
+.postContainer .selectStudents,
 .postContainer .selectRooms .room {
   color: darkgrey;
   font-size: 12px;
@@ -476,6 +488,13 @@
   font-size: 14px;
   font-weight: bold;
   color: darkgrey;
+  padding: 10px 5px;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+.postContainer .optionItem.active {
+  opacity: 1;
 }
 
 .postContainer .mediaOptions {
@@ -484,7 +503,7 @@
 
 .postContainer .tags .optionItem img,
 .postContainer .mediaOptions .optionItem img {
-  height: 10px;
+  height: 25px;
   margin: 5px;
 }
 
