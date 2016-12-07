@@ -93,6 +93,7 @@ class SchoolController extends Controller
                       return $item['kidId']."-".$item['roomId'];
                   });
 
+
     return view ('private.lists.kids',['kids' => $kids]);
   }
 

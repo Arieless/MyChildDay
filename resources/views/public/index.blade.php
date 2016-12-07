@@ -16,9 +16,12 @@
         />
       </section>
       <section class="sectionVideo">
-        <section class="videoWrapper">
+          <section class="videoWrapper">
+            <img src="/images/tempImg.jpg" alt="temp">
+          </section>
+        <!-- <section class="videoWrapper">
             <!-- <iframe src="https://www.youtube.com/embed/5iKitGJeAZ4" allowfullscreen></iframe> -->
-        </section>
+
         <section class="description">
               <h1>Enterate del día a día de tu hijo...<br><br>
                  y sus pequeños logros...</h1>

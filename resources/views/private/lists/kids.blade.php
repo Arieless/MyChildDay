@@ -12,9 +12,9 @@
           <div class="itemOrigin">
             <img src="{{ asset($kid->kidProfilePicture) }}" alt="kidPhoto" class="avatar roundPicture">
             <div class="itemInfoContainer">
-              <span class="name"><a href="/home/profile/kids/{{$kid->kidId}}/{{$kid->kidFirstName . $kid->kidLastName}}">{{ $kid->kidFirstName . ' ' . $kid->kidLastName}}</a></span>
+              <span class="name">{{$kid->roomName}}</span>
               <span class="triangle">&#9658;</span>
-              <span class="name">Room</span>
+              <span class="name"><a href="/home/profile/kids/{{$kid->kidId}}/{{$kid->kidFirstName . $kid->kidLastName}}">{{ $kid->kidFirstName . ' ' . $kid->kidLastName}}</a></span>
               <span class="itemInfo">
 
                 {{ $kid->birthdate }}
@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="itemAction">
-            <a class="addParentButton" kid="{{$kid->id}}">Agregar guardian</a>
+            <a class="addParentButton" kid="{{$kid->kidId}}">Agregar guardian</a>
             <a>Mensaje</a>
           </div>
         </div>
