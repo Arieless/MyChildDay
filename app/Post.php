@@ -17,7 +17,7 @@ class Post extends Model
       return $this->belongsTo(School::class, 'school_id');
     }
 
-    public function postType () {
+    public function posttype () {
       return $this->hasOne(Posttype::class, 'posttype_id');
     }
 

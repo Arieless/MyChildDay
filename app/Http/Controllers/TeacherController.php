@@ -13,10 +13,17 @@ use App\School;
 class TeacherController extends Controller
 {
 
-  function profile($idTeacher, $teacherName){
+  function profile($teacherId){
 
-    $teacher = User::where("id", $idTeacher);
-    return view ('private.profile.teacher', ['teacher' => $teacher]);
+    $teacher = User::find($teacherId);
+
+    $rooms = User::Where('users.id', '=', $teacherId)->select('users.id as userId')
+                                      ->join('user_room', 'user_room.user_id', '=', 'users.id')
+                                      ->join('rooms', 'rooms.id', '=', 'user_room.room_id')
+                                      ->addSelect('rooms.id as roomId', 'rooms.name as roomName')
+                                      ->get();
+
+    return view ('private.profile.teacher', ['teacher' => $teacher, 'rooms' => $rooms]);
   }
 
   static function feed (Request $request) { // Request->user() vs Auth::user()
@@ -29,8 +36,8 @@ class TeacherController extends Controller
     $posts = DB::table('user_room')->where('user_room.room_id', '=', $roomsID->pluck('roomId')) // fix
                                   ->join('posts', 'posts.room_id', '=', 'user_room.room_id')
                                   ->select('posts.contentText as contentText', 'posts.created_at as date' )
-                                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
+                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
                                   ->join('users', 'posts.user_id', "=", 'users.id')
                                   ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
                                   ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')

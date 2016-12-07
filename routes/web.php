@@ -32,12 +32,13 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/home/profile/edit/user', 'ProfileController@update');
 
 
-    Route::get('/home/profile/teachers/{idTeacher}/{teacherName}', 'TeacherController@profile');
-    Route::get('/home/profile/rooms/{idRoom}/{roomName}', 'RoomController@profile');
+    Route::get('/home/profile/teachers/{teacherId}/{teacherName}', 'TeacherController@profile');
+    Route::get('/home/profile/rooms/{roomId}/{roomName}', 'RoomController@profile');
+    Route::get('/home/profile/kids/{kidId}/{kidName}', 'KidController@profile');
+    Route::get('/home/profile/parents/{guardianId}/{guardianName}', 'ParentController@parentProfile');
 
 
-    Route::get('/home/profile/kid', 'KidController@profile');
-    Route::get('/home/profile/parent', 'ParentController@profile');
+    Route::get('/home/profile/user', 'ParentController@userProfile');
     Route::get('/home/profile/school', 'SchoolController@profile');
     Route::get('/home/profile/edit/school', 'SchoolController@edit');
 

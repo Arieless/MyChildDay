@@ -66,10 +66,10 @@ $factory->define(App\Posttype::class, function (Faker\Generator $faker) {
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
         'contentText' => $faker->text,
-        'postType_id' => 1,
+        'posttype_id' => 1,
         'user_id' => App\User::all()->random()->id,
         'school_id' => App\School::all()->random()->id,
         'room_id' => App\Room::all()->random()->id,
-        'postType_id' => App\Posttype::all()->random()->id,
+        'posttype_id' => App\Posttype::all()->random()->id,
     ];
 });

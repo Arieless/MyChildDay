@@ -48,6 +48,9 @@
   font-size: 10px;
   color: darkgrey;
 }
+.listContainerMain .itemData .itemOrigin  .itemInfoContainer .name a {
+  color: #555555;
+}
 
 .listContainerMain .itemData .itemInfoContainer .itemInfo {
   font-size: 12px;

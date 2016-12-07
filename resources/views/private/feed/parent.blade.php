@@ -31,7 +31,7 @@
         <form class="activityOptionsForm" method="post">
           <select id="activityOptions" class="" name="activityOptions">
             <option selected disabled>Actividad</option>
-            @foreach ($postTypes as $id => $type)
+            @foreach ($posttypes as $id => $type)
               <option value="{{$id}}">{{$type}}</option>
             @endforeach
           </select>
