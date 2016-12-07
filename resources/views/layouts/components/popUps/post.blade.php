@@ -240,8 +240,6 @@ window.addEventListener('DOMContentLoaded', function (evt){
 
 <!-- SELECT STUDENT STYLE CHANGE -->
 
-var StudentsSelected;
-
 <script type="text/javascript">
 
 var studentsSelected = [];
