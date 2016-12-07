@@ -157,7 +157,7 @@ function popUpEscapeClose (ev){
 
 function hideTheRest (bool){
 
-  if (getWidth() < 1280){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
+  if (getWidth() < 960){ // WARNING THIS SHOULD BE THE SAME AS THE QUERYS OF THE CSS
 
     if (bool){
       for (var i=0; i < toHide.length; i++){
@@ -171,7 +171,7 @@ function hideTheRest (bool){
     }
   }
 
-  else if (getWidth() >= 1280 && !bool){ //esto es un super hackcode
+  else if (getWidth() >= 960 && !bool){ //esto es un super hackcode
     for (iii=0; iii < toHide.length; iii++){
       toHide[iii].style.display = "block";
     }

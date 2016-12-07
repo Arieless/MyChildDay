@@ -36,4 +36,8 @@ class Kid extends Model
     return $this->belongsToMany(Post::class, 'post_kid', 'kid_id', 'post_id');
   }
 
+  public function waitingForGuardians(){
+    return $this->hasMany('schedule_user_kid', 'kid_id');
+  }
+
 }

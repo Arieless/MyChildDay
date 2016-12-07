@@ -76,7 +76,15 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/home/school/post', 'PostController@upload');
 
     Route::get('/home/school/rooms', 'SchoolController@rooms');
+
     Route::get('/home/school/kids', 'SchoolController@kids');
+    Route::post('/home/profile/create/userkid', 'KidController@addParent');
+    Route::get('/home/profile/create/kid', 'KidController@create');
+
+
     Route::get('/home/school/teachers', 'SchoolController@teachers');
+
+
+
 
 });

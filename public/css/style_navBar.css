@@ -17,7 +17,7 @@
   width: 100%;
 }
 
-@media (max-width: 1280px){
+@media (max-width: 960px){
 
   .mainBar {
     margin-bottom: 30px;
@@ -49,11 +49,11 @@
 }
 
 
-@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+@media (min-width: 550px) and (max-width: 960px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
 
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 960px) {
 
   .mainBar {
     position: fixed;
@@ -69,7 +69,7 @@
 
   .mainBar .mainBarNav{
     height: 60px;
-    width: 1200px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
