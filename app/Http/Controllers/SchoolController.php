@@ -24,21 +24,21 @@ class SchoolController extends Controller
 
   function feed () {
 
-    $posts = DB::table('schools')->where('schools.user_id', '=', Auth::user()->id)
-                                  ->select('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
-                                  ->join('posts', 'posts.school_id', '=', 'schools.user_id')
-                                  ->addSelect('posts.contentText as contentText', 'posts.created_at as date' )
-                                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
-                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
-                                  ->join('users', 'posts.user_id', "=", 'users.id')
-                                  ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
-                                  ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
-                                  ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
-                                  ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture')
-                                  ->orderBy('date')
-                                  ->get();
+    $posts = Auth::user()->school()
+                        ->select('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
+                        ->join('posts', 'posts.school_id', '=', 'schools.id')
+                        ->addSelect('posts.contentText as contentText', 'posts.created_at as date')
+                        ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
+                        ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                        ->join('users', 'posts.user_id', "=", 'users.id')
+                        ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
+                        ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
+                        ->join('kids', 'post_kid.kid_id', "=", 'kids.id')
+                        ->addSelect('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture', 'kids.id as kidId')
+                        ->orderBy('date')
+                        ->get();
 
-    $kids = $posts->unique('kidFirstName'); // arreglar esto, capaz desde la vista.
+    $kids = $posts->unique('kidId');
 
     return view ('private.feed.school', ['posts' => $posts, 'kids' => $kids]);
 
