@@ -104,7 +104,7 @@
 
 /*  <----------------------------------- (INDEX) SECTION INFO GENERAL -------------------------------> */
 
-@media (max-width: 1280px){ /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+@media (max-width: 960px){ /*  <----------------------------------- MAS DE 1280 -------------------------------> */
 
 /*  <----------------------------------- (INDEX) SECTION VIDEO HASTA 1280 -------------------------------> */
 
@@ -176,7 +176,7 @@
 
 }
 
-@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+@media (min-width: 550px) and (max-width: 960px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
 
   .indexContainerMain .sectionParallax .parallaxContain h2 {
     font-size: 40px;
@@ -197,7 +197,41 @@
   }
 }
 
-@media (min-width: 1280px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
+@media (min-width: 1280px){
+  .indexContainerMain .textOverVideo{
+    width: 1080px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1280px){
+  .indexContainerMain .textOverVideo{
+    width: 900px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1100px){
+
+  .indexContainerMain .textOverVideo h1{
+    font-size: 40px ;
+  }
+  .indexContainerMain .textOverVideo h3{
+    font-size: 25px ;
+  }
+}
+
+@media (min-width: 1100px){
+
+  .indexContainerMain .textOverVideo h1{
+    font-size: 50px ;
+  }
+  .indexContainerMain .textOverVideo h3{
+    font-size: 30px ;
+  }
+
+}
+
+
+@media (min-width: 960px) { /*  <----------------------------------- MAS DE 1280 -------------------------------> */
 
 /*  <----------------------------------- (INDEX) SECTION VIDEO GRAAAAANDE DESDE 1280 -------------------------------> */
 
@@ -228,28 +262,30 @@
 
 /*  <----------------------------------- (INDEX) SECTION VIDEO DESDE 1280 -------------------------------> */
 
+
+  .indexContainerMain .sectionMain {
+    position: relative;
+  }
+
   .indexContainerMain .containerSectionVideo {
     background-color: black;
   }
 
   .indexContainerMain .textOverVideo{
-    width: 1080px;
     color: white;
     position: absolute;
     z-index: 20;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .indexContainerMain .textOverVideo h1{
-    font-size: 50px ;
     font-weight: bold;
   }
 
   .indexContainerMain .textOverVideo h3{
     padding-top: 30px;
-    font-size: 30px ;
   }
 
   .indexContainerMain .sectionVideo {

@@ -50,7 +50,7 @@
   font-size: 10px;
 }
 
-@media (max-width: 1280px){
+@media (max-width: 960px){
 
   .mainFooter {
     height: 80px;
@@ -63,12 +63,12 @@
 
 }
 
-@media (min-width: 550px) and (max-width: 1280px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
+@media (min-width: 550px) and (max-width: 960px) {   /*  <----------ENTRE 550 Y 1280 -------------------------------> */
 
 }
 
 
-@media (min-width: 1280px) {
+@media (min-width: 960px) {
 
   .mainFooter {
     height: 80px;
