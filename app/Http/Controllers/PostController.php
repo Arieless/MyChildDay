@@ -59,7 +59,7 @@ class PostController extends Controller
 
       return Validator::make($data, [ // finish validator
           'contentText' => 'required|max:255',
-          'postType' => 'required',
+          'posttype' => 'required',
           'kids_id' => 'required', // validate
           'room_id' => 'required',
       ]);
@@ -85,7 +85,7 @@ class PostController extends Controller
         $post = Post::create([
             'contentText' => $request->input('contentText'),
             'room_id' =>  $request->input('room_id'),
-            'postType_id' => $request->input('postType'),
+            'posttype_id' => $request->input('posttype'),
             'school_id' => Room::find($request->input('room_id'))->school()->get()->first()->id,
             'user_id' => $request->user()->id,
         ]);

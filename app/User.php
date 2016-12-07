@@ -46,8 +46,8 @@ class User extends Authenticatable
       return $this->teacherInRooms()
                   ->join('posts', 'posts.room_id', '=', 'user_room.room_id')
                   ->select('posts.contentText as contentText', 'posts.created_at as date', 'posts.id as postId' )
-                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
+                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
                   ->join('users', 'posts.user_id', "=", 'users.id')
                   ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
                   ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
@@ -59,14 +59,14 @@ class User extends Authenticatable
     }
 
     public function postsOfKidsHeHas(){
-      
+
       return $this->kids()
                   ->select('kids.firstName as kidFirstName', 'kids.lastName as kidLastName', 'kids.profilePicture as kidProfilePicture', 'kids.id as kidId')
                   ->join('post_kid', 'post_kid.kid_id', '=', 'kids.id')
                   ->join(Post::getTableName(), 'posts.id', '=', 'post_kid.post_id')
                   ->addSelect('posts.contentText as contentText', 'posts.created_at as date', 'posts.id as postId' )
-                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
+                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
                   ->join('users', 'posts.user_id', "=", 'users.id')
                   ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
                   ->join('schools', 'posts.school_id', "=", 'schools.id')

@@ -48,7 +48,7 @@
   padding: 4px 4px 2px 4px;
 }
 
-.feedPostsContainer .feedPost .postTypeContainer {
+.feedPostsContainer .feedPost .posttypeContainer {
   display:flex;
   justify-content: flex-start;
   align-items: center;
@@ -70,7 +70,7 @@
   color: darkgrey;
 }
 
-.feedPostsContainer .feedPost .postTypeContainer span {
+.feedPostsContainer .feedPost .posttypeContainer span {
   padding-left: 10px;
   padding-right: 10px;
   color: darkgrey;
@@ -83,7 +83,7 @@
 }
 
 .feedPostsContainer .feedPost .avatar,
-.feedPostsContainer .feedPost .postType {
+.feedPostsContainer .feedPost .posttype {
   height: 35px;
 }
 

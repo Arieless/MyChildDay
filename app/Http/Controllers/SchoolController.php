@@ -28,8 +28,8 @@ class SchoolController extends Controller
                                   ->select('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
                                   ->join('posts', 'posts.school_id', '=', 'schools.user_id')
                                   ->addSelect('posts.contentText as contentText', 'posts.created_at as date' )
-                                  ->join('posttypes', 'posts.postType_id', '=', 'posttypes.id')
-                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'postTypes.icon as typeIcon')
+                                  ->join('posttypes', 'posts.posttype_id', '=', 'posttypes.id')
+                                  ->addSelect('posttypes.type as typeName', 'posttypes.id as typeId', 'posttypes.icon as typeIcon')
                                   ->join('users', 'posts.user_id', "=", 'users.id')
                                   ->addSelect('users.firstName as teacherFirstName', 'users.lastName as teacherLastName', 'users.profilePicture as teacherProfilePicture')
                                   ->join('post_kid', 'post_kid.post_id', '=', 'posts.id')
@@ -96,7 +96,8 @@ class SchoolController extends Controller
   }
 
   function kids() {
-      return view ('private.lists.kids');
+    $kids = $this->post()->kids;
+      return view ('private.lists.kids', ['kids' => $kids]);
   }
 
   function teachers() {

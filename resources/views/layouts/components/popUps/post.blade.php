@@ -29,11 +29,11 @@
     <div class="">
       <div class="tags flexRow">
 
-        @foreach ($postTypes as $postType)
+        @foreach ($posttypes as $posttype)
         <div class="optionItem hand flexRowCenter">
-          <img src="{{url($postType->icon)}}" alt="Tag {{$postType->type}}">
+          <img src="{{url($posttype->icon)}}" alt="Tag {{$posttype->type}}">
 
-          <input id="radio{{$postType->type}}" type="radio" name="postType" value="{{$postType->id}}" required><label class="hand" for="radio{{$postType->type}}">{{$postType->type}}</label>
+          <input id="radio{{$posttype->type}}" type="radio" name="posttype" value="{{$posttype->id}}" required><label class="hand" for="radio{{$posttype->type}}">{{$posttype->type}}</label>
         </div>
         @endforeach
       </div>

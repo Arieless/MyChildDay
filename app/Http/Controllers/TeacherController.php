@@ -14,10 +14,17 @@ use App\Posttype;
 class TeacherController extends Controller
 {
 
-  function profile($idTeacher, $teacherName){
+  function profile($teacherId){
 
-    $teacher = User::where("id", $idTeacher);
-    return view ('private.profile.teacher', ['teacher' => $teacher]);
+    $teacher = User::find($teacherId);
+
+    $rooms = User::Where('users.id', '=', $teacherId)->select('users.id as userId')
+                                      ->join('user_room', 'user_room.user_id', '=', 'users.id')
+                                      ->join('rooms', 'rooms.id', '=', 'user_room.room_id')
+                                      ->addSelect('rooms.id as roomId', 'rooms.name as roomName')
+                                      ->get();
+
+    return view ('private.profile.teacher', ['teacher' => $teacher, 'rooms' => $rooms]);
   }
 
   function log (Request $request) {
@@ -34,7 +41,6 @@ class TeacherController extends Controller
     $posts = $user->postsWhereTeaches()->get()->unique(function ($item) {   // I dont really know what i have to filter it ...
                                 return $item['kidId']."-".$item['postId'];
                             });
-
 
     $kids = $posts->unique('kidId');
 
@@ -67,7 +73,7 @@ class TeacherController extends Controller
 
     $roomsToPost = $kidsToPost->unique('roomId'); // you can not make a post in an empty room¿?
 
-    $postTypes = Posttype::all();
+    $posttypes = Posttype::all();
 
     return view ('private.feed.teacher', [
                                           'displayPost' => 'true',
@@ -76,7 +82,7 @@ class TeacherController extends Controller
                                           'posts' => $posts,
                                           'kids' => $kids,
                                           'formAction' => url('/home/teacher/post'),
-                                          'postTypes' => $postTypes,
+                                          'posttypes' => $posttypes,
                                         ]);
   }
 }
