@@ -23,7 +23,7 @@ class SchoolController extends Controller
   }
 
   function feed () {
-    
+
     $posts = Auth::user()->school()
                         ->select('schools.name as schoolName', 'schools.profilePicture as schoolProfilePicture')
                         ->join('posts', 'posts.school_id', '=', 'schools.id')
@@ -38,7 +38,7 @@ class SchoolController extends Controller
                         ->orderBy('date')
                         ->get();
 
-    $kids = $posts->unique('kidId'); // arreglar esto, capaz desde la vista.
+    $kids = $posts->unique('kidId');
 
     return view ('private.feed.school', ['posts' => $posts, 'kids' => $kids]);
 
@@ -96,7 +96,8 @@ class SchoolController extends Controller
   }
 
   function kids() {
-      return view ('private.lists.kids');
+    $kids = $this->post()->kids;
+      return view ('private.lists.kids', ['kids' => $kids]);
   }
 
   function teachers() {

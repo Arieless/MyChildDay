@@ -2,7 +2,6 @@
 @section('title','MyChildDay')
 
 @section('content')
-<?php dd($room) ?>
   <div class="viewProfileContainerMain">
     <div class="profileHeader teacherColor">
       <div class="profilePicImgContainer">
@@ -13,14 +12,18 @@
       </div>
     </div>
     <section class="dataSection">
-      <h3>teachers</h3>
+      <h3>Responsable de aula</h3>
+      @foreach($teachers as $teacher)
       <div class="infoContainer">
-        <div class="dataItem">los teacher</div>
+        <div class="dataItem"><a href="/home/profile/teachers/{{$teacher->teacherId}}/{{$teacher->teacherFirstName}}{{$teacher->teacherLastName}}">{{$teacher->teacherFirstName}} {{$teacher->teacherLastName}}</a></div>
       </div>
+      @endforeach
       <h3>kids</h3>
+      @foreach($kids as $kid)
       <div class="teachersContainer">
-        <div class="dataItem">los kids</div>
+        <div class="dataItem"><a href="/home/profile/kids/{{$kid->id}}/{{$kid->firstName}}{{$kid->lastName}}">{{$kid->firstName}} {{$kid->lastName}}</a></div>
       </div>
+      @endforeach
     </section>
   </div>
 @endsection

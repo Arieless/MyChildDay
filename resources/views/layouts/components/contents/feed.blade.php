@@ -24,9 +24,9 @@
             </div>
           </div>
 
-          <div class="postTypeContainer">
-            <span title="Actividad">{{$post->typeName}}</span>
-            <img src="{{url($post->typeIcon)}}" class="roundPicture postType" alt="{{$post->typeName}}" title="Actividad">
+          <div class="posttypeContainer">
+            <span>{{$post->typeName}}</span>
+            <img src="{{url($post->typeIcon)}}" class="roundPicture posttype" alt="{{$post->typeName}}">
           </div>
 
         </div>
