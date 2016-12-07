@@ -18,7 +18,7 @@
         <div class="dataItem"><a href="/home/profile/teachers/{{$teacher->teacherId}}/{{$teacher->teacherFirstName}}{{$teacher->teacherLastName}}">{{$teacher->teacherFirstName}} {{$teacher->teacherLastName}}</a></div>
       </div>
       @endforeach
-      <h3>kids</h3>
+      <h3>Infantes</h3>
       @foreach($kids as $kid)
       <div class="teachersContainer">
         <div class="dataItem"><a href="/home/profile/kids/{{$kid->id}}/{{$kid->firstName}}{{$kid->lastName}}">{{$kid->firstName}} {{$kid->lastName}}</a></div>

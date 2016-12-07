@@ -21,7 +21,7 @@
       <h3>Aulas</h3>
       <div class="roomsContainer">
         @foreach ($rooms as $room)
-        <div class="dataItem"><a href="/home/profile/rooms/{{$room->id}}/{{$room->roomName}}">{{$room->roomName}}</a></div>
+        <div class="dataItem"><a href="/home/profile/rooms/{{$room->roomId}}/{{$room->roomName}}">{{$room->roomName}}</a></div>
         @endforeach
       </div>
     </section>

@@ -97,7 +97,8 @@ class SchoolController extends Controller
 
   function kids() {
     $kids = $this->post()->kids;
-      return view ('private.lists.kids', ['kids' => $kids]);
+
+    return view ('private.lists.kids', ['kids' => $kids]);
   }
 
   function teachers() {

@@ -4,7 +4,7 @@
 @section('content')
 <div class="listContainerMain">
   <div class="listDataContainer">
-    <h3>Kids</h3>
+    <h3>Infantes</h3>
 
     @foreach ($kids as $kid)
     <?php $kidName = $kid->firstName . $kid->lastName; ?>
@@ -16,9 +16,10 @@
               <span class="name"><a href="/home/profile/kids/{{$kid->id}}/{{$kidName}}">{{ $kid->firstName . ' ' . $kid->lastName}}</a></span>
               <span class="triangle">&#9658;</span>
               <span class="name">Room</span>
-              <ul class="itemInfo">
-                <li>{{ Auth::user()->address }}</li>
-              </ul>
+              <span class="itemInfo">
+
+                {{ $kid->birthdate }}
+              </span>
             </div>
           </div>
           <div class="itemAction">

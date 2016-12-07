@@ -56,6 +56,7 @@
   font-size: 12px;
   color: darkgrey;
   padding: 4px 4px 2px 4px;
+  display: block;
 }
 
 .listContainerMain .itemData .itemInfoContainer .itemInfo a {
