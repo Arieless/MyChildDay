@@ -22,9 +22,6 @@ class ParentController extends Controller
       return view ('private.profile.parent', ['parent' => $parent]);
   }
 
-  static function feed () {
->>>>>>> new lists in profile
-
   function log (Request $request) {
 
     $request->session()->put('rol', 'parent');
@@ -32,16 +29,25 @@ class ParentController extends Controller
     return redirect()->action('ParentController@feed'); // Rol should be assigned in middleware this is for the moment
   }
 
-<<<<<<< c45659478581205e9bfe1ca13ca76e63eb1fc08b
-  function feed () {
+  function feed (Request $request) {
 
-    $posts = Auth::user()->postsOfKidsHeHas()->get();
+    if ($request->has('activityOption') && $request->input('activityOption')){
+      $postsQuery = Auth::user()->postsOfKidsHeHas()->where('posts.posttype_id', '=', $request->input('activityOption'));
+      $posttypeSelected = $request->input('activityOption');
+    }else{
+      $postsQuery = Auth::user()->postsOfKidsHeHas();
+      $posttypeSelected = $request->has('activityOption')? $request->input('activityOption') : 'default';
+    }
+
+    // add select kid id
+
+    $posts = $postsQuery->get();
 
     $kids = $posts->unique('kidId');
 
-    $posttypes = $posts->unique('typeId');
+    $posttypes = Posttype::all();;
 
-    return view ('private.feed.parent', ['posts' => $posts, 'kids' => $kids ,'posttypes' => $posttypes]);
+    return view ('private.feed.parent', ['posts' => $posts, 'kids' => $kids ,'posttypes' => $posttypes, 'posttypeSelected' => $posttypeSelected]);
 
   }
 

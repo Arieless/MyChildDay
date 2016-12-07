@@ -20,6 +20,8 @@
       <link rel="stylesheet" type="text/css" href="/css/style_editProfile.css">
       <link rel="stylesheet" type="text/css" href="/css/style_viewProfile.css">
 
+      <link rel="stylesheet" type="text/css" href="/css/style_lists.css">
+
 
       <title>@yield('title')</title>
   </head>
@@ -30,7 +32,7 @@
 
 @if(isset($displayPost))
     <!-- POPUPS -->
-    @if ( (isset($displayPost) && $displayPost))
+    @if ((isset($displayPost) && $displayPost))
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: block">
     @else
       <div id="popUpContainerBackground" class="popUpContainerBackground" style="display: none">

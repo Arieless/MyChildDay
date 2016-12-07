@@ -28,14 +28,15 @@
       @endif
 
       <div class="activityOptions">
-        <form class="activityOptionsForm" method="post">
-          <select id="activityOptions" class="" name="activityOptions">
-            <option selected disabled>Actividad</option>
+        <form class="activityOptionsForm" method="get">
+          <select id="activityOption" class="" name="activityOption">
+            <option {{isset($posttypeSelected) && $posttypeSelected == 'default'? "selected": ""}} disabled>Actividad</option>
+            <option value="0">All</option>
             @foreach ($posttypes as $posttype)
-              <option value="{{$posttype->typeId}}">{{$posttype->typeName}}</option>
+              <option {{(isset($posttypeSelected) && $posttypeSelected == $posttype->id)? "selected" : ""}} value="{{$posttype->id}}">{{$posttype->type}}</option>
             @endforeach
           </select>
-          <button id="activityOptionsSubmit" type="submit" name="button" style="display:none"></button>
+          <button id="activityOptionSubmit" type="submit" style="display:none"></button>
         </form>
       </div>
 
@@ -47,8 +48,8 @@
 <script type="text/javascript">
 
 window.addEventListener('DOMContentLoaded', function (){
-  document.getElementById('activityOptions').addEventListener('change', function(){
-    document.getElementById('activityOptionsSubmit').click();
+  document.getElementById('activityOption').addEventListener('change', function(){
+    document.getElementById('activityOptionSubmit').click();
   })
 });
 

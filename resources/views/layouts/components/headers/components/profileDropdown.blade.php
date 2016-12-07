@@ -25,7 +25,7 @@
     @if (Auth::user()->numberOfRols()>1)
     <li class="navButton {{isset($color)? $color:""}}">
       <a class="navButton" href="{{ url('/home') }}">
-        <img src="/images/icons/app/change.svg" alt="">
+        <img src="/images/icons/app/close.svg" alt="">
         <h5>Cambiar rol</h5>
       </a>
     </li>
